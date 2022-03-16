@@ -1,0 +1,18 @@
+{
+  "menu": {
+    "home": "Home",
+    "products": "Products",
+    "shops": "Shops",
+    "about": "About",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "newsletter": "Newsletter",
+    "reseller": "Become a reseller"
+  },
+  "link": {
+    "readmoreabout": "Read more about"
+  },
+  "messages": {
+    "welcome": "HI there"
+  }
+}

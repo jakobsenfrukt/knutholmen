@@ -1,0 +1,44 @@
+// Default
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  min-height: 100%;
+  font-size: calc(16px + 6 * (100vw - 320px) / 1200);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  line-height: 1.2;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+img {
+  max-width: 100%;
+}
+
+p {
+  margin: 0 0 1.4rem;
+}
+
+section {
+  background: var(--color-background);
+  padding: var(--spacing-sitepadding);
+}
