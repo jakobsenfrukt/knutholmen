@@ -1,26 +1,22 @@
 export default {
   name: 'pageHeader',
   type: 'object',
-  title: 'Page header',
+  title: 'Toppseksjon',
   fields: [
     {
       name: 'heading',
       type: 'localeString',
-      title: 'Heading'
+      title: 'Overskrift'
     },
     {
       name: 'text',
       type: 'localeText',
-      title: 'Text'
+      title: 'Tekst'
     },
     {
-      name: 'images',
-      type: 'array',
-      title: 'Images',
-      of: [{
-        type: 'localeFigure'
-      }],
-      validation: Rule => Rule.max(2)
+      name: 'image',
+      type: 'localeFigure',
+      title: 'Bilde'
     }
   ]
 }

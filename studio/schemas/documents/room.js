@@ -1,12 +1,12 @@
 export default {
   name: 'room',
   type: 'document',
-  title: 'Room',
+  title: 'Rom',
   fields: [
     {
       name: 'title',
       type: 'localeString',
-      title: 'Title'
+      title: 'Tittel'
     },
     {
       name: 'slug',
@@ -20,22 +20,22 @@ export default {
     {
       name: 'image',
       type: 'localeFigure',
-      title: 'Main image'
+      title: 'Hovedbilde'
     },
     {
       name: 'lead',
       type: 'localeText',
-      title: 'Intro'
+      title: 'Ingress'
     },
     {
       name: 'body',
       type: 'localeBody',
-      title: 'Content'
+      title: 'Innhold'
     }
   ],
   preview: {
     select: {
-      title: 'title.en',
+      title: 'title.no',
       media: 'image'
     }
   }

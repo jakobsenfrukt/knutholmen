@@ -1,17 +1,17 @@
 export default {
-  title: 'Body',
+  title: 'Innhold',
   name: 'localeSimpleBody',
   type: 'object',
   fields: [
     {
       name: 'no',
       type: 'simpleBody',
-      title: 'Norwegian'
+      title: 'Norsk'
     },
     {
       name: 'en',
       type: 'simpleBody',
-      title: 'English'
+      title: 'Engelsk'
     }
   ]
 }

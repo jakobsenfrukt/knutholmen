@@ -1,13 +1,13 @@
 export default {
   name: 'general',
   type: 'document',
-  title: 'General',
+  title: 'Generelt',
   __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'], 
   fields: [
     {
       name: 'seo',
       type: 'seo',
-      title: 'Sharing & SEO'
+      title: 'Deling & SEO'
     }
   ]
 }

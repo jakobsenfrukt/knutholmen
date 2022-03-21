@@ -1,13 +1,13 @@
 export default {
   name: 'about',
   type: 'document',
-  title: 'About',
+  title: 'Om oss',
   __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'], 
   fields: [
     {
       name: 'title',
       type: 'localeString',
-      title: 'Title'
+      title: 'Tittel'
     },
     {
       name: 'pageHeader',

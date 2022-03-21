@@ -1,18 +1,18 @@
 export default {
   name: 'contact',
   type: 'document',
-  title: 'Contact',
+  title: 'Kontakt',
   //__experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'], 
   fields: [
     {
       name: 'email',
       type: 'string',
-      title: 'E-mail'
+      title: 'E-post'
     },
     {
       name: 'phone',
       type: 'string',
-      title: 'Phone'
+      title: 'Telefon'
     },
     {
       name: 'facebook',
@@ -21,8 +21,8 @@ export default {
     },
     {
       name: 'address',
-      title: 'Address',
-      type: 'simpleBody'
+      type: 'simpleBody',
+      title: 'Adresse'
     }
   ]
 }

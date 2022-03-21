@@ -1,12 +1,12 @@
 export default {
   name: 'article',
   type: 'document',
-  title: 'Article',
+  title: 'Artikkel',
   fields: [
     {
       name: 'title',
       type: 'string',
-      title: 'Title'
+      title: 'Tittel'
     },
     {
       name: 'slug',
@@ -23,30 +23,26 @@ export default {
       type: 'string',
       options: {
         list: [
-          {title: 'Norwegian', value: 'no'},
-          {title: 'English', value: 'en'}
+          {title: 'Norsk', value: 'no'},
+          {title: 'Engelsk', value: 'en'}
         ], // <-- predefined values
         layout: 'radio' // <-- defaults to 'dropdown'
       }
     },
     {
       name: 'publishedAt',
-      title: 'Published at',
+      title: 'Publiseringsdato',
       type: 'datetime',
     },
     {
       name: 'mainImages',
-      title: 'Main images',
-      type: 'array',
-      of: [{
-        type: 'figure'
-      }],
-      validation: Rule => Rule.max(2)
+      title: 'Hovedbilde',
+      type: 'figure',
     },
     {
       name: 'lead',
       type: 'text',
-      title: 'Lead'
+      title: 'Ingress'
     }
   ],
   preview: {

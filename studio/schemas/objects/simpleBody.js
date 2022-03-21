@@ -1,7 +1,7 @@
 export default {
   name: 'simpleBody',
   type: 'array',
-  title: 'Body',
+  title: 'Innhold',
   of: [
     {
       type: 'block',
@@ -26,7 +26,7 @@ export default {
                 validation: Rule => Rule.uri({scheme: ['tel', 'mailto', 'http', 'https']})
               },
               {
-                title: 'Open in new tab',
+                title: 'Åpne i ny fane',
                 name: 'blank',
                 type: 'boolean'
               }

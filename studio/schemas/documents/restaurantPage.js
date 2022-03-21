@@ -7,7 +7,7 @@ export default {
     {
       name: 'title',
       type: 'localeString',
-      title: 'Title'
+      title: 'Tittel'
     }
   ]
 }

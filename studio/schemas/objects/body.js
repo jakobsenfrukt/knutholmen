@@ -1,5 +1,5 @@
 export default {
-  title: 'Body',
+  title: 'Innhold',
   name: 'body',
   type: 'array',
   of: [
@@ -41,7 +41,7 @@ export default {
                 validation: Rule => Rule.uri({scheme: ['tel', 'mailto', 'http', 'https']})
               },
               {
-                title: 'Open in new tab',
+                title: 'Åpne i ny fane',
                 name: 'blank',
                 type: 'boolean'
               }

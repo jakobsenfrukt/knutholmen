@@ -1,7 +1,7 @@
 export default {
   name: 'frontpage',
   type: 'document',
-  title: 'Front page',
+  title: 'Forside',
   __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'], 
   fields: [
     {

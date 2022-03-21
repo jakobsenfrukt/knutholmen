@@ -1,7 +1,7 @@
 export default {
   name: 'localeFigure',
   type: 'image',
-  title: 'Image',
+  title: 'Bilde',
   options: {
     hotspot: true
   },
@@ -9,8 +9,8 @@ export default {
     {
       name: 'alt',
       type: 'localeString',
-      title: 'Alternative text',
-      description: 'Important for SEO and accessiblity. Briefly describe what is shown in the image as if to a blind person.',
+      title: 'Alternativ tekst',
+      description: 'Viktig for SEO og tilgjengelighet. Beskriv kort hva man ser i bildet for en som er blind.',
       options: {
         isHighlighted: true
       },

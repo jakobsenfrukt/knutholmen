@@ -1,20 +1,20 @@
 export default {
   name: 'seo',
   type: 'object',
-  title: 'Sharing & SEO',
+  title: 'Deling & SEO',
   fields: [
     {
       name: 'ogimg',
       type: 'image',
-      title: 'Social media thumbnail',
-      description: 'Shows up when sharing the website on social media if no other image is available.',
-      validation: Rule => Rule.error('Missing social media thumbnail!').required(),
+      title: 'Bilde til sosiale medier',
+      description: 'Dukker opp når nettsiden deles på sosiale medier om ikke annet bilde er tilgjengelig.',
+      validation: Rule => Rule.error('Mangler bilde til sosiale medier!').required(),
     },
     {
       name: 'description',
       type: 'text',
-      title: 'Description',
-      description: 'Describe your site for search engines and social media.'
+      title: 'Beskrivelse',
+      description: 'Kort beskrivelse av nettsiden for søkemotorer og sosiale medier.'
     }
   ]
 }

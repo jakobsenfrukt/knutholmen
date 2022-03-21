@@ -7,55 +7,55 @@ const hiddenDocTypes = listItem =>
 
 export default () =>
   S.list()
-    .title('Content')
+    .title('Innhold')
     .items([
       S.listItem()
-        .title('General')
+        .title('Generelt')
         .icon(MdSettings)
         .child(
           S.editor()
-            .title('General')
+            .title('Generelt')
             .id('general')
             .schemaType('general')
             .documentId('general')
         ),
       S.listItem()
-        .title('Front page')
+        .title('Forside')
         .icon(MdHome)
         .child(
           S.editor()
-            .title('Front page')
+            .title('Forside')
             .id('frontpage')
             .schemaType('frontpage')
             .documentId('frontpage')
         ),
       S.listItem()
-        .title('Rooms')
+        .title('Overnatting')
         .icon(MdHotel)
         .child(
           S.list()
             .id('room')
-            .title('Room')
+            .title('Overnatting')
             .items(
               [
                 S.listItem()
-                .title('Main page')
+                .title('Hovedside')
                 .icon(MdArticle)
                 .child(
                   S.editor()
-                    .title('Rooms')
+                    .title('Overnatting')
                     .id('roomPage')
                     .schemaType('roomPage')
                     .documentId('roomPage')
                 ),
                 S.listItem()
-                .title('All rooms')
+                .title('Alle rom')
                 .schemaType('room')
                 .icon(MdHotel)
                 .child(
                   S.documentList()
                     .id('allroom')
-                    .title('Room list')
+                    .title('Liste over rom')
                     .filter('_type == "room"')
                 )
               ]
@@ -72,60 +72,60 @@ export default () =>
             .documentId('restaurantPage')
         ),
       S.listItem()
-        .title('Package deals')
+        .title('Pakker')
         .icon(MdLocalOffer)
         .schemaType('offer')
         .child(
-          S.documentTypeList('offer').title('Package deals'),
+          S.documentTypeList('offer').title('Pakker'),
         ),
       S.listItem()
-        .title('Articles')
+        .title('Artikler')
         .icon(MdArticle)
         .child(
           S.list()
             .id('articles')
-            .title('Articles')
+            .title('Artikler')
             .items(
               [
                 S.listItem()
-                .title('Norwegian')
+                .title('Norsk')
                 .schemaType('article')
                 .icon(MdArticle)
                 .child(
                   S.documentList()
                     .id('noArticles')
-                    .title('Norwegian articles')
+                    .title('Norske artikler')
                     .filter('_type == "article" && (!defined(locale) || locale == "no")')
                 ),
                 S.listItem()
-                .title('English')
+                .title('Engelsk')
                 .schemaType('article')
                 .icon(MdOutlineArticle)
                 .child(
                   S.documentList()
                     .id('enArticles')
-                    .title('English articles')
+                    .title('Engelske artikler')
                     .filter('_type == "article" && (!defined(locale) || locale == "en")')
                 )
               ]
             )
         ),
       S.listItem()
-        .title('About')
+        .title('Om oss')
         .icon(MdInfo)
         .child(
           S.editor()
-            .title('About')
+            .title('Om oss')
             .id('about')
             .schemaType('about')
             .documentId('about')
         ),
       S.listItem()
-        .title('Contact')
+        .title('Kontakt')
         .icon(MdEmail)
         .child(
           S.editor()
-            .title('Contact')
+            .title('Kontakt')
             .id('contact')
             .schemaType('contact')
             .documentId('contact')

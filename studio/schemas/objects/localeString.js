@@ -1,17 +1,17 @@
 export default {
   name: 'localeString',
   type: 'object',
-  title: 'Locale String',
+  title: 'Tekst',
   fields: [
     {
       name: 'no',
       type: 'string',
-      title: 'Norwegian'
+      title: 'Norsk'
     },
     {
       name: 'en',
       type: 'string',
-      title: 'English'
+      title: 'Engelsk'
     }
   ]
 }
