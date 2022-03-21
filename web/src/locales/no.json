@@ -1,13 +1,12 @@
 {
   "menu": {
     "home": "Hjem",
-    "products": "Produkter",
-    "shops": "Butikker",
+    "rooms": "Overnatting",
+    "activities": "Aktiviteter",
+    "restaurant": "Restaurant",
+    "meetings": "Møter & selskap",
     "about": "Om oss",
-    "contact": "Kontakt",
-    "faq": "FAQ",
-    "newsletter": "Nyhetsbrev",
-    "reseller": "Bli en forhandler"
+    "contact": "Kontakt"
   },
   "link": {
     "readmoreabout": "Les mer om"

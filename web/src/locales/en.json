@@ -1,13 +1,12 @@
 {
   "menu": {
     "home": "Home",
-    "products": "Products",
-    "shops": "Shops",
+    "rooms": "Rooms",
+    "activities": "Activities",
+    "restaurant": "Restaurant",
+    "meetings": "Meetings & events",
     "about": "About",
-    "contact": "Contact",
-    "faq": "FAQ",
-    "newsletter": "Newsletter",
-    "reseller": "Become a reseller"
+    "contact": "Contact"
   },
   "link": {
     "readmoreabout": "Read more about"

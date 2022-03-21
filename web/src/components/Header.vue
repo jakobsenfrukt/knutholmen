@@ -9,6 +9,26 @@
           >
         </li>
         <li>
+          <g-link class="nav__link" :to="$tp('/rooms')"
+            ><span>{{ $t("menu.rooms") }}</span></g-link
+          >
+        </li>
+        <li>
+          <g-link class="nav__link" :to="$tp('/activities')"
+            ><span>{{ $t("menu.activities") }}</span></g-link
+          >
+        </li>
+        <li>
+          <g-link class="nav__link" :to="$tp('/restaurant')"
+            ><span>{{ $t("menu.restaurant") }}</span></g-link
+          >
+        </li>
+        <li>
+          <g-link class="nav__link" :to="$tp('/meetings')"
+            ><span>{{ $t("menu.meetings") }}</span></g-link
+          >
+        </li>
+        <li>
           <g-link class="nav__link" :to="$tp('/about')"
             ><span>{{ $t("menu.about") }}</span></g-link
           >
@@ -26,6 +46,36 @@
           <li>
             <g-link class="nav__link" :to="$tp('/')"
               ><span>{{ $t("menu.home") }}</span></g-link
+            >
+          </li>
+          <li>
+            <g-link class="nav__link" :to="$tp('/')"
+              ><span>{{ $t("menu.home") }}</span></g-link
+            >
+          </li>
+          <li>
+            <g-link class="nav__link" :to="$tp('/rooms')"
+              ><span>{{ $t("menu.rooms") }}</span></g-link
+            >
+          </li>
+          <li>
+            <g-link class="nav__link" :to="$tp('/activities')"
+              ><span>{{ $t("menu.activities") }}</span></g-link
+            >
+          </li>
+          <li>
+            <g-link class="nav__link" :to="$tp('/restaurant')"
+              ><span>{{ $t("menu.restaurant") }}</span></g-link
+            >
+          </li>
+          <li>
+            <g-link class="nav__link" :to="$tp('/meetings')"
+              ><span>{{ $t("menu.meetings") }}</span></g-link
+            >
+          </li>
+          <li>
+            <g-link class="nav__link" :to="$tp('/about')"
+              ><span>{{ $t("menu.about") }}</span></g-link
             >
           </li>
           <li><LocaleSwitcher /></li>
