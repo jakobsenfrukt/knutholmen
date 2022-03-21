@@ -2,6 +2,20 @@
   <Layout class="index">
     <section>
       <h1>{{ $page.frontpage.pageHeader.heading[$context.locale] }}</h1>
+      <p>{{ $page.frontpage.pageHeader.text[$context.locale] }}</p>
+      <g-image
+        v-if="$page.frontpage.pageHeader.image"
+        :src="
+          $urlForImage(
+            $page.frontpage.pageHeader.image,
+            $page.metadata.sanityOptions
+          )
+            .width(1200)
+            .auto('format')
+            .url()
+        "
+        :alt="$page.frontpage.pageHeader.image.alt[$context.locale]"
+      />
     </section>
     <OfferGrid />
     <RoomGrid />
@@ -13,11 +27,31 @@
 
 <page-query>
 query {
+  metadata {
+    sanityOptions {
+      projectId
+      dataset
+    }
+  }
   frontpage: sanityFrontpage(id: "frontpage") {
     pageHeader {
       heading {
         no
         en
+      }
+      text {
+        no
+        en
+      }
+      image {
+        asset {
+          _id
+          url
+        }
+        alt {
+          no
+          en
+        }
       }
     }
   }
