@@ -22,6 +22,7 @@
           $static.contact.phone
         }}</a>
       </li>
+      <li>&nbsp;</li>
       <li v-if="$static.contact.facebook">
         <a
           :href="`https://facebook.com/${$static.contact.facebook}`"
@@ -58,8 +59,8 @@ export default {
 
 <style lang="scss" scoped>
 .site-footer {
-  background: var(--color-text);
-  color: var(--color-background);
+  background: var(--color-blue-dark);
+  color: var(--color-yellow-light);
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;

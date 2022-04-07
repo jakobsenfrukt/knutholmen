@@ -21,6 +21,12 @@ export default {
 
   h1 {
     margin: 0;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 1.6rem;
+    font-style: normal;
   }
 }
 </style>

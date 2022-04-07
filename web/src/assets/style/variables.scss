@@ -12,19 +12,39 @@
   // color palette
   --color-black: #1c1c1c;
   --color-white: #fff;
-  --color-blue: #222bac;
 
-  --border-radius: 10px;
+  --color-yellow: #f7bd57;
+  --color-red: #df2926;
+  --color-purple: #9b1361;
+  --color-green: #7ac371;
+  --color-blue: #69c9d2;
+
+  --color-yellow-light: #f4f2ef;
+  --color-red-light: #f4e1e1;
+  --color-purple-light: #e8cddf;
+  --color-green-light: #ebf9e8;
+  --color-blue-light: #d8eef3;
+
+  --color-yellow-dark: #965a04;
+  --color-red-dark: #700a0f;
+  --color-purple-dark: #540352;
+  --color-green-dark: #005627;
+  --color-blue-dark: #0a1e5e;
+
+  // sizes
+  --border-radius: 20px;
   --border-radius-l: 60px;
   --spacing-sitepadding: 2rem;
 }
 
 // light default theme
 body {
+  --font-main: var(--font-serif);
+
   --color-background: var(--color-white);
-  --color-text: var(--color-black);
-  --color-link: var(--color-blue);
-  --color-highlight: var(--color-blue);
+  --color-text: var(--color-blue-dark);
+  --color-link: var(--color-green);
+  --color-highlight: var(--color-green);
 }
 
 /*

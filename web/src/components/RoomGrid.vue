@@ -1,6 +1,15 @@
 <template>
   <section class="room-grid">
-    <h2 class="room-heading">{{ $static.roomPage.title[$context.locale] }}</h2>
+    <div class="offer-intro">
+      <g-link class="nav__link" :to="$tp('/rooms')"
+        ><span>{{ $t("menu.rooms") }}</span></g-link
+      >
+      <h2 class="room-heading">
+        {{ $static.roomPage.title[$context.locale] }}
+      </h2>
+      <p>En tekst som introduserer romtilbudene</p>
+      <Button text="Mer om våre overnattingstilbud" />
+    </div>
     <RoomItem
       v-for="room in $static.rooms.edges.slice(0, limit)"
       :key="room.id"
@@ -63,10 +72,12 @@ query {
 
 <script>
 import RoomItem from "@/components/RoomItem";
+import Button from "@/components/Button";
 
 export default {
   components: {
     RoomItem,
+    Button,
   },
   props: {
     limit: {

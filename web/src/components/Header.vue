@@ -4,11 +4,6 @@
     <nav class="nav nav-main">
       <ul>
         <li>
-          <g-link class="nav__link" :to="$tp('/')"
-            ><span>{{ $t("menu.home") }}</span></g-link
-          >
-        </li>
-        <li>
           <g-link class="nav__link" :to="$tp('/rooms')"
             ><span>{{ $t("menu.rooms") }}</span></g-link
           >
@@ -43,16 +38,6 @@
       </div>
       <nav class="nav-mobile">
         <ul>
-          <li>
-            <g-link class="nav__link" :to="$tp('/')"
-              ><span>{{ $t("menu.home") }}</span></g-link
-            >
-          </li>
-          <li>
-            <g-link class="nav__link" :to="$tp('/')"
-              ><span>{{ $t("menu.home") }}</span></g-link
-            >
-          </li>
           <li>
             <g-link class="nav__link" :to="$tp('/rooms')"
               ><span>{{ $t("menu.rooms") }}</span></g-link
@@ -147,6 +132,10 @@ export default {
   text-decoration: none;
   position: relative;
 
+  font-family: var(--font-sans);
+  font-style: italic;
+  text-transform: uppercase;
+
   span {
     position: relative;
     z-index: 10;
@@ -155,12 +144,6 @@ export default {
   &.active--exact,
   &:hover {
     text-decoration: underline;
-  }
-}
-
-@media (max-width: 1000px) {
-  .nav-main {
-    display: none;
   }
 }
 
@@ -225,12 +208,10 @@ export default {
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1300px) {
   .nav {
     &-main {
-      .nav-link {
-        display: none;
-      }
+      display: none;
     }
     &-mobile {
       display: flex;

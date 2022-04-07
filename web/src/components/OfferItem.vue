@@ -13,6 +13,10 @@
     />
     <div class="offer-text">
       <h3>{{ offer.title[$context.locale] }}</h3>
+      <p>
+        <!--{{ offer.lead[$context.locale] }}-->En kort tekst om denne pakken og
+        hva som er inkludert.
+      </p>
     </div>
     <!--<BlockContent :blocks="offer._rawBio" v-if="offer._rawBio" />-->
     <g-link class="offer-link" :to="`/offers/${offer.slug.current}`"
@@ -49,11 +53,13 @@ export default {
 .offer {
   position: relative;
   border: 1px solid var(--color-text);
+  border-radius: var(--border-radius);
+  overflow: hidden;
   &-text {
     padding: 1rem;
 
     h3 {
-      margin: 0;
+      margin: 0 0 0.5rem;
     }
   }
   &-link {

@@ -1,6 +1,20 @@
 <template>
   <section class="offer-grid">
-    <h2 class="offer-heading">Pakker</h2>
+    <div class="offer-intro">
+      <h2 class="offer-heading">Pakker</h2>
+      <p>En tekst som introduserer pakkene</p>
+      <Button text="Se alle pakker" />
+    </div>
+    <OfferItem
+      v-for="offer in $static.offers.edges.slice(0, limit)"
+      :key="offer.id"
+      :offer="offer.node"
+    />
+    <OfferItem
+      v-for="offer in $static.offers.edges.slice(0, limit)"
+      :key="offer.id"
+      :offer="offer.node"
+    />
     <OfferItem
       v-for="offer in $static.offers.edges.slice(0, limit)"
       :key="offer.id"
@@ -57,10 +71,12 @@ query {
 
 <script>
 import OfferItem from "@/components/OfferItem";
+import Button from "@/components/Button";
 
 export default {
   components: {
     OfferItem,
+    Button,
   },
   props: {
     limit: {
