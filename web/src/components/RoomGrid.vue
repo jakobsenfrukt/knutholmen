@@ -7,7 +7,7 @@
       <h2 class="room-heading">
         {{ $static.roomPage.title[$context.locale] }}
       </h2>
-      <p>En tekst som introduserer romtilbudene</p>
+      <p class="lead">En tekst som introduserer romtilbudene</p>
       <Button text="Mer om våre overnattingstilbud" />
     </div>
     <RoomItem

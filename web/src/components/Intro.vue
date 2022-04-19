@@ -8,6 +8,7 @@
           $page.metadata.sanityOptions
         )
           .width(1200)
+          .height(600)
           .auto('format')
           .url()
       "
@@ -33,9 +34,8 @@ export default {
 
 <style lang="scss" scoped>
 .intro {
-  padding: 0;
-  &-text {
-    padding: var(--spacing-sitepadding);
+  img {
+    border-radius: var(--border-radius);
   }
 }
 </style>

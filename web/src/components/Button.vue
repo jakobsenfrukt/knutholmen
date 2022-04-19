@@ -34,5 +34,6 @@ export default {
   font-family: inherit;
   font-size: 1rem;
   padding: 1rem 1.5rem;
+  border-radius: var(--border-radius-l);
 }
 </style>

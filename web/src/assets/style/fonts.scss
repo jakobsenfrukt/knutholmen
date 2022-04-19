@@ -1,1 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+@font-face {
+  font-family: "Boogy Brut";
+  src: url("../fonts/BoogyBrutTEST-Light.woff")
+      format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ostia Antica";
+  src: url("../fonts/OstiaAnticaTEST-Light.woff")
+      format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ostia Antica";
+  src: url("../fonts/OstiaAnticaTEST-LightItalic.woff")
+      format("woff");
+  font-weight: 300;
+  font-style: italic;
+}

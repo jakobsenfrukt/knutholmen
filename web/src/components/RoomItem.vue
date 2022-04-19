@@ -4,7 +4,8 @@
       v-if="room.image"
       :src="
         $urlForImage(room.image, $static.metadata.sanityOptions)
-          .width(1200)
+          .width(600)
+          .height(400)
           .auto('format')
           .url()
       "

@@ -4,7 +4,8 @@
       v-if="offer.image"
       :src="
         $urlForImage(offer.image, $static.metadata.sanityOptions)
-          .width(1200)
+          .width(600)
+          .height(400)
           .auto('format')
           .url()
       "
@@ -55,6 +56,9 @@ export default {
   border: 1px solid var(--color-text);
   border-radius: var(--border-radius);
   overflow: hidden;
+  &-image {
+    display: block;
+  }
   &-text {
     padding: 1rem;
 

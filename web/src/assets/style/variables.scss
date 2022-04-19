@@ -1,6 +1,6 @@
 :root {
-  --font-sans: "Inter", sans-serif;
-  --font-serif: serif;
+  --font-sans: "Ostia Antica", sans-serif;
+  --font-serif: "Boogy Brut", serif;
 
   --font-size-xs: 0.8rem;
   --font-size-s: 1rem;
@@ -39,7 +39,7 @@
 
 // light default theme
 body {
-  --font-main: var(--font-serif);
+  --font-main: var(--font-sans);
 
   --color-background: var(--color-white);
   --color-text: var(--color-blue-dark);

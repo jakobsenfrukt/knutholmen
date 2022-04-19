@@ -2,29 +2,9 @@
   <section class="offer-grid">
     <div class="offer-intro">
       <h2 class="offer-heading">Pakker</h2>
-      <p>En tekst som introduserer pakkene</p>
+      <p class="lead">En tekst som introduserer pakkene</p>
       <Button text="Se alle pakker" />
     </div>
-    <OfferItem
-      v-for="offer in $static.offers.edges.slice(0, limit)"
-      :key="offer.id"
-      :offer="offer.node"
-    />
-    <OfferItem
-      v-for="offer in $static.offers.edges.slice(0, limit)"
-      :key="offer.id"
-      :offer="offer.node"
-    />
-    <OfferItem
-      v-for="offer in $static.offers.edges.slice(0, limit)"
-      :key="offer.id"
-      :offer="offer.node"
-    />
-    <OfferItem
-      v-for="offer in $static.offers.edges.slice(0, limit)"
-      :key="offer.id"
-      :offer="offer.node"
-    />
     <OfferItem
       v-for="offer in $static.offers.edges.slice(0, limit)"
       :key="offer.id"
