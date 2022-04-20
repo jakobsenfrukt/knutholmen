@@ -1,6 +1,6 @@
 <template>
   <section class="room-grid">
-    <div class="offer-intro">
+    <div class="room-intro">
       <g-link class="section-heading--link" :to="$tp('/rooms')"
         ><span>{{ $t("menu.rooms") }}</span></g-link
       >
@@ -102,8 +102,8 @@ export default {
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-sitepadding);
 }
-.room-heading {
-  grid-column: 1 / -1;
+.room-intro {
+  grid-column: 1 / span 2;
 }
 @media (min-width: 800px) {
   .room-grid {

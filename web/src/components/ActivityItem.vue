@@ -15,12 +15,11 @@
     <div class="activity-text">
       <h3>{{ activity.title[$context.locale] }}</h3>
       <p>
-        <!--{{ activity.lead[$context.locale] }}-->En kort tekst om denne pakken
-        og hva som er inkludert.
+        {{ activity.lead[$context.locale] }}
       </p>
     </div>
     <!--<BlockContent :blocks="activity._rawBio" v-if="activity._rawBio" />-->
-    <g-link class="activity-link" :to="`/activitys/${activity.slug.current}`"
+    <g-link class="activity-link" :to="`/activities/${activity.slug.current}`"
       >Link</g-link
     >
   </article>

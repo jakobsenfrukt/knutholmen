@@ -2,7 +2,7 @@ export default {
   name: 'contact',
   type: 'document',
   title: 'Kontakt',
-  //__experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'], 
+  __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'], 
   fields: [
     {
       name: 'email',

@@ -88,8 +88,8 @@ export default {
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-sitepadding);
 }
-.offer-heading {
-  grid-column: 1 / -1;
+.offer-intro {
+  grid-column: 1 / span 2;
 }
 @media (min-width: 800px) {
   .offer-grid {

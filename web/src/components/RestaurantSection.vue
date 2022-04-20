@@ -6,6 +6,8 @@
     <h2 class="restaurant-heading">
       {{ $static.restaurantPage.title[$context.locale] }}
     </h2>
+    <p class="lead">{{ $static.restaurantPage.lead[$context.locale] }}</p>
+    <Button :text="$t('links.restaurant')" :link="$tp('/restaurant')" />
   </section>
 </template>
 
@@ -16,9 +18,23 @@ query {
       no
       en
     }
+    lead {
+      no
+      en
+    }
   }
 }
 </static-query>
+
+<script>
+import Button from "@/components/Button";
+
+export default {
+  components: {
+    Button,
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 .restaurant-section {

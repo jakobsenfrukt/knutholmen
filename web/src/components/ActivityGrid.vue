@@ -58,6 +58,10 @@ query {
             en
           }
         }
+        lead {
+          no
+          en
+        }
       }
     }
   }

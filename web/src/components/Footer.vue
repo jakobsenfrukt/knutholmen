@@ -60,7 +60,7 @@ export default {
 <style lang="scss" scoped>
 .site-footer {
   background: var(--color-blue-dark);
-  color: var(--color-yellow-light);
+  color: var(--color-yellow);
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;

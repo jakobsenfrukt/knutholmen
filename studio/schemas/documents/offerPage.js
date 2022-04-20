@@ -10,6 +10,11 @@ export default {
       title: 'Tittel'
     },
     {
+      name: 'heading',
+      type: 'localeString',
+      title: 'Overskrift'
+    },
+    {
       name: 'lead',
       type: 'localeText',
       title: 'Ingress'
