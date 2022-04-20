@@ -1,14 +1,14 @@
 <template>
   <section class="room-grid">
     <div class="offer-intro">
-      <g-link class="nav__link" :to="$tp('/rooms')"
+      <g-link class="section-heading--link" :to="$tp('/rooms')"
         ><span>{{ $t("menu.rooms") }}</span></g-link
       >
       <h2 class="room-heading">
         {{ $static.roomPage.title[$context.locale] }}
       </h2>
-      <p class="lead">En tekst som introduserer romtilbudene</p>
-      <Button text="Mer om våre overnattingstilbud" />
+      <p class="lead">{{ $static.roomPage.lead[$context.locale] }}</p>
+      <Button :text="$t('links.rooms')" :link="$tp('/rooms')" />
     </div>
     <RoomItem
       v-for="room in $static.rooms.edges.slice(0, limit)"
@@ -37,6 +37,14 @@
 query {
   roomPage: sanityRoomPage(id: "roomPage") {
     title {
+      no
+      en
+    }
+    bookingUrl {
+      no
+      en
+    }
+    lead {
       no
       en
     }

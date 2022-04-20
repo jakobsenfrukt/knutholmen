@@ -12,10 +12,13 @@ import frontpage from './documents/frontpage'
 import about from './documents/about'
 import contact from './documents/contact'
 import article from './documents/article'
+import offerPage from './documents/offerPage'
 import offer from './documents/offer'
 import roomPage from './documents/roomPage'
 import room from './documents/room'
 import restaurantPage from './documents/restaurantPage'
+import activityPage from './documents/activityPage'
+import activity from './documents/activity'
 
 // objects
 import body from './objects/body'
@@ -50,6 +53,9 @@ export default createSchema({
     room,
     roomPage,
     restaurantPage,
+    offerPage,
+    activityPage,
+    activity,
     // objects
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas

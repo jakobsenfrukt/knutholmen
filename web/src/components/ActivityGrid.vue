@@ -1,31 +1,31 @@
 <template>
-  <section class="offer-grid">
-    <div class="offer-intro">
-      <g-link class="section-heading--link" :to="$tp('/offers')"
-        ><span>{{ $t("menu.offers") }}</span></g-link
+  <section class="activity-grid">
+    <div class="activity-intro">
+      <g-link class="section-heading--link" :to="$tp('/activities')"
+        ><span>{{ $t("menu.activities") }}</span></g-link
       >
-      <h2 class="offer-heading">
-        {{ $static.offerPage.title[$context.locale] }}
+      <h2 class="activity-heading">
+        {{ $static.activityPage.title[$context.locale] }}
       </h2>
-      <p class="lead">{{ $static.offerPage.lead[$context.locale] }}</p>
-      <Button :text="$t('links.offers')" :link="$tp('/offers')" />
+      <p class="lead">{{ $static.activityPage.lead[$context.locale] }}</p>
+      <Button :text="$t('links.activities')" :link="$tp('/activities')" />
     </div>
-    <OfferItem
-      v-for="offer in $static.offers.edges.slice(0, limit)"
-      :key="offer.id"
-      :offer="offer.node"
+    <ActivityItem
+      v-for="activity in $static.activities.edges.slice(0, limit)"
+      :key="activity.id"
+      :activity="activity.node"
     />
-    <OfferItem
-      v-for="offer in $static.offers.edges.slice(0, limit)"
-      :key="offer.id"
-      :offer="offer.node"
+    <ActivityItem
+      v-for="activity in $static.activities.edges.slice(0, limit)"
+      :key="activity.id"
+      :activity="activity.node"
     />
   </section>
 </template>
 
 <static-query>
 query {
-  offerPage: sanityOfferPage(id: "offerPage") {
+  activityPage: sanityActivityPage(id: "activityPage") {
     title {
       no
       en
@@ -35,7 +35,7 @@ query {
       en
     }
   }
-  offers: allSanityOffer(
+  activities: allSanityActivity(
     filter: {slug: {current: {ne: null}}},
     sortBy: "title", order: DESC
   ) {
@@ -65,12 +65,12 @@ query {
 </static-query>
 
 <script>
-import OfferItem from "@/components/OfferItem";
+import ActivityItem from "@/components/ActivityItem";
 import Button from "@/components/Button";
 
 export default {
   components: {
-    OfferItem,
+    ActivityItem,
     Button,
   },
   props: {
@@ -83,17 +83,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.offer-grid {
+.activity-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-sitepadding);
 }
-.offer-heading {
+.activity-heading {
   grid-column: 1 / -1;
 }
 @media (min-width: 800px) {
-  .offer-grid {
-    grid-template-columns: repeat(4, 1fr);
+  .activity-grid {
   }
 }
 </style>

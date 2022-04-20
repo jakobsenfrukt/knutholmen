@@ -1,7 +1,7 @@
 export default {
-  name: 'restaurantPage',
+  name: 'offerPage',
   type: 'document',
-  title: 'Restaurant',
+  title: 'Pakker',
   __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'], 
   fields: [
     {
@@ -13,6 +13,6 @@ export default {
       name: 'lead',
       type: 'localeText',
       title: 'Ingress'
-    },
+    }
   ]
 }

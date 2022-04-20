@@ -158,8 +158,8 @@ export default {
   height: 100%;
   width: 100%;
   z-index: 100;
-  background: var(--color-text);
-  color: var(--color-background);
+  background: var(--color-background);
+  color: var(--color-text);
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -208,7 +208,7 @@ export default {
   }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1370px) {
   .nav {
     &-main {
       display: none;
@@ -223,7 +223,7 @@ export default {
     display: block;
   }
   .open {
-    color: var(--color-background);
+    color: var(--color-text);
     .nav-mobile {
       opacity: 1;
       transform: translateY(0);

@@ -3,9 +3,7 @@
     <Intro />
     <OfferGrid />
     <RoomGrid />
-    <section>
-      <h1>Aktiviteter</h1>
-    </section>
+    <ActivityGrid />
     <RestaurantSection />
     <section>
       <h1>Aktuelt</h1>
@@ -50,6 +48,7 @@ query {
 import Intro from "@/components/Intro";
 import OfferGrid from "@/components/OfferGrid";
 import RoomGrid from "@/components/RoomGrid";
+import ActivityGrid from "@/components/ActivityGrid";
 import RestaurantSection from "@/components/RestaurantSection";
 
 export default {
@@ -57,6 +56,7 @@ export default {
     Intro,
     OfferGrid,
     RoomGrid,
+    ActivityGrid,
     RestaurantSection,
   },
   metaInfo: {
@@ -65,10 +65,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-section {
-  &:nth-of-type(odd) {
-    background: var(--color-yellow-light);
-  }
-}
-</style>
+<style lang="scss" scoped></style>

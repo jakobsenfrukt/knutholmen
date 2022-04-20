@@ -6,12 +6,13 @@
     "restaurant": "Restaurant",
     "meetings": "Meetings & events",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "offers": "Offers"
   },
-  "link": {
-    "readmoreabout": "Read more about"
-  },
-  "messages": {
-    "welcome": "HI there"
+  "links": {
+    "bookRoom": "Book a room",
+    "offers": "View all offers",
+    "rooms": "View all rooms",
+    "activities": "View all activities"
   }
 }

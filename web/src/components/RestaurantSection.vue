@@ -1,6 +1,6 @@
 <template>
   <section class="restaurant-section">
-    <g-link class="nav__link" :to="$tp('/restaurant')"
+    <g-link class="section-heading--link" :to="$tp('/restaurant')"
       ><span>{{ $t("menu.restaurant") }}</span></g-link
     >
     <h2 class="restaurant-heading">
@@ -22,6 +22,6 @@ query {
 
 <style lang="scss" scoped>
 .restaurant-section {
-  background: gold;
+  background: var(--color-yellow);
 }
 </style>

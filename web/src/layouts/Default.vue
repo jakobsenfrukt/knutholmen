@@ -33,6 +33,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.site-main {
+  min-height: 60vh;
+}
+
 .fade-enter-active {
   transition: opacity 0.6s;
 }

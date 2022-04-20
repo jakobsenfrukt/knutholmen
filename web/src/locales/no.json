@@ -6,12 +6,13 @@
     "restaurant": "Restaurant",
     "meetings": "Møter & selskap",
     "about": "Om oss",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "offers": "Pakker"
   },
-  "link": {
-    "readmoreabout": "Les mer om"
-  },
-  "messages": {
-    "welcome": "jadda"
+  "links": {
+    "bookRoom": "Bestill rom",
+    "offers": "Sjå alle pakketilbod",
+    "rooms": "Sjå alle romma",
+    "activities": "Sjå alle aktivitetstilbod"
   }
 }

@@ -20,6 +20,11 @@ export default {
       title: 'Facebook'
     },
     {
+      name: 'instagram',
+      type: 'string',
+      title: 'Instagram'
+    },
+    {
       name: 'address',
       type: 'simpleBody',
       title: 'Adresse'

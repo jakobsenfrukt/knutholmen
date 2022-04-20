@@ -1,9 +1,9 @@
 import S from '@sanity/desk-tool/structure-builder'
 
-import { MdSettings, MdInfo, MdArticle, MdOutlineArticle, MdHome, MdEmail, MdLocalOffer, MdHotel, MdRestaurant } from 'react-icons/md'
+import { MdSettings, MdInfo, MdArticle, MdOutlineArticle, MdHome, MdEmail, MdLocalOffer, MdHotel, MdRestaurant, MdDirectionsBoatFilled } from 'react-icons/md'
 
 const hiddenDocTypes = listItem =>
-  !['general', 'article', 'about', 'frontpage', 'contact', 'offer', 'room', 'roomPage', 'restaurantPage'].includes(listItem.getId())
+  !['general', 'article', 'about', 'frontpage', 'contact', 'offer', 'room', 'roomPage', 'restaurantPage', 'offerPage', 'activityPage', 'activity'].includes(listItem.getId())
 
 export default () =>
   S.list()
@@ -62,6 +62,38 @@ export default () =>
             )
         ),
       S.listItem()
+        .title('Aktiviteter')
+        .icon(MdDirectionsBoatFilled)
+        .child(
+          S.list()
+            .id('activity')
+            .title('Aktiviteter')
+            .items(
+              [
+                S.listItem()
+                .title('Hovedside')
+                .icon(MdArticle)
+                .child(
+                  S.editor()
+                    .title('Aktiviteter')
+                    .id('activityPage')
+                    .schemaType('activityPage')
+                    .documentId('activityPage')
+                ),
+                S.listItem()
+                .title('Alle aktiviteter')
+                .schemaType('activity')
+                .icon(MdDirectionsBoatFilled)
+                .child(
+                  S.documentList()
+                    .id('allactivity')
+                    .title('Liste over aktiviteter')
+                    .filter('_type == "activity"')
+                )
+              ]
+            )
+        ),
+      S.listItem()
         .title('Restaurant')
         .icon(MdRestaurant)
         .child(
@@ -74,9 +106,34 @@ export default () =>
       S.listItem()
         .title('Pakker')
         .icon(MdLocalOffer)
-        .schemaType('offer')
         .child(
-          S.documentTypeList('offer').title('Pakker'),
+          S.list()
+            .id('offer')
+            .title('Pakker')
+            .items(
+              [
+                S.listItem()
+                .title('Hovedside')
+                .icon(MdArticle)
+                .child(
+                  S.editor()
+                    .title('Pakker')
+                    .id('offerPage')
+                    .schemaType('offerPage')
+                    .documentId('offerPage')
+                ),
+                S.listItem()
+                .title('Alle pakker')
+                .schemaType('offer')
+                .icon(MdLocalOffer)
+                .child(
+                  S.documentList()
+                    .id('alloffer')
+                    .title('Liste over pakker')
+                    .filter('_type == "offer"')
+                )
+              ]
+            )
         ),
       S.listItem()
         .title('Artikler')

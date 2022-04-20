@@ -5,36 +5,39 @@
   --font-size-xs: 0.8rem;
   --font-size-s: 1rem;
   --font-size-m: 1.4rem;
-  --font-size-l: 1.9rem;
-  --font-size-xl: 2.4rem;
-  --font-size-xxl: 2.8rem;
+  --font-size-l: 1.8rem;
+  --font-size-xl: 2.2rem;
+  --font-size-xxl: 2.6rem;
 
   // color palette
   --color-black: #1c1c1c;
   --color-white: #fff;
 
-  --color-yellow: #f7bd57;
-  --color-red: #df2926;
-  --color-purple: #9b1361;
-  --color-green: #7ac371;
-  --color-blue: #69c9d2;
+  --color-yellow: #ECBE69;
+  --color-red: #C93F2F;
+  --color-purple: #91236B;
+  --color-green: #9AC980;
+  --color-blue: #89D6E6;
 
-  --color-yellow-light: #f4f2ef;
-  --color-red-light: #f4e1e1;
-  --color-purple-light: #e8cddf;
-  --color-green-light: #ebf9e8;
-  --color-blue-light: #d8eef3;
+  --color-yellow-light: #FAFFAF;
+  --color-red-light: #FFEFE3;
+  --color-purple-light: #F0E6F2;
+  --color-green-light: #E6FFDE;
+  --color-blue-light: #E1F8FF;
 
-  --color-yellow-dark: #965a04;
-  --color-red-dark: #700a0f;
-  --color-purple-dark: #540352;
-  --color-green-dark: #005627;
-  --color-blue-dark: #0a1e5e;
+  --color-yellow-dark: #946715;
+  --color-red-dark: #6C160F;
+  --color-purple-dark: #3A1822;
+  --color-green-dark: #2F5F2F;
+  --color-blue-dark: #151F67;
 
   // sizes
   --border-radius: 20px;
   --border-radius-l: 60px;
   --spacing-sitepadding: 2rem;
+
+  // animations
+  --transition-hover: all .3s ease;
 }
 
 // light default theme
@@ -45,6 +48,8 @@ body {
   --color-text: var(--color-blue-dark);
   --color-link: var(--color-green);
   --color-highlight: var(--color-green);
+
+  --color-hover: var(--color-purple);
 }
 
 /*

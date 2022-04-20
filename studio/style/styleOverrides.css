@@ -1,7 +1,7 @@
 :root {
-  --brand-primary: #106063;
-  --main-navigation-color: #106063;
-  --focus: #dfdfdf;
+  --brand-primary: #151F67;
+  --main-navigation-color: #151F67;
+  --focus: #FAFFAF;
 
   --hairline-color: var(--focus);
   --selectable-item-base: var(--focus);

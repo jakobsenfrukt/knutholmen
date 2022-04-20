@@ -43,24 +43,37 @@ export default {
 <style lang="scss" scoped>
 .locale-switcher {
   display: flex;
-  gap: 1em;
 }
 .locale-button {
   outline: none;
   border: none;
   background: none;
-  padding: 0;
+  margin: 0;
+  width: 2.6em;
+  text-align: center;
   display: inline-block;
   font-family: inherit;
-  font-size: inherit;
+  font-size: var(--font-size-xs);
   text-transform: uppercase;
   color: var(--color-text);
+  border: 1px solid var(--color-text);
   cursor: pointer;
   &:hover {
-    color: var(--color-highlight);
+    background: var(--color-highlight);
   }
   &.active {
-    color: var(--color-highlight);
+    color: var(--color-background);
+    background: var(--color-text);
+  }
+  &:first-of-type {
+    padding: 0.2em 0.2em 0.2em 0.4em;
+    border-top-left-radius: var(--border-radius-l);
+    border-bottom-left-radius: var(--border-radius-l);
+  }
+  &:last-of-type {
+    padding: 0.2em 0.4em 0.2em 0.2em;
+    border-top-right-radius: var(--border-radius-l);
+    border-bottom-right-radius: var(--border-radius-l);
   }
 }
 </style>
