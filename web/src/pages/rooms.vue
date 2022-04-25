@@ -1,10 +1,7 @@
 <template>
   <Layout>
     <main class="page-content">
-      <h1>{{ $page.roomPage.pageHeader.title[$context.locale] }}</h1>
-      <p class="lead">
-        {{ $page.roomPage.pageHeader.lead[$context.locale] }}
-      </p>
+      <PageHeader :pageHeader="$page.roomPage.pageHeader" />
       <Button
         :text="$t('links.bookRoom')"
         :link="$page.general.bookingUrl[$context.locale]"
@@ -32,6 +29,16 @@ query {
         no
         en
       }
+      image {
+        asset {
+          _id
+          url
+        }
+        alt {
+          no
+          en
+        }
+      }
     }
   }
   general: sanityGeneral(id: "general") {
@@ -45,12 +52,14 @@ query {
 
 <script>
 import BlockContent from "~/components/tools/BlockContent";
+import PageHeader from "~/components/PageHeader";
 import Button from "~/components/Button";
 import RoomGrid from "~/components/RoomGrid";
 
 export default {
   components: {
     BlockContent,
+    PageHeader,
     Button,
     RoomGrid,
   },

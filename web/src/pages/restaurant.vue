@@ -1,10 +1,7 @@
 <template>
   <Layout>
     <main class="page-content">
-      <h1>{{ $page.restaurantPage.pageHeader.heading[$context.locale] }}</h1>
-      <p class="lead">
-        {{ $page.restaurantPage.pageHeader.lead[$context.locale] }}
-      </p>
+      <PageHeader :pageHeader="$page.restaurantPage.pageHeader" />
       <!--<block-content
           :blocks="$page.restaurantPage._rawBody"
           v-if="$page.restaurantPage._rawBody"
@@ -30,6 +27,16 @@ query {
         no
         en
       }
+      image {
+        asset {
+          _id
+          url
+        }
+        alt {
+          no
+          en
+        }
+      }
     }
   }
 }
@@ -37,9 +44,11 @@ query {
 
 <script>
 import BlockContent from "~/components/tools/BlockContent";
+import PageHeader from "~/components/PageHeader";
 
 export default {
   components: {
+    PageHeader,
     BlockContent,
   },
   metaInfo: {

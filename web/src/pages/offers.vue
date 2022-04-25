@@ -1,10 +1,7 @@
 <template>
   <Layout>
     <main class="page-content">
-      <h1>{{ $page.offerPage.pageHeader.heading[$context.locale] }}</h1>
-      <p class="lead">
-        Dette er en ingress
-      </p>
+      <PageHeader :pageHeader="$page.offerPage.pageHeader" />
       <OfferGrid />
     </main>
   </Layout>
@@ -26,6 +23,16 @@ query {
         no
         en
       }
+      image {
+        asset {
+          _id
+          url
+        }
+        alt {
+          no
+          en
+        }
+      }
     }
   }
 }
@@ -33,11 +40,13 @@ query {
 
 <script>
 import BlockContent from "~/components/tools/BlockContent";
+import PageHeader from "~/components/PageHeader";
 import OfferGrid from "~/components/OfferGrid";
 
 export default {
   components: {
     BlockContent,
+    PageHeader,
     OfferGrid,
   },
   metaInfo: {

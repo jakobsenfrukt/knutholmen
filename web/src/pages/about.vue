@@ -1,10 +1,7 @@
 <template>
   <Layout>
     <main class="page-content about-content">
-      <h1>{{ $page.about.pageHeader.heading[$context.locale] }}</h1>
-      <p class="lead">
-        {{ $page.about.pageHeader.lead[$context.locale] }}
-      </p>
+      <PageHeader :pageHeader="$page.about.pageHeader" />
       <!--<block-content
           :blocks="$page.about._rawBody"
           v-if="$page.about._rawBody"
@@ -53,6 +50,16 @@ query {
         no
         en
       }
+      image {
+        asset {
+          _id
+          url
+        }
+        alt {
+          no
+          en
+        }
+      }
     }
   }
 }
@@ -60,10 +67,12 @@ query {
 
 <script>
 import BlockContent from "~/components/tools/BlockContent";
+import PageHeader from "~/components/PageHeader";
 
 export default {
   components: {
     BlockContent,
+    PageHeader,
   },
   metaInfo: {
     title: "About",

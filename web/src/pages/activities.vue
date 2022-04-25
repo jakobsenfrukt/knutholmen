@@ -1,10 +1,7 @@
 <template>
   <Layout>
     <main class="page-content">
-      <h1>{{ $page.activityPage.pageHeader.heading[$context.locale] }}</h1>
-      <p class="lead">
-        {{ $page.activityPage.pageHeader.lead[$context.locale] }}
-      </p>
+      <PageHeader :pageHeader="$page.activityPage.pageHeader" />
       <ActivityGrid />
     </main>
   </Layout>
@@ -26,6 +23,16 @@ query {
         no
         en
       }
+      image {
+        asset {
+          _id
+          url
+        }
+        alt {
+          no
+          en
+        }
+      }
     }
   }
 }
@@ -33,11 +40,13 @@ query {
 
 <script>
 import BlockContent from "~/components/tools/BlockContent";
+import PageHeader from "~/components/PageHeader";
 import ActivityGrid from "~/components/ActivityGrid";
 
 export default {
   components: {
     BlockContent,
+    PageHeader,
     ActivityGrid,
   },
   metaInfo: {
