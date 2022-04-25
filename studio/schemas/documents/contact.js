@@ -26,7 +26,7 @@ export default {
     },
     {
       name: 'address',
-      type: 'simpleBody',
+      type: 'localeSimpleBody',
       title: 'Adresse'
     }
   ]

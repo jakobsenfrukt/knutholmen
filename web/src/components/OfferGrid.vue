@@ -7,16 +7,17 @@
       <h2 class="offer-heading">
         {{ $static.offerPage.pageHeader.heading[$context.locale] }}
       </h2>
-      <p class="lead">
+      <p
+        class="lead"
+        v-if="
+          $static.offerPage.pageHeader.lead &&
+            $static.offerPage.pageHeader.lead[$context.locale]
+        "
+      >
         {{ $static.offerPage.pageHeader.lead[$context.locale] }}
       </p>
       <Button :text="$t('links.offers')" :link="$tp('/offers')" />
     </div>
-    <OfferItem
-      v-for="offer in $static.offers.edges.slice(0, limit)"
-      :key="offer.id"
-      :offer="offer.node"
-    />
     <OfferItem
       v-for="offer in $static.offers.edges.slice(0, limit)"
       :key="offer.id"
@@ -103,10 +104,11 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-sitepadding);
+  background: var(--color-red-light);
 }
-@media (min-width: 800px) {
+@media (min-width: 1200px) {
   .offer-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 </style>

@@ -4,10 +4,16 @@
       <g-link :to="$tp('/')" class="logo"><Logo /></g-link>
     </div>
     <ul class="contact-list">
-      <li v-if="$static.contact._rawAddress">
+      <li v-if="$static.contact.address">
         <block-content
-          :blocks="$static.contact._rawAddress"
-          v-if="$static.contact._rawAddress"
+          :blocks="$static.contact.address._rawNo"
+          v-if="$static.contact.address._rawNo && $context.locale == 'no'"
+          class="block-content"
+        />
+        <block-content
+          :blocks="$static.contact.address._rawEn"
+          v-else-if="$static.contact.address._rawEn && $context.locale == 'en'"
+          class="block-content"
         />
       </li>
       <li v-if="$static.contact.email">
@@ -30,6 +36,19 @@
           >Facebook</a
         >
       </li>
+      <li v-if="$static.contact.instagram">
+        <a
+          :href="`https://instagram.com/${$static.contact.instagram}`"
+          target="_blank"
+          >Instagram</a
+        >
+      </li>
+    </ul>
+    <ul class="footer-logos">
+      <li><img src="/assets/images/footerlogos/VISA__Verified_by.png" /></li>
+      <li><img src="/assets/images/footerlogos/MasterCard.png" /></li>
+      <li><img src="/assets/images/footerlogos/logo-en.png" /></li>
+      <li><img src="/assets/images/footerlogos/dehistoriske.svg" /></li>
     </ul>
   </footer>
 </template>
@@ -40,7 +59,11 @@ query {
     email
     phone
     facebook
-    _rawAddress
+    instagram
+    address {
+      _rawNo
+      _rawEn
+    }
   }
 }
 </static-query>
@@ -81,6 +104,24 @@ export default {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+.footer-logos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  li {
+    height: 2rem;
+    img {
+      max-height: 100%;
+      opacity: 0.8;
+      filter: grayscale(0.3);
+    }
+  }
 }
 
 @media (max-width: 1000px) {

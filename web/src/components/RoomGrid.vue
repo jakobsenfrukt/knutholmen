@@ -17,21 +17,6 @@
       :key="room.id"
       :room="room.node"
     />
-    <RoomItem
-      v-for="room in $static.rooms.edges.slice(0, limit)"
-      :key="room.id"
-      :room="room.node"
-    />
-    <RoomItem
-      v-for="room in $static.rooms.edges.slice(0, limit)"
-      :key="room.id"
-      :room="room.node"
-    />
-    <RoomItem
-      v-for="room in $static.rooms.edges.slice(0, limit)"
-      :key="room.id"
-      :room="room.node"
-    />
   </section>
 </template>
 
@@ -76,6 +61,10 @@ query {
             en
           }
         }
+        lead {
+          no
+          en
+        }
       }
     }
   }
@@ -107,12 +96,15 @@ export default {
 <style lang="scss" scoped>
 .room-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: var(--spacing-sitepadding);
 }
-@media (min-width: 800px) {
+.room-heading {
+  color: var(--color-yellow-dark);
+}
+@media (min-width: 1400px) {
   .room-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 </style>

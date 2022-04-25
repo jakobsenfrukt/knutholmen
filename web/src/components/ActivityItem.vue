@@ -58,10 +58,16 @@ export default {
     display: block;
   }
   &-text {
-    padding: 1rem;
+    padding: calc(var(--spacing-sitepadding) * 0.75);
 
     h3 {
-      margin: 0 0 0.5rem;
+      margin: 0.5rem 0 1rem;
+      font-weight: bold;
+      font-size: var(--font-size-l);
+      color: var(--color-red);
+    }
+    p {
+      color: var(--color-text);
     }
   }
   &-link {

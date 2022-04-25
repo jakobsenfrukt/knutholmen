@@ -219,6 +219,9 @@ export default {
 }
 
 @media (max-width: 1370px) {
+  .logo {
+    margin: 0.15rem 0;
+  }
   .nav {
     &-main {
       display: none;

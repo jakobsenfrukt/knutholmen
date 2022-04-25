@@ -1,29 +1,26 @@
 <template>
-  <article class="article-item offer">
+  <article class="article-item article">
     <img
-      v-if="offer.image"
+      v-if="article.mainImages"
       :src="
-        $urlForImage(offer.image, $static.metadata.sanityOptions)
+        $urlForImage(article.mainImages, $static.metadata.sanityOptions)
           .width(600)
           .height(400)
           .auto('format')
           .url()
       "
-      :alt="offer.image.alt"
-      class="offer-image"
+      :alt="article.mainImages.alt"
+      class="article-image"
     />
-    <div class="offer-text">
+    <div class="article-text">
       <h3>
-        <span>{{ offer.title[$context.locale] }}</span>
-        {{ offer.heading[$context.locale] }}
+        {{ article.title }}
       </h3>
       <p>
-        <!--{{ offer.lead[$context.locale] }}-->En kort tekst om denne pakken og
-        hva som er inkludert.
+        {{ article.lead }}
       </p>
     </div>
-    <!--<BlockContent :blocks="offer._rawBio" v-if="offer._rawBio" />-->
-    <g-link class="offer-link" :to="`/offers/${offer.slug.current}`"
+    <g-link class="article-link" :to="`/news/${article.slug.current}`"
       >Link</g-link
     >
   </article>
@@ -48,13 +45,13 @@ export default {
     BlockContent,
   },
   props: {
-    offer: Object,
+    article: Object,
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.offer {
+.article {
   position: relative;
   border-radius: var(--border-radius);
   overflow: hidden;

@@ -5,9 +5,7 @@
     <RoomGrid showIntro />
     <ActivityGrid showIntro :limit="3" />
     <RestaurantSection />
-    <section>
-      <h1>Aktuelt</h1>
-    </section>
+    <ArticleGrid showIntro />
   </Layout>
 </template>
 
@@ -17,6 +15,7 @@ import OfferGrid from "@/components/OfferGrid";
 import RoomGrid from "@/components/RoomGrid";
 import ActivityGrid from "@/components/ActivityGrid";
 import RestaurantSection from "@/components/RestaurantSection";
+import ArticleGrid from "@/components/ArticleGrid";
 
 export default {
   components: {
@@ -25,6 +24,7 @@ export default {
     RoomGrid,
     ActivityGrid,
     RestaurantSection,
+    ArticleGrid,
   },
   metaInfo: {
     title: "Welcome",

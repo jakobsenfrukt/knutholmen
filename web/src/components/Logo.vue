@@ -55,6 +55,7 @@ export default {
 <style lang="scss" scoped>
 .logo {
   width: 100%;
+  max-width: 50vw;
 
   h1 {
     margin: 0;

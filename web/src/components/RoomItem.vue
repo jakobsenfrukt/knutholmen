@@ -15,8 +15,7 @@
     <div class="room-text">
       <h3>{{ room.title[$context.locale] }}</h3>
       <p>
-        <!--{{ offer.lead[$context.locale] }}-->En kort tekst om dette
-        romtilbudet.
+        {{ room.lead[$context.locale] }}
       </p>
     </div>
     <!--<BlockContent :blocks="room._rawBio" v-if="room._rawBio" />-->
@@ -50,14 +49,23 @@ export default {
 
 <style lang="scss" scoped>
 .room {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
   position: relative;
   border-radius: var(--border-radius);
   overflow: hidden;
+  &-image {
+    height: 100%;
+    object-fit: cover;
+  }
   &-text {
-    padding: 1rem;
+    padding: 2rem;
 
     h3 {
-      margin: 0 0 0.5rem;
+      margin: 0 0 1rem;
+      font-family: var(--font-serif);
+      font-size: var(--font-size-xxl);
     }
   }
   &-link {

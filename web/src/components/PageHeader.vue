@@ -1,8 +1,9 @@
 <template>
   <header class="page-header">
     <div class="text">
-      <h1>{{ pageHeader.title[$context.locale] }}</h1>
-      <p class="lead">
+      <span class="page-title">{{ pageHeader.title[$context.locale] }}</span>
+      <h1 class="page-heading">{{ pageHeader.heading[$context.locale] }}</h1>
+      <p class="lead" v-if="pageHeader.lead[$context.locale]">
         {{ pageHeader.lead[$context.locale] }}
       </p>
     </div>
@@ -50,6 +51,19 @@ export default {
   min-height: 60vh;
   img {
     border-radius: var(--border-radius);
+  }
+}
+@media (max-width: 1000px) {
+  .page-header {
+    grid-template-columns: 1fr;
+    min-height: 0;
+
+    img {
+      order: 1;
+    }
+    .text {
+      order: 2;
+    }
   }
 }
 </style>

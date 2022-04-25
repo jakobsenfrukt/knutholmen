@@ -48,5 +48,31 @@ export default {
 
 <style lang="scss" scoped>
 .restaurant-section {
+  color: var(--color-blue-dark);
+
+  h2 {
+    color: var(--color-green-text);
+  }
+
+  &:before,
+  &:after {
+    content: " ";
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    width: 12rem;
+    height: 12rem;
+    position: absolute;
+  }
+  &:before {
+    background-image: url("/assets/images/illustrations/test/skisse-hummer.png");
+    bottom: -2rem;
+    left: 2rem;
+  }
+  &:after {
+    background-image: url("/assets/images/illustrations/test/skisse-eple.png");
+    top: -1rem;
+    right: -2rem;
+  }
 }
 </style>

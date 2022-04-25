@@ -100,7 +100,7 @@ export default {
   gap: var(--spacing-sitepadding);
 }
 .activity-heading {
-  grid-column: 1 / -1;
+  color: var(--color-red);
 }
 @media (min-width: 800px) {
   .activity-grid {
