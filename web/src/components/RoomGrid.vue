@@ -1,13 +1,15 @@
 <template>
   <section class="room-grid">
-    <div class="room-intro">
+    <div class="section-intro room-intro" v-if="showIntro">
       <g-link class="section-heading--link" :to="$tp('/rooms')"
         ><span>{{ $t("menu.rooms") }}</span></g-link
       >
       <h2 class="room-heading">
-        {{ $static.roomPage.title[$context.locale] }}
+        {{ $static.roomPage.pageHeader.heading[$context.locale] }}
       </h2>
-      <p class="lead">{{ $static.roomPage.lead[$context.locale] }}</p>
+      <p class="lead">
+        {{ $static.roomPage.pageHeader.lead[$context.locale] }}
+      </p>
       <Button :text="$t('links.rooms')" :link="$tp('/rooms')" />
     </div>
     <RoomItem
@@ -36,17 +38,19 @@
 <static-query>
 query {
   roomPage: sanityRoomPage(id: "roomPage") {
-    title {
-      no
-      en
-    }
-    bookingUrl {
-      no
-      en
-    }
-    lead {
-      no
-      en
+    pageHeader {
+      title {
+        no
+        en
+      }
+      heading {
+        no
+        en
+      }
+      lead {
+        no
+        en
+      }
     }
   }
   rooms: allSanityRoom(
@@ -92,6 +96,10 @@ export default {
       type: Number,
       default: undefined,
     },
+    showIntro: {
+      type: Boolean,
+      default: false,
+    },
   },
 };
 </script>
@@ -101,9 +109,6 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-sitepadding);
-}
-.room-intro {
-  grid-column: 1 / span 2;
 }
 @media (min-width: 800px) {
   .room-grid {

@@ -1,48 +1,15 @@
 <template>
   <Layout class="index">
     <Intro />
-    <OfferGrid />
-    <RoomGrid />
-    <ActivityGrid />
+    <OfferGrid showIntro />
+    <RoomGrid showIntro />
+    <ActivityGrid showIntro :limit="3" />
     <RestaurantSection />
     <section>
       <h1>Aktuelt</h1>
     </section>
   </Layout>
 </template>
-
-<page-query>
-query {
-  metadata {
-    sanityOptions {
-      projectId
-      dataset
-    }
-  }
-  frontpage: sanityFrontpage(id: "frontpage") {
-    pageHeader {
-      heading {
-        no
-        en
-      }
-      text {
-        no
-        en
-      }
-      image {
-        asset {
-          _id
-          url
-        }
-        alt {
-          no
-          en
-        }
-      }
-    }
-  }
-}
-</page-query>
 
 <script>
 import Intro from "@/components/Intro";

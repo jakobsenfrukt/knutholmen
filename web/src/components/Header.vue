@@ -34,7 +34,8 @@
     </nav>
     <div class="nav-mobile-wrapper" :class="{ open: showMenu }">
       <div role="button" @click="toggleMenu" class="menu-toggle">
-        <MenuIcon class="menu-toggle-icon" :open="showMenu" />
+        <span class="menu-toggle-text">{{ $t("menu.menu") }}</span
+        ><MenuIcon class="menu-toggle-icon" :open="showMenu" />
       </div>
       <nav class="nav-mobile">
         <ul>
@@ -194,9 +195,11 @@ export default {
   height: 2rem;
   display: flex;
   align-items: center;
-  top: 0.25rem;
+  gap: 1.25rem;
+  min-width: 5rem;
+  top: var(--spacing-sitepadding);
   right: 0.25rem;
-  padding: var(--spacing-sitepadding);
+  padding: 0 var(--spacing-sitepadding);
   z-index: 101;
   cursor: pointer;
   display: none;
@@ -205,6 +208,13 @@ export default {
     display: block;
     width: 1.5rem;
     height: 1.5rem;
+  }
+  &-text {
+    display: block;
+    font-family: var(--font-sans);
+    font-style: italic;
+    text-transform: uppercase;
+    font-size: var(--font-size-m);
   }
 }
 
@@ -235,7 +245,7 @@ export default {
     }
   }
   .menu-toggle {
-    display: block;
+    display: flex;
   }
 }
 

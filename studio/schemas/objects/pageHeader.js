@@ -4,19 +4,19 @@ export default {
   title: 'Toppseksjon',
   fields: [
     {
+      name: 'title',
+      type: 'localeString',
+      title: 'Tittel'
+    },
+    {
       name: 'heading',
       type: 'localeString',
       title: 'Overskrift'
     },
     {
-      name: 'text',
+      name: 'lead',
       type: 'localeText',
-      title: 'Tekst'
-    },
-    {
-      name: 'image',
-      type: 'localeFigure',
-      title: 'Bilde'
+      title: 'Ingress'
     }
   ]
 }

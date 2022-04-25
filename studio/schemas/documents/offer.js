@@ -9,6 +9,11 @@ export default {
       title: 'Tittel'
     },
     {
+      name: 'heading',
+      type: 'localeString',
+      title: 'Overskrift'
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',

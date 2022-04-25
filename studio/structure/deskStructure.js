@@ -1,9 +1,9 @@
 import S from '@sanity/desk-tool/structure-builder'
 
-import { MdSettings, MdInfo, MdArticle, MdOutlineArticle, MdHome, MdEmail, MdLocalOffer, MdHotel, MdRestaurant, MdDirectionsBoatFilled } from 'react-icons/md'
+import { MdSettings, MdInfo, MdArticle, MdOutlineArticle, MdHome, MdEmail, MdLocalOffer, MdHotel, MdRestaurant, MdDirectionsBoatFilled, MdFolder, MdCake } from 'react-icons/md'
 
 const hiddenDocTypes = listItem =>
-  !['general', 'article', 'about', 'frontpage', 'contact', 'offer', 'room', 'roomPage', 'restaurantPage', 'offerPage', 'activityPage', 'activity'].includes(listItem.getId())
+  !['general', 'article', 'articlePage', 'about', 'frontpage', 'contact', 'offer', 'room', 'roomPage', 'restaurantPage', 'offerPage', 'activityPage', 'activity', 'eventPage'].includes(listItem.getId())
 
 export default () =>
   S.list()
@@ -136,16 +136,36 @@ export default () =>
             )
         ),
       S.listItem()
-        .title('Artikler')
+        .title('Konferanse & selskap')
+        .icon(MdCake)
+        .child(
+          S.editor()
+            .title('Konferanse & selskap')
+            .id('eventPage')
+            .schemaType('eventPage')
+            .documentId('eventPage')
+        ),
+      S.listItem()
+        .title('Aktuelt')
         .icon(MdArticle)
         .child(
           S.list()
             .id('articles')
-            .title('Artikler')
+            .title('Aktuelt')
             .items(
               [
                 S.listItem()
-                .title('Norsk')
+                .title('Hovedside')
+                .icon(MdFolder)
+                .child(
+                  S.editor()
+                    .title('Aktuelt')
+                    .id('articlePage')
+                    .schemaType('articlePage')
+                    .documentId('articlePage')
+                ),
+                S.listItem()
+                .title('Norske artikler')
                 .schemaType('article')
                 .icon(MdArticle)
                 .child(
@@ -155,7 +175,7 @@ export default () =>
                     .filter('_type == "article" && (!defined(locale) || locale == "no")')
                 ),
                 S.listItem()
-                .title('Engelsk')
+                .title('Engelske artikler')
                 .schemaType('article')
                 .icon(MdOutlineArticle)
                 .child(

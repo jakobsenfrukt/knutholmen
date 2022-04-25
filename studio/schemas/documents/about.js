@@ -5,13 +5,14 @@ export default {
   __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'], 
   fields: [
     {
-      name: 'title',
-      type: 'localeString',
-      title: 'Tittel'
+      name: 'pageHeader',
+      type: 'pageHeader',
+      title: 'Intro'
     },
     {
-      name: 'pageHeader',
-      type: 'pageHeader'
-    },
+      name: 'pageContent',
+      type: 'pageContent',
+      title: 'Innhold'
+    }
   ]
 }

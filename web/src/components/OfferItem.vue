@@ -13,7 +13,10 @@
       class="offer-image"
     />
     <div class="offer-text">
-      <h3>{{ offer.title[$context.locale] }}</h3>
+      <h3>
+        <span>{{ offer.title[$context.locale] }}</span>
+        {{ offer.heading[$context.locale] }}
+      </h3>
       <p>
         <!--{{ offer.lead[$context.locale] }}-->En kort tekst om denne pakken og
         hva som er inkludert.
@@ -61,9 +64,23 @@ export default {
   }
   &-text {
     padding: 1rem;
+    color: var(--color-blue-dark);
+    background: var(--color-white);
 
     h3 {
-      margin: 0 0 0.5rem;
+      margin: 0 0 0.8rem;
+      font-family: var(--font-serif);
+      font-size: var(--font-size-l);
+      color: var(--color-yellow-dark);
+      span {
+        display: block;
+        font-family: var(--font-sans);
+        font-size: var(--font-size-xs);
+        font-style: italic;
+        text-transform: uppercase;
+        margin-bottom: 0.8rem;
+        color: var(--color-red-dark);
+      }
     }
   }
   &-link {

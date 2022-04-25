@@ -1,26 +1,36 @@
 <template>
   <section class="restaurant-section">
-    <g-link class="section-heading--link" :to="$tp('/restaurant')"
-      ><span>{{ $t("menu.restaurant") }}</span></g-link
-    >
-    <h2 class="restaurant-heading">
-      {{ $static.restaurantPage.title[$context.locale] }}
-    </h2>
-    <p class="lead">{{ $static.restaurantPage.lead[$context.locale] }}</p>
-    <Button :text="$t('links.restaurant')" :link="$tp('/restaurant')" />
+    <div class="section-intro">
+      <g-link class="section-heading--link" :to="$tp('/restaurant')"
+        ><span>{{ $t("menu.restaurant") }}</span></g-link
+      >
+      <h2 class="restaurant-heading">
+        {{ $static.restaurantPage.pageHeader.heading[$context.locale] }}
+      </h2>
+      <p class="lead">
+        {{ $static.restaurantPage.pageHeader.lead[$context.locale] }}
+      </p>
+      <Button :text="$t('links.restaurant')" :link="$tp('/restaurant')" />
+    </div>
   </section>
 </template>
 
 <static-query>
 query {
   restaurantPage: sanityRestaurantPage (id: "restaurantPage") {
-    title {
-      no
-      en
-    }
-    lead {
-      no
-      en
+    pageHeader {
+      title {
+        no
+        en
+      }
+      heading {
+        no
+        en
+      }
+      lead {
+        no
+        en
+      }
     }
   }
 }
@@ -38,6 +48,5 @@ export default {
 
 <style lang="scss" scoped>
 .restaurant-section {
-  background: var(--color-yellow);
 }
 </style>

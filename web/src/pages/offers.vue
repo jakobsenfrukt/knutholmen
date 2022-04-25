@@ -1,10 +1,11 @@
 <template>
   <Layout>
     <main class="page-content">
-      <h1>{{ $page.offerPage.title[$context.locale] }}</h1>
+      <h1>{{ $page.offerPage.pageHeader.heading[$context.locale] }}</h1>
       <p class="lead">
         Dette er en ingress
       </p>
+      <OfferGrid />
     </main>
   </Layout>
 </template>
@@ -12,9 +13,19 @@
 <page-query>
 query {
   offerPage: sanityOfferPage(id: "offerPage") {
-    title {
-      no
-      en
+    pageHeader {
+      title {
+        no
+        en
+      }
+      heading {
+        no
+        en
+      }
+      lead {
+        no
+        en
+      }
     }
   }
 }
@@ -22,10 +33,12 @@ query {
 
 <script>
 import BlockContent from "~/components/tools/BlockContent";
+import OfferGrid from "~/components/OfferGrid";
 
 export default {
   components: {
     BlockContent,
+    OfferGrid,
   },
   metaInfo: {
     title: "Rooms",

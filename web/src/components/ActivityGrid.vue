@@ -1,20 +1,17 @@
 <template>
   <section class="activity-grid">
-    <div class="activity-intro">
+    <div class="section-intro activity-intro" v-if="showIntro">
       <g-link class="section-heading--link" :to="$tp('/activities')"
         ><span>{{ $t("menu.activities") }}</span></g-link
       >
       <h2 class="activity-heading">
-        {{ $static.activityPage.title[$context.locale] }}
+        {{ $static.activityPage.pageHeader.heading[$context.locale] }}
       </h2>
-      <p class="lead">{{ $static.activityPage.lead[$context.locale] }}</p>
+      <p class="lead">
+        {{ $static.activityPage.pageHeader.lead[$context.locale] }}
+      </p>
       <Button :text="$t('links.activities')" :link="$tp('/activities')" />
     </div>
-    <ActivityItem
-      v-for="activity in $static.activities.edges.slice(0, limit)"
-      :key="activity.id"
-      :activity="activity.node"
-    />
     <ActivityItem
       v-for="activity in $static.activities.edges.slice(0, limit)"
       :key="activity.id"
@@ -26,13 +23,19 @@
 <static-query>
 query {
   activityPage: sanityActivityPage(id: "activityPage") {
-    title {
-      no
-      en
-    }
-    lead {
-      no
-      en
+    pageHeader {
+      title {
+        no
+        en
+      }
+      heading {
+        no
+        en
+      }
+      lead {
+        no
+        en
+      }
     }
   }
   activities: allSanityActivity(
@@ -82,6 +85,10 @@ export default {
       type: Number,
       default: undefined,
     },
+    showIntro: {
+      type: Boolean,
+      default: false,
+    },
   },
 };
 </script>
@@ -97,6 +104,7 @@ export default {
 }
 @media (min-width: 800px) {
   .activity-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 </style>

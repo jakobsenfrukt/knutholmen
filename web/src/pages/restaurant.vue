@@ -1,9 +1,9 @@
 <template>
   <Layout>
     <main class="page-content">
-      <h1>{{ $page.restaurantPage.title[$context.locale] }}</h1>
+      <h1>{{ $page.restaurantPage.pageHeader.heading[$context.locale] }}</h1>
       <p class="lead">
-        Dette er en ingress
+        {{ $page.restaurantPage.pageHeader.lead[$context.locale] }}
       </p>
       <!--<block-content
           :blocks="$page.restaurantPage._rawBody"
@@ -17,9 +17,19 @@
 <page-query>
 query {
   restaurantPage: sanityRestaurantPage(id: "restaurantPage") {
-    title {
-      no
-      en
+    pageHeader {
+      title {
+        no
+        en
+      }
+      heading {
+        no
+        en
+      }
+      lead {
+        no
+        en
+      }
     }
   }
 }

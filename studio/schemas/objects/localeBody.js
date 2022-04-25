@@ -13,5 +13,10 @@ export default {
       type: 'body',
       title: 'Engelsk'
     }
-  ]
+  ],
+  preview: {
+    select: {
+      title: 'no'
+    }
+  }
 }

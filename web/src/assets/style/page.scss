@@ -5,6 +5,20 @@
   border-bottom-right-radius: var(--border-radius-l);
 }
 
+section:nth-of-type(even) {
+  background: var(--color-purple-light);
+  color: var(--color-purple-dark);
+}
+
+.section-intro {
+  grid-column: 1 / -1;
+  text-align: center;
+
+  .lead {
+    margin: 0 auto 2rem;
+  }
+}
+
 .section-heading--link {
   text-decoration: none;
   font-size: var(--font-size-s);

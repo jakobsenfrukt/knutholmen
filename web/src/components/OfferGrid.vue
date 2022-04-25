@@ -1,13 +1,15 @@
 <template>
   <section class="offer-grid">
-    <div class="offer-intro">
+    <div class="section-intro offer-intro" v-if="showIntro">
       <g-link class="section-heading--link" :to="$tp('/offers')"
         ><span>{{ $t("menu.offers") }}</span></g-link
       >
       <h2 class="offer-heading">
-        {{ $static.offerPage.title[$context.locale] }}
+        {{ $static.offerPage.pageHeader.heading[$context.locale] }}
       </h2>
-      <p class="lead">{{ $static.offerPage.lead[$context.locale] }}</p>
+      <p class="lead">
+        {{ $static.offerPage.pageHeader.lead[$context.locale] }}
+      </p>
       <Button :text="$t('links.offers')" :link="$tp('/offers')" />
     </div>
     <OfferItem
@@ -26,13 +28,19 @@
 <static-query>
 query {
   offerPage: sanityOfferPage(id: "offerPage") {
-    title {
-      no
-      en
-    }
-    lead {
-      no
-      en
+    pageHeader {
+      title {
+        no
+        en
+      }
+      heading {
+        no
+        en
+      }
+      lead {
+        no
+        en
+      }
     }
   }
   offers: allSanityOffer(
@@ -43,6 +51,10 @@ query {
       node {
         id
         title {
+          no
+          en
+        }
+        heading {
           no
           en
         }
@@ -78,6 +90,10 @@ export default {
       type: Number,
       default: undefined,
     },
+    showIntro: {
+      type: Boolean,
+      default: false,
+    },
   },
 };
 </script>
@@ -87,9 +103,6 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-sitepadding);
-}
-.offer-intro {
-  grid-column: 1 / span 2;
 }
 @media (min-width: 800px) {
   .offer-grid {

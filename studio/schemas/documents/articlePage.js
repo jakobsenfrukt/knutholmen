@@ -1,7 +1,7 @@
 export default {
-  name: 'offerPage',
+  name: 'articlePage',
   type: 'document',
-  title: 'Pakker',
+  title: 'Aktuelt',
   __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'], 
   fields: [
     {

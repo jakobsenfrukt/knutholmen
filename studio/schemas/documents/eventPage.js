@@ -1,7 +1,7 @@
 export default {
-  name: 'offerPage',
+  name: 'eventPage',
   type: 'document',
-  title: 'Pakker',
+  title: 'Konferanse & selskap',
   __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'], 
   fields: [
     {

@@ -1,30 +1,25 @@
 <template>
   <section class="intro">
-    <g-image
-      v-if="$static.frontpage.pageHeader.image"
-      :src="
-        $urlForImage(
-          $static.frontpage.pageHeader.image,
-          $static.metadata.sanityOptions
-        )
-          .width(1200)
-          .height(600)
-          .auto('format')
-          .url()
-      "
-      :alt="$static.frontpage.pageHeader.image.alt[$context.locale]"
-    />
     <div class="intro-text">
-      <h1>{{ $static.frontpage.pageHeader.heading[$context.locale] }}</h1>
       <p class="lead">
-        {{ $static.frontpage.pageHeader.text[$context.locale] }}
+        {{ $static.frontpage.text[$context.locale] }}
       </p>
       <Button
         :text="$t('links.bookRoom')"
-        :link="$static.roomPage.bookingUrl[$context.locale]"
+        :link="$static.general.bookingUrl[$context.locale]"
         blank
       />
     </div>
+    <g-image
+      v-if="$static.frontpage.image"
+      :src="
+        $urlForImage($static.frontpage.image, $static.metadata.sanityOptions)
+          .width(1200)
+          .auto('format')
+          .url()
+      "
+      :alt="$static.frontpage.image.alt[$context.locale]"
+    />
   </section>
 </template>
 
@@ -37,28 +32,22 @@ query {
     }
   }
   frontpage: sanityFrontpage(id: "frontpage") {
-    pageHeader {
-      heading {
+    text {
+      no
+      en
+    }
+    image {
+      asset {
+        _id
+        url
+      }
+      alt {
         no
         en
-      }
-      text {
-        no
-        en
-      }
-      image {
-        asset {
-          _id
-          url
-        }
-        alt {
-          no
-          en
-        }
       }
     }
   }
-  roomPage: sanityRoomPage(id: "roomPage") {
+  general: sanityGeneral(id: "general") {
     bookingUrl {
       no
       en
@@ -79,7 +68,14 @@ export default {
 
 <style lang="scss" scoped>
 .intro {
+  background: var(--color-background);
+  color: var(--color-text);
   padding-top: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--spacing-sitepadding);
+  min-height: 60vh;
   img {
     border-radius: var(--border-radius);
   }
