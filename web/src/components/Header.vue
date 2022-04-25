@@ -4,27 +4,27 @@
     <nav class="nav nav-main">
       <ul>
         <li>
-          <g-link class="nav__link" :to="$tp('/rooms')"
+          <g-link class="nav__link" :to="$tp($t('slug.rooms'))"
             ><span>{{ $t("menu.rooms") }}</span></g-link
           >
         </li>
         <li>
-          <g-link class="nav__link" :to="$tp('/activities')"
+          <g-link class="nav__link" :to="$tp($t('slug.activities'))"
             ><span>{{ $t("menu.activities") }}</span></g-link
           >
         </li>
         <li>
-          <g-link class="nav__link" :to="$tp('/restaurant')"
+          <g-link class="nav__link" :to="$tp($t('slug.restaurant'))"
             ><span>{{ $t("menu.restaurant") }}</span></g-link
           >
         </li>
         <li>
-          <g-link class="nav__link" :to="$tp('/meetings')"
+          <g-link class="nav__link" :to="$tp($t('slug.meetings'))"
             ><span>{{ $t("menu.meetings") }}</span></g-link
           >
         </li>
         <li>
-          <g-link class="nav__link" :to="$tp('/about')"
+          <g-link class="nav__link" :to="$tp($t('slug.about'))"
             ><span>{{ $t("menu.about") }}</span></g-link
           >
         </li>
@@ -40,27 +40,27 @@
       <nav class="nav-mobile">
         <ul>
           <li>
-            <g-link class="nav__link" :to="$tp('/rooms')"
+            <g-link class="nav__link" :to="$tp($t('slug.rooms'))"
               ><span>{{ $t("menu.rooms") }}</span></g-link
             >
           </li>
           <li>
-            <g-link class="nav__link" :to="$tp('/activities')"
+            <g-link class="nav__link" :to="$tp($t('slug.activities'))"
               ><span>{{ $t("menu.activities") }}</span></g-link
             >
           </li>
           <li>
-            <g-link class="nav__link" :to="$tp('/restaurant')"
+            <g-link class="nav__link" :to="$tp($t('slug.restaurant'))"
               ><span>{{ $t("menu.restaurant") }}</span></g-link
             >
           </li>
           <li>
-            <g-link class="nav__link" :to="$tp('/meetings')"
+            <g-link class="nav__link" :to="$tp($t('slug.meetings'))"
               ><span>{{ $t("menu.meetings") }}</span></g-link
             >
           </li>
           <li>
-            <g-link class="nav__link" :to="$tp('/about')"
+            <g-link class="nav__link" :to="$tp($t('slug.about'))"
               ><span>{{ $t("menu.about") }}</span></g-link
             >
           </li>

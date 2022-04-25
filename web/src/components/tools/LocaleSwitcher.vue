@@ -32,9 +32,18 @@ export default {
     },*/
     changeLocale(locale) {
       this.currentLocale = locale;
-      this.$router.push({
-        path: this.$tp(this.$route.path, this.currentLocale, true),
-      });
+      console.log(this.$route)
+      const translatedPaths = this.$route.meta?.translatedPaths
+      if (translatedPaths) {
+        this.$router.push({
+          path: translatedPaths[this.currentLocale],
+        });
+      } else {
+        this.$router.push({
+          path: this.$tp(this.$route.path, this.currentLocale, true),
+        });
+      }
+
     },
   },
 };

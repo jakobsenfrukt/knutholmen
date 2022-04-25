@@ -18,6 +18,11 @@ export default {
       },
     },
     {
+      name: 'slug2',
+      title: 'Slug',
+      type: 'localeSlug',
+    },
+    {
       name: 'image',
       type: 'localeFigure',
       title: 'Hovedbilde'

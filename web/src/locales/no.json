@@ -16,5 +16,12 @@
     "rooms": "Sjå alle overnattingstilbod",
     "activities": "Sjå alle aktivitetstilbod",
     "restaurant": "Om vår restaurant"
+  },
+  "slug": {
+    "rooms": "/rom",
+    "about": "/om",
+    "activities": "/aktiviteter",
+    "restaurant": "/restaurant",
+    "meetings": "/moter"
   }
 }

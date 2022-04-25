@@ -44,6 +44,7 @@ query {
   ) {
     edges {
       node {
+        _type
         id
         title {
           no
@@ -51,6 +52,14 @@ query {
         }
         slug {
           current
+        }
+        slug2 {
+          no {
+            current
+          }
+          en {
+            current
+          }
         }
         image {
           asset {

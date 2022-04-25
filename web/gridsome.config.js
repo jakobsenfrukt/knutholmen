@@ -15,10 +15,10 @@ const isProd = process.env.NODE_ENV === 'production'
 module.exports = {
   siteName: 'Knutholmen',
 
-  templates: {
-    SanityRoom: '/rooms/:slug__current',
-    SanityOffer: '/offers/:slug__current'
-  },
+  // templates: {
+  //   SanityRoom: '/rooms/:slug__current',
+  //   SanityOffer: '/offers/:slug__current'
+  // },
 
   plugins: [
     {
@@ -40,14 +40,14 @@ module.exports = {
         ],
         fallbackLocale: 'no', // fallback language
         defaultLocale: 'no', // default language
-        enablePathRewrite: true, // rewrite path with locale prefix, default: true
-        rewriteDefaultLanguage: true, // rewrite default locale, default: true
+        enablePathRewrite: false, // rewrite path with locale prefix, default: true
+        rewriteDefaultLanguage: false, // rewrite default locale, default: true
         messages: {
           'no': require('./src/locales/no.json'), // Messages files
           'en': require('./src/locales/en.json'),
         },
-        //enablePathGeneration: false, // disable path generation
-        //routes: require('./routes.js') // load path translation declaration from external file
+        enablePathGeneration: false, // disable path generation
+        routes: require('./routes.js') // load path translation declaration from external file
       }
     }
   ]

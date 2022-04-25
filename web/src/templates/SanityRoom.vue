@@ -13,12 +13,21 @@ query room ($id: ID!) {
     }
   }
   room: sanityRoom (id: $id) {
+    _type
     title {
       no
       en
     }
     slug {
       current
+    }
+    slug2 {
+      no {
+        current
+      }
+      en {
+        current
+      }
     }
   }
 }

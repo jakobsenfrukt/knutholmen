@@ -19,7 +19,7 @@
       </p>
     </div>
     <!--<BlockContent :blocks="room._rawBio" v-if="room._rawBio" />-->
-    <g-link class="room-link" :to="`/rooms/${room.slug.current}`">Link</g-link>
+    <g-link class="room-link" :to="$tp(`${$t('slug.rooms')}/${$slugByLocale(room, this.$i18n.locale)}`)">Link</g-link>
   </article>
 </template>
 
