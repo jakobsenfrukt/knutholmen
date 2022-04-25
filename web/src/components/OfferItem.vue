@@ -1,5 +1,5 @@
 <template>
-  <article class="offer">
+  <article class="article-item offer">
     <img
       v-if="offer.image"
       :src="
@@ -56,7 +56,6 @@ export default {
 <style lang="scss" scoped>
 .offer {
   position: relative;
-  border: 1px solid var(--color-text);
   border-radius: var(--border-radius);
   overflow: hidden;
   &-image {

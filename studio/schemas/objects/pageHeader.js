@@ -17,6 +17,11 @@ export default {
       name: 'lead',
       type: 'localeText',
       title: 'Ingress'
+    },
+    {
+      name: 'image',
+      type: 'localeFigure',
+      title: 'Bilde'
     }
   ]
 }

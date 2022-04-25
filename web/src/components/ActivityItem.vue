@@ -1,5 +1,5 @@
 <template>
-  <article class="activity">
+  <article class="article-item activity">
     <img
       v-if="activity.image"
       :src="
@@ -52,7 +52,6 @@ export default {
 <style lang="scss" scoped>
 .activity {
   position: relative;
-  border: 1px solid var(--color-text);
   border-radius: var(--border-radius);
   overflow: hidden;
   &-image {

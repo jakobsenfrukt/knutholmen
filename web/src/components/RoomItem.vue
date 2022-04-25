@@ -1,5 +1,5 @@
 <template>
-  <article class="room">
+  <article class="article-item room">
     <img
       v-if="room.image"
       :src="
@@ -51,7 +51,6 @@ export default {
 <style lang="scss" scoped>
 .room {
   position: relative;
-  border: 1px solid var(--color-text);
   border-radius: var(--border-radius);
   overflow: hidden;
   &-text {

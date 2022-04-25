@@ -5,6 +5,11 @@
   border-bottom-right-radius: var(--border-radius-l);
 }
 
+section {
+  background: var(--color-background);
+  padding: var(--spacing-sitepadding);
+}
+
 section:nth-of-type(even) {
   background: var(--color-purple-light);
   color: var(--color-purple-dark);
@@ -42,5 +47,15 @@ section:nth-of-type(even) {
       transform: translateX(0);
       opacity: 1;
     }
+  }
+}
+
+.article-item {
+  box-shadow: var(--box-shadow);
+  background: var(--color-background);
+  transition: var(--transition-hover);
+
+  &:hover {
+    transform: translateY(-15px);
   }
 }
