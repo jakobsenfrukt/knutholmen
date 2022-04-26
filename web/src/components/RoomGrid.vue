@@ -111,7 +111,7 @@ export default {
 }
 @media (min-width: 1400px) {
   .room-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 </style>
