@@ -1,7 +1,19 @@
 <template>
   <Layout>
+    <PageHeader :pageHeader="$page.eventPage.pageHeader" />
     <main class="page-content">
-      <PageHeader :pageHeader="$page.eventPage.pageHeader" />
+      <div class="body-content" v-if="$page.eventPage.tempbody">
+        <block-content
+          :blocks="$page.eventPage.tempbody._rawNo"
+          v-if="$page.eventPage.tempbody._rawNo && $context.locale == 'no'"
+          class="block-content"
+        />
+        <block-content
+          :blocks="$page.eventPage.tempbody._rawEn"
+          v-else-if="$page.eventPage.tempbody._rawEn && $context.locale == 'en'"
+          class="block-content"
+        />
+      </div>
     </main>
   </Layout>
 </template>
@@ -32,6 +44,10 @@ query {
           en
         }
       }
+    }
+    tempbody {
+      _rawNo
+      _rawEn
     }
   }
 }

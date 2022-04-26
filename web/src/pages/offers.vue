@@ -1,7 +1,7 @@
 <template>
   <Layout>
+    <PageHeader :pageHeader="$page.offerPage.pageHeader" />
     <main class="page-content">
-      <PageHeader :pageHeader="$page.offerPage.pageHeader" />
       <OfferGrid />
     </main>
   </Layout>

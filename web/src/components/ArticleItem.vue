@@ -1,15 +1,15 @@
 <template>
   <article class="article-item article">
     <img
-      v-if="article.mainImages"
+      v-if="article.image"
       :src="
-        $urlForImage(article.mainImages, $static.metadata.sanityOptions)
+        $urlForImage(article.image, $static.metadata.sanityOptions)
           .width(600)
           .height(400)
           .auto('format')
           .url()
       "
-      :alt="article.mainImages.alt"
+      :alt="article.image.alt"
       class="article-image"
     />
     <div class="article-text">

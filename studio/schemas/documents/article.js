@@ -35,8 +35,8 @@ export default {
       type: 'datetime',
     },
     {
-      name: 'mainImages',
-      title: 'Hovedbilde',
+      name: 'image',
+      title: 'Bilde',
       type: 'figure',
     },
     {

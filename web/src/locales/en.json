@@ -12,6 +12,7 @@
   },
   "links": {
     "bookRoom": "Book a room",
+    "bookActivity": "Book a trip",
     "offers": "View all offers",
     "rooms": "View all room types",
     "activities": "View all activities",

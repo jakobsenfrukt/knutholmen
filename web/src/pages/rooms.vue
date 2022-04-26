@@ -1,13 +1,25 @@
 <template>
   <Layout>
+    <PageHeader :pageHeader="$page.roomPage.pageHeader" />
     <main class="page-content">
-      <PageHeader :pageHeader="$page.roomPage.pageHeader" />
       <Button
         :text="$t('links.bookRoom')"
         :link="$page.general.bookingUrl[$context.locale]"
         blank
       />
       <p>Her kjem du til ei eigen nettside for booking. Velkomen til havs!</p>
+      <div class="body-content" v-if="$page.roomPage.tempbody">
+        <block-content
+          :blocks="$page.roomPage.tempbody._rawNo"
+          v-if="$page.roomPage.tempbody._rawNo && $context.locale == 'no'"
+          class="block-content"
+        />
+        <block-content
+          :blocks="$page.roomPage.tempbody._rawEn"
+          v-else-if="$page.roomPage.tempbody._rawEn && $context.locale == 'en'"
+          class="block-content"
+        />
+      </div>
       <RoomGrid />
     </main>
   </Layout>
@@ -39,6 +51,10 @@ query {
           en
         }
       }
+    }
+    tempbody {
+      _rawNo
+      _rawEn
     }
   }
   general: sanityGeneral(id: "general") {

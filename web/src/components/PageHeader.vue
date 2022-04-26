@@ -43,7 +43,7 @@ export default {
 .page-header {
   background: var(--color-background);
   color: var(--color-text);
-  padding-top: 0;
+  padding: var(--spacing-sitepadding);
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;

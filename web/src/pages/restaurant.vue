@@ -1,12 +1,21 @@
 <template>
   <Layout>
+    <PageHeader :pageHeader="$page.restaurantPage.pageHeader" />
     <main class="page-content">
-      <PageHeader :pageHeader="$page.restaurantPage.pageHeader" />
-      <!--<block-content
-          :blocks="$page.restaurantPage._rawBody"
-          v-if="$page.restaurantPage._rawBody"
+      <div class="body-content" v-if="$page.restaurantPage.tempbody">
+        <block-content
+          :blocks="$page.restaurantPage.tempbody._rawNo"
+          v-if="$page.restaurantPage.tempbody._rawNo && $context.locale == 'no'"
           class="block-content"
-        />-->
+        />
+        <block-content
+          :blocks="$page.restaurantPage.tempbody._rawEn"
+          v-else-if="
+            $page.restaurantPage.tempbody._rawEn && $context.locale == 'en'
+          "
+          class="block-content"
+        />
+      </div>
     </main>
   </Layout>
 </template>
@@ -37,6 +46,10 @@ query {
           en
         }
       }
+    }
+    tempbody {
+      _rawNo
+      _rawEn
     }
   }
 }
