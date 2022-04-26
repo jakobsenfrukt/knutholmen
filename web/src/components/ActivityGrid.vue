@@ -10,13 +10,15 @@
       <p class="lead">
         {{ $static.activityPage.pageHeader.lead[$context.locale] }}
       </p>
-      <Button :text="$t('links.activities')" :link="$tp('/activities')" />
     </div>
     <ActivityItem
       v-for="activity in $static.activities.edges.slice(0, limit)"
       :key="activity.id"
       :activity="activity.node"
     />
+    <div class="section-button">
+      <Button :text="$t('links.activities')" :link="$tp('/activities')" />
+    </div>
   </section>
 </template>
 

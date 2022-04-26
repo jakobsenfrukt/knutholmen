@@ -1,15 +1,5 @@
 <template>
   <section class="intro">
-    <div class="intro-text">
-      <p class="lead">
-        {{ $static.frontpage.text[$context.locale] }}
-      </p>
-      <Button
-        :text="$t('links.bookRoom')"
-        :link="$static.general.bookingUrl[$context.locale]"
-        blank
-      />
-    </div>
     <g-image
       v-if="$static.frontpage.image"
       :src="
@@ -20,6 +10,16 @@
       "
       :alt="$static.frontpage.image.alt[$context.locale]"
     />
+    <div class="intro-text">
+      <p class="lead">
+        {{ $static.frontpage.text[$context.locale] }}
+      </p>
+      <Button
+        :text="$t('links.bookRoom')"
+        :link="$static.general.bookingUrl[$context.locale]"
+        blank
+      />
+    </div>
   </section>
 </template>
 
@@ -71,13 +71,20 @@ export default {
   background: var(--color-background);
   color: var(--color-text);
   padding-top: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
   gap: var(--spacing-sitepadding);
   min-height: 60vh;
   img {
+    display: block;
     border-radius: var(--border-radius);
+    max-width: 94%;
+    margin: 0 auto;
+  }
+  &-text {
+    text-align: center;
+  }
+  .lead {
+    margin: var(--spacing-sitepadding) auto;
+    max-width: 24em;
   }
 }
 </style>

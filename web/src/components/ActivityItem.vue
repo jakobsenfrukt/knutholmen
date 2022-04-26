@@ -62,7 +62,7 @@ export default {
 
     h3 {
       margin: 0.5rem 0 1rem;
-      font-weight: bold;
+      font-weight: 300;
       font-size: var(--font-size-l);
       color: var(--color-red);
     }

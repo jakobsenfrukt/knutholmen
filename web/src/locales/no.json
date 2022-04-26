@@ -13,9 +13,9 @@
   "links": {
     "bookRoom": "Bestill rom",
     "bookActivity": "Bestill en tur",
-    "offers": "Sjå alle pakketilbod",
-    "rooms": "Sjå alle overnattingstilbod",
-    "activities": "Sjå alle aktivitetstilbod",
-    "restaurant": "Om vår restaurant"
+    "offers": "Sjå alle pakker",
+    "rooms": "Sjå alle romma",
+    "activities": "Sjå alle aktiviteter",
+    "restaurant": "Om restauranten"
   }
 }

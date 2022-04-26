@@ -6,7 +6,7 @@
 }
 
 .page-title {
-  font-size: var(--font-size-m);
+  font-size: var(--font-size-s);
   font-style: italic;
   text-transform: uppercase;
 }
@@ -33,11 +33,11 @@ section:nth-of-type(even) {
   }
 
   .lead {
-    margin: 0 auto 3rem;
+    margin: 0 auto 2rem;
   }
 
   .button {
-    margin-bottom: 2rem;
+    margin: auto 2rem;
   }
 }
 
@@ -69,6 +69,12 @@ section:nth-of-type(even) {
       opacity: 1;
     }
   }
+}
+
+.section-button {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 1rem;
 }
 
 .article-item {
