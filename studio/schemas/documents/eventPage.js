@@ -8,6 +8,11 @@ export default {
       name: 'pageHeader',
       type: 'pageHeader',
       title: 'Intro'
+    },
+    {
+      name: 'tempbody',
+      type: 'localeBody',
+      title: 'Innhold (MIDLERTIDIG)'
     }
   ]
 }

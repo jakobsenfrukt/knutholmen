@@ -1,9 +1,9 @@
 import S from '@sanity/desk-tool/structure-builder'
 
-import { MdSettings, MdInfo, MdArticle, MdOutlineArticle, MdHome, MdEmail, MdLocalOffer, MdHotel, MdRestaurant, MdDirectionsBoatFilled, MdFolder, MdCake } from 'react-icons/md'
+import { MdSettings, MdInfo, MdArticle, MdOutlineArticle, MdHome, MdEmail, MdLocalOffer, MdHotel, MdRestaurant, MdDirectionsBoatFilled, MdFolder, MdCake, MdAnchor } from 'react-icons/md'
 
 const hiddenDocTypes = listItem =>
-  !['general', 'article', 'articlePage', 'about', 'frontpage', 'contact', 'offer', 'room', 'roomPage', 'restaurantPage', 'offerPage', 'activityPage', 'activity', 'eventPage'].includes(listItem.getId())
+  !['general', 'article', 'articlePage', 'about', 'frontpage', 'contact', 'offer', 'room', 'roomPage', 'restaurantPage', 'offerPage', 'activityPage', 'activity', 'eventPage', 'guestinfo'].includes(listItem.getId())
 
 export default () =>
   S.list()
@@ -189,7 +189,7 @@ export default () =>
         ),
       S.listItem()
         .title('Om oss')
-        .icon(MdInfo)
+        .icon(MdAnchor)
         .child(
           S.editor()
             .title('Om oss')
@@ -206,6 +206,16 @@ export default () =>
             .id('contact')
             .schemaType('contact')
             .documentId('contact')
+        ),
+      S.listItem()
+        .title('Info til gjester')
+        .icon(MdInfo)
+        .child(
+          S.editor()
+            .title('Info til gjester')
+            .id('guestinfo')
+            .schemaType('guestinfo')
+            .documentId('guestinfo')
         ),
       // This returns an array of all the document types
       // defined in schema.js. We filter out those that we have

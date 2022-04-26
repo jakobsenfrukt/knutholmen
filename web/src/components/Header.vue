@@ -103,9 +103,6 @@ export default {
   width: 100%;
   padding: var(--spacing-sitepadding);
   background: var(--color-background);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 
   a {
     color: inherit;
@@ -113,17 +110,21 @@ export default {
   }
 }
 .logo {
-  grid-column: 1 / span 4;
+  width: 20rem;
+  margin: calc(var(--spacing-sitepadding) / 2) auto var(--spacing-sitepadding);
 }
 .nav-main {
-  grid-column: 5 / span 6;
+  width: 100%;
   ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
     li {
-      display: inline-block;
-      margin-left: 2rem;
+      display: block;
     }
   }
 }
@@ -134,7 +135,6 @@ export default {
   position: relative;
 
   font-family: var(--font-sans);
-  font-style: italic;
   text-transform: uppercase;
 
   span {
@@ -144,7 +144,7 @@ export default {
 
   &.active--exact,
   &:hover {
-    text-decoration: underline;
+    font-style: italic;
   }
 }
 
@@ -218,7 +218,7 @@ export default {
   }
 }
 
-@media (max-width: 1370px) {
+@media (max-width: 1000px) {
   .logo {
     margin: 0.15rem 0;
   }

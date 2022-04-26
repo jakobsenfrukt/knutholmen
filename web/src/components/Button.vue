@@ -40,7 +40,9 @@ export default {
   outline: none;
   border: none;
   font-family: inherit;
-  font-size: var(--font-size-m);
+  font-size: var(--font-size-s);
+  text-transform: uppercase;
+  letter-spacing: 1px;
   padding: 0.8rem 2rem;
   border-radius: var(--border-radius-l);
   text-decoration: none;

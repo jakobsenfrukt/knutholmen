@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <h1>{{ $page.offer.title[$context.locale] }}</h1>
+    <PageHeader :pageHeader="$page.offer" />
   </Layout>
 </template>
 
@@ -17,18 +17,37 @@ query offer ($id: ID!) {
       no
       en
     }
+    heading {
+      no
+      en
+    }
     slug {
       current
+    }
+    image {
+      asset {
+        url
+      }
+      alt {
+        no
+        en
+      }
+    }
+    lead {
+      no
+      en
     }
   }
 }
 </page-query>
 
 <script>
+import PageHeader from "~/components/PageHeader";
 import BlockContent from "~/components/tools/BlockContent";
 
 export default {
   components: {
+    PageHeader,
     BlockContent,
   },
 };

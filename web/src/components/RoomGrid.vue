@@ -10,13 +10,15 @@
       <p class="lead">
         {{ $static.roomPage.pageHeader.lead[$context.locale] }}
       </p>
-      <Button :text="$t('links.rooms')" :link="$tp('/rooms')" />
     </div>
     <RoomItem
       v-for="room in $static.rooms.edges.slice(0, limit)"
       :key="room.id"
       :room="room.node"
     />
+    <div class="section-button">
+      <Button :text="$t('links.rooms')" :link="$tp('/rooms')" />
+    </div>
   </section>
 </template>
 

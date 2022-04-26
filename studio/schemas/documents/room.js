@@ -36,6 +36,17 @@ export default {
       name: 'body',
       type: 'localeBody',
       title: 'Innhold'
+    },
+    {
+      name: 'gallery',
+      type: 'array',
+      title: 'Bildegalleri',
+      of: [
+        {
+          type: 'localeFigure',
+          title: 'Bilde uten bildetekst'
+        }
+      ]
     }
   ],
   preview: {

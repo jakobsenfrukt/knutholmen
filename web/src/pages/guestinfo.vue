@@ -1,16 +1,16 @@
 <template>
   <Layout>
-    <PageHeader :pageHeader="$page.eventPage.pageHeader" />
-    <main class="page-content">
-      <div class="body-content" v-if="$page.eventPage.tempbody">
+    <PageHeader :pageHeader="$page.guestinfo.pageHeader" />
+    <main class="page-content guestinfo-content">
+      <div class="body-content" v-if="$page.guestinfo.tempbody">
         <block-content
-          :blocks="$page.eventPage.tempbody._rawNo"
-          v-if="$page.eventPage.tempbody._rawNo && $context.locale == 'no'"
+          :blocks="$page.guestinfo.tempbody._rawNo"
+          v-if="$page.guestinfo.tempbody._rawNo && $context.locale == 'no'"
           class="block-content"
         />
         <block-content
-          :blocks="$page.eventPage.tempbody._rawEn"
-          v-else-if="$page.eventPage.tempbody._rawEn && $context.locale == 'en'"
+          :blocks="$page.guestinfo.tempbody._rawEn"
+          v-else-if="$page.guestinfo.tempbody._rawEn && $context.locale == 'en'"
           class="block-content"
         />
       </div>
@@ -20,7 +20,7 @@
 
 <page-query>
 query {
-  eventPage: sanityEventPage(id: "eventPage") {
+  guestinfo: sanityGuestinfo(id: "guestinfo") {
     pageHeader {
       title {
         no
@@ -63,7 +63,7 @@ export default {
     PageHeader,
   },
   metaInfo: {
-    title: "Rooms",
+    title: "guestinfo",
   },
 };
 </script>

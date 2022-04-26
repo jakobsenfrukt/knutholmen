@@ -1,8 +1,8 @@
 export default {
-  name: 'roomPage',
+  name: 'guestinfo',
   type: 'document',
-  title: 'Overnatting',
-  __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'], 
+  title: 'Info til gjester',
+  //__experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'], 
   fields: [
     {
       name: 'pageHeader',

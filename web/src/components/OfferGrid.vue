@@ -16,13 +16,15 @@
       >
         {{ $static.offerPage.pageHeader.lead[$context.locale] }}
       </p>
-      <Button :text="$t('links.offers')" :link="$tp('/offers')" />
     </div>
     <OfferItem
       v-for="offer in $static.offers.edges.slice(0, limit)"
       :key="offer.id"
       :offer="offer.node"
     />
+    <div class="section-button">
+      <Button :text="$t('links.offers')" :link="$tp('/offers')" />
+    </div>
   </section>
 </template>
 

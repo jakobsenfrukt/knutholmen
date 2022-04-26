@@ -44,6 +44,10 @@
         >
       </li>
     </ul>
+    <ul class="">
+      <li><img src="/assets/images/footerlogos/logo-en.png" /></li>
+      <li><img src="/assets/images/footerlogos/dehistoriske.svg" /></li>
+    </ul>
     <ul class="footer-logos">
       <li><img src="/assets/images/footerlogos/VISA__Verified_by.png" /></li>
       <li><img src="/assets/images/footerlogos/MasterCard.png" /></li>
@@ -113,6 +117,7 @@ export default {
   display: flex;
   align-items: center;
   gap: 2rem;
+  background: white;
 
   li {
     height: 2rem;

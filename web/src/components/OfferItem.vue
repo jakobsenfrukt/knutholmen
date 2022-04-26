@@ -68,7 +68,6 @@ export default {
 
     h3 {
       margin: 0 0 0.8rem;
-      font-family: var(--font-serif);
       font-size: var(--font-size-l);
       color: var(--color-yellow-dark);
       span {
