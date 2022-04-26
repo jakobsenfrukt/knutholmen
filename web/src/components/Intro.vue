@@ -60,14 +60,13 @@ export default {
 .intro {
   background: var(--color-background);
   color: var(--color-text);
-  padding-top: 0;
+  padding-top: 0 !important;
   gap: var(--spacing-sitepadding);
-  min-height: 60vh;
   img {
     display: block;
     border-radius: var(--border-radius);
     max-width: 86%;
-    margin: -1rem auto;
+    margin: 0 auto;
   }
   &-text {
     text-align: center;
