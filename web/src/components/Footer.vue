@@ -56,6 +56,7 @@
     <ul class="footer-logos">
       <li><img src="/assets/images/footerlogos/dehistoriske.svg" /></li>
       <li><img src="/assets/images/footerlogos/logo-en.png" /></li>
+      <li><img src="/assets/images/footerlogos/mf-logo.svg" /></li>
     </ul>
     <ul class="footer-logos footer-logos--visa">
       <li><img src="/assets/images/footerlogos/VISA__Verified_by.png" /></li>
