@@ -80,6 +80,9 @@ export default {
     .text {
       order: 2;
     }
+    .lead {
+      margin: 0 auto 2rem;
+    }
   }
   .page-title {
     display: block;
