@@ -88,6 +88,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    hideButton: {
+      type: Boolean,
+      default: false,
+    },
   },
   methods: {
     getLocaleArticles() {

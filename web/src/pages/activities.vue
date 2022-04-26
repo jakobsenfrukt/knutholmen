@@ -19,7 +19,7 @@
           class="block-content"
         />
       </div>
-      <ActivityGrid />
+      <ActivityGrid hideButton />
     </main>
   </Layout>
 </template>

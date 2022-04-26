@@ -15,7 +15,7 @@
           class="block-content"
         />
       </div>
-      <RoomGrid />
+      <RoomGrid hideButton />
     </main>
   </Layout>
 </template>

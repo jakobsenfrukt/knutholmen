@@ -3,9 +3,34 @@
   background: var(--color-background);
   border-bottom-left-radius: var(--border-radius-l);
   border-bottom-right-radius: var(--border-radius-l);
+}
 
-  p {
-    margin: 0 auto 1rem;
+.block-content {
+  h1, h2, h3, h4, h5, h6 {
+    margin: 2rem auto 2rem;
+    max-width: 30rem;
+  }
+  p, ul, ol {
+    margin: 1rem auto 1.5rem;
+  }
+  ul, ol {
+    max-width: 30rem;
+  }
+  img {
+    display: block;
+    width: 100%;
+    margin: 3rem auto 4rem;
+    max-width: 50rem;
+  }
+  blockquote {
+    font-family: var(--font-serif);
+    font-size: var(--font-size-l);
+    font-style: italic;
+    display: block;
+    width: 100%;
+    margin: 3rem auto 4rem;
+    max-width: 40rem;
+    text-align: center;
   }
 }
 

@@ -22,7 +22,7 @@
       :key="offer.id"
       :offer="offer.node"
     />
-    <div class="section-button">
+    <div class="section-button" v-if="!hideButton">
       <Button :text="$t('links.offers')" :link="$tp(`${$t('slug.offers')}`)" />
     </div>
   </section>
@@ -98,6 +98,10 @@ export default {
       default: undefined,
     },
     showIntro: {
+      type: Boolean,
+      default: false,
+    },
+    hideButton: {
       type: Boolean,
       default: false,
     },

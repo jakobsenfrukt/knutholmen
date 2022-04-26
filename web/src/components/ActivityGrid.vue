@@ -18,7 +18,7 @@
       :key="activity.id"
       :activity="activity.node"
     />
-    <div class="section-button">
+    <div class="section-button" v-if="!hideButton">
       <Button
         :text="$t('links.activities')"
         :link="$tp(`${$t('slug.activities')}`)"
@@ -97,6 +97,10 @@ export default {
       default: undefined,
     },
     showIntro: {
+      type: Boolean,
+      default: false,
+    },
+    hideButton: {
       type: Boolean,
       default: false,
     },

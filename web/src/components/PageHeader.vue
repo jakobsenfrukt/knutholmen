@@ -72,6 +72,7 @@ export default {
   .page-header {
     grid-template-columns: 1fr;
     min-height: 0;
+    text-align: center;
 
     img {
       order: 1;

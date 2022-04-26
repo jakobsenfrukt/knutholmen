@@ -2,7 +2,7 @@
   <Layout>
     <PageHeader :pageHeader="$page.offerPage.pageHeader" />
     <main class="page-content">
-      <OfferGrid />
+      <OfferGrid hideButton />
     </main>
   </Layout>
 </template>

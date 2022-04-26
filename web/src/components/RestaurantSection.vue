@@ -69,11 +69,6 @@ export default {
     height: 12rem;
     position: absolute;
   }
-  &:before {
-    background-image: url("/assets/images/illustrations/test/skisse-hummer.png");
-    bottom: -2rem;
-    left: 2rem;
-  }
   &:after {
     background-image: url("/assets/images/illustrations/test/skisse-eple.png");
     top: -1rem;

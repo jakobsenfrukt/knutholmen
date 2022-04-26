@@ -16,7 +16,7 @@
       :key="room.id"
       :room="room.node"
     />
-    <div class="section-button">
+    <div class="section-button" v-if="!hideButton">
       <Button :text="$t('links.rooms')" :link="$tp(`${$t('slug.rooms')}`)" />
     </div>
   </section>
@@ -93,6 +93,10 @@ export default {
       default: undefined,
     },
     showIntro: {
+      type: Boolean,
+      default: false,
+    },
+    hideButton: {
       type: Boolean,
       default: false,
     },
