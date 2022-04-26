@@ -1,15 +1,19 @@
-const slugByLocale = (page, locale) => page.slug2[locale].current;
+const slugByLocale = (page, locale) => page.slug[locale].current;
 
 const pathToPage = (page, locale) => {
   const slug = slugByLocale(page, locale);
   const type = {
     no: {
       room: "rom",
-      offer: "aktiviteter",
+      offer: "pakker",
+      activity: "aktiviteter",
+      article: "aktuelt",
     },
     en: {
       room: "rooms",
-      offer: "activities",
+      offer: "offers",
+      activity: "activities",
+      article: "news",
     },
   }[locale][page._type];
   return `/${type}/${slug}`;

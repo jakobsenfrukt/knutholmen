@@ -30,7 +30,39 @@ module.exports = function(api) {
             node {
               _type
               id
-              slug2 {
+              slug {
+                no {
+                  current
+                }
+                en {
+                  current
+                }
+              }
+            }
+          }
+        }
+        offers: allSanityOffer {
+          edges {
+            node {
+              _type
+              id
+              slug {
+                no {
+                  current
+                }
+                en {
+                  current
+                }
+              }
+            }
+          }
+        }
+        activities: allSanityActivity {
+          edges {
+            node {
+              _type
+              id
+              slug {
                 no {
                   current
                 }
@@ -43,23 +75,6 @@ module.exports = function(api) {
         }
       }
     `);
-
-    // offers: allSanityOffer {
-    //   edges {
-    //     node {
-    //       _type
-    //       id
-    //       slug2 {
-    //         no {
-    //           current
-    //         }
-    //         en {
-    //           current
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
 
     if (response.errors) {
       throw response.errors[0];
@@ -99,9 +114,9 @@ module.exports = function(api) {
     };
 
     const handlePageWithLocalizedSlugs = (page, component) => {
-      const slugEn = page.slug2.en.current;
-      const slugNo = page.slug2.no.current;
-      Object.entries(page.slug2).forEach(([locale, slug]) => {
+      const slugEn = page.slug.en.current;
+      const slugNo = page.slug.no.current;
+      Object.entries(page.slug).forEach(([locale, slug]) => {
         createPageWithLocale({
           page: page,
           locale: locale,
@@ -118,7 +133,7 @@ module.exports = function(api) {
     const handleEdges = ({ edges, component }) => {
       edges
         .map((edge) => edge.node)
-        .filter((node) => node.slug2)
+        .filter((node) => node.slug)
         .forEach((page) => handlePageWithLocalizedSlugs(page, component));
     };
 
@@ -127,9 +142,14 @@ module.exports = function(api) {
       component: "./src/templates/SanityRoom.vue",
     });
 
-    // handleEdges({
-    //   edges: response.data.offers.edges,
-    //   component: "./src/templates/SanityOffer.vue",
-    // });
+    handleEdges({
+      edges: response.data.offers.edges,
+      component: "./src/templates/SanityOffer.vue",
+    });
+
+    handleEdges({
+      edges: response.data.activities.edges,
+      component: "./src/templates/SanityActivity.vue",
+    });
   });
 };

@@ -11,15 +11,6 @@ export default {
     {
       name: 'slug',
       title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'title.en',
-        maxLength: 96,
-      },
-    },
-    {
-      name: 'slug2',
-      title: 'Slug',
       type: 'localeSlug',
     },
     {

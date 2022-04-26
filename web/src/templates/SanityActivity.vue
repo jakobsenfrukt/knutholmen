@@ -1,23 +1,19 @@
 <template>
   <Layout>
-    <PageHeader :pageHeader="$page.offer" />
+    <h1>{{ $page.activity.title[$context.locale] }}</h1>
   </Layout>
 </template>
 
 <page-query>
-query offer ($id: ID!) {
+query activity ($id: ID!) {
   metadata {
     sanityOptions {
       projectId
       dataset
     }
   }
-  offer: sanityOffer (id: $id) {
+  activity: sanityActivity (id: $id) {
     title {
-      no
-      en
-    }
-    heading {
       no
       en
     }

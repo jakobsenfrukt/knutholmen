@@ -38,9 +38,6 @@ query ($id: ID!) {
       en
     }
     slug {
-      current
-    }
-    slug2 {
       no {
         current
       }

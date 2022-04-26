@@ -47,7 +47,6 @@ query {
     }
   }
   offers: allSanityOffer(
-    filter: {slug: {current: {ne: null}}},
     sortBy: "title", order: DESC
   ) {
     edges {
@@ -62,7 +61,12 @@ query {
           en
         }
         slug {
-          current
+          no {
+            current
+          }
+          en {
+            current
+          }
         }
         image {
           asset {

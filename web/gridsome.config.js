@@ -15,11 +15,6 @@ const isProd = process.env.NODE_ENV === 'production'
 module.exports = {
   siteName: 'Knutholmen',
 
-  // templates: {
-  //   SanityRoom: '/rooms/:slug__current',
-  //   SanityOffer: '/offers/:slug__current'
-  // },
-
   plugins: [
     {
       use: 'gridsome-source-sanity',

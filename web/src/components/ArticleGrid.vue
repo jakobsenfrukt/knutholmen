@@ -44,7 +44,7 @@ query {
     }
   }
   articles: allSanityArticle(
-    filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}},
+    filter: {publishedAt: {ne: null}},
     sortBy: "publishedAt", order: DESC
   ) {
     edges {

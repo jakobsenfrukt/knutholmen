@@ -17,13 +17,16 @@
         <span>{{ offer.title[$context.locale] }}</span>
         {{ offer.heading[$context.locale] }}
       </h3>
-      <p>
-        <!--{{ offer.lead[$context.locale] }}-->En kort tekst om denne pakken og
-        hva som er inkludert.
+      <p v-if="offer.lead && offer.lead[$context.locale]">
+        {{ offer.lead[$context.locale] }}
       </p>
     </div>
     <!--<BlockContent :blocks="offer._rawBio" v-if="offer._rawBio" />-->
-    <g-link class="offer-link" :to="`/offers/${offer.slug.current}`"
+    <g-link
+      class="offer-link"
+      :to="
+        $tp(`${$t('slug.offers')}/${$slugByLocale(offer, this.$i18n.locale)}`)
+      "
       >Link</g-link
     >
   </article>
@@ -74,7 +77,6 @@ export default {
         display: block;
         font-family: var(--font-sans);
         font-size: var(--font-size-xs);
-        font-style: italic;
         text-transform: uppercase;
         margin-bottom: 0.8rem;
         color: var(--color-red-dark);

@@ -20,7 +20,9 @@
         {{ article.lead }}
       </p>
     </div>
-    <g-link class="article-link" :to="`/news/${article.slug.current}`"
+    <g-link
+      class="article-link"
+      :to="$tp(`${$t('slug.news')}/${article.slug.current}`)"
       >Link</g-link
     >
   </article>

@@ -41,7 +41,6 @@ query {
     }
   }
   rooms: allSanityRoom(
-    filter: {slug: {current: {ne: null}}},
     sortBy: "title", order: DESC
   ) {
     edges {
@@ -53,9 +52,6 @@ query {
           en
         }
         slug {
-          current
-        }
-        slug2 {
           no {
             current
           }
