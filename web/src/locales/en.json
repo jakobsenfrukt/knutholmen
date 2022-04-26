@@ -25,5 +25,9 @@
     "activities": "/activities",
     "restaurant": "/restaurant",
     "meetings": "/meetings"
+  },
+  "headings": {
+    "address": "Visit us",
+    "contact": "Contact us"
   }
 }

@@ -25,5 +25,9 @@
     "activities": "/aktiviteter",
     "restaurant": "/restaurant",
     "meetings": "/moter"
+  },
+  "headings": {
+    "address": "Besøk oss",
+    "contact": "Kontakt oss"
   }
 }
