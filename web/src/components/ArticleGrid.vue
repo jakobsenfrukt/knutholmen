@@ -72,7 +72,7 @@ query {
 
 <script>
 import ArticleItem from "@/components/ArticleItem";
-import Button from "@/components/Button";
+import Button from "@/components/buttons/Button";
 
 export default {
   components: {

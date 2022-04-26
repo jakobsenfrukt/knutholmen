@@ -31,6 +31,7 @@ import simpleBody from './objects/simpleBody'
 import seo from './objects/seo'
 import pageHeader from './objects/pageHeader'
 import pageContent from './objects/pageContent'
+import booking from './objects/booking'
 
 // localized objects
 import localeString from './objects/localeString'
@@ -74,6 +75,7 @@ export default createSchema({
     seo,
     pageHeader,
     pageContent,
+    booking,
     // localized objects
     localeString,
     localeText,

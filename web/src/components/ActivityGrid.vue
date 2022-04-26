@@ -1,7 +1,9 @@
 <template>
   <section class="activity-grid">
     <div class="section-intro activity-intro" v-if="showIntro">
-      <g-link class="section-heading--link" :to="$tp('/activities')"
+      <g-link
+        class="section-heading--link"
+        :to="$tp(`${$t('slug.activities')}`)"
         ><span>{{ $t("menu.activities") }}</span></g-link
       >
       <h2 class="activity-heading">
@@ -17,7 +19,10 @@
       :activity="activity.node"
     />
     <div class="section-button">
-      <Button :text="$t('links.activities')" :link="$tp('/activities')" />
+      <Button
+        :text="$t('links.activities')"
+        :link="$tp(`${$t('slug.activities')}`)"
+      />
     </div>
   </section>
 </template>
@@ -79,7 +84,7 @@ query {
 
 <script>
 import ActivityItem from "@/components/ActivityItem";
-import Button from "@/components/Button";
+import Button from "@/components/buttons/Button";
 
 export default {
   components: {

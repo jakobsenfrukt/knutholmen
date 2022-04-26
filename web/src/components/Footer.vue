@@ -44,6 +44,7 @@
         >
       </li>
     </ul>
+    <Button type="giftcard" />
     <ul class="">
       <li><img src="/assets/images/footerlogos/logo-en.png" /></li>
       <li><img src="/assets/images/footerlogos/dehistoriske.svg" /></li>
@@ -74,11 +75,13 @@ query {
 
 <script>
 import Logo from "~/components/Logo";
+import Button from "~/components/buttons/Button";
 import BlockContent from "~/components/tools/BlockContent";
 
 export default {
   components: {
     Logo,
+    Button,
     BlockContent,
   },
 };

@@ -9,6 +9,17 @@
   </Layout>
 </template>
 
+<page-query>
+query {
+  frontpage: sanityFrontpage(id: "frontpage") {
+    title {
+      no
+      en
+    }
+  }
+}
+</page-query>
+
 <script>
 import Intro from "@/components/Intro";
 import OfferGrid from "@/components/OfferGrid";
@@ -26,8 +37,10 @@ export default {
     RestaurantSection,
     ArticleGrid,
   },
-  metaInfo: {
-    title: "Welcome",
+  metaInfo() {
+    return {
+      title: this.$page.frontpage.title[this.$context.locale],
+    };
   },
 };
 </script>

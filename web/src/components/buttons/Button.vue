@@ -1,0 +1,181 @@
+<template>
+  <div>
+    <!-- Book room -->
+    <div v-if="type && type === 'bookRoom'">
+      <a
+        class="button large"
+        :href="$static.general.bookRoom.url[$context.locale]"
+        target="_blank"
+        >{{ $static.general.bookRoom.buttonText[$context.locale] }}</a
+      >
+      <p class="info">{{ $static.general.bookRoom.info[$context.locale] }}</p>
+    </div>
+
+    <!-- Book activity -->
+    <div v-if="type && type === 'bookActivity'">
+      <a
+        class="button large"
+        :href="$static.general.bookActivity.url[$context.locale]"
+        target="_blank"
+        >{{ $static.general.bookActivity.buttonText[$context.locale] }}</a
+      >
+      <p class="info">
+        {{ $static.general.bookActivity.info[$context.locale] }}
+      </p>
+    </div>
+
+    <!-- Book table -->
+    <div v-if="type && type === 'bookTable'">
+      <a
+        class="button large"
+        :href="$static.general.bookTable.url[$context.locale]"
+        target="_blank"
+        >{{ $static.general.bookTable.buttonText[$context.locale] }}</a
+      >
+      <p class="info">{{ $static.general.bookTable.info[$context.locale] }}</p>
+    </div>
+
+    <!-- Buy gift card -->
+    <div v-if="type && type === 'giftcard'">
+      <a
+        class="button large"
+        :href="$static.general.giftcard.url[$context.locale]"
+        target="_blank"
+        >{{ $static.general.giftcard.buttonText[$context.locale] }}</a
+      >
+      <p class="info">{{ $static.general.giftcard.info[$context.locale] }}</p>
+    </div>
+
+    <!-- Other buttons -->
+    <button class="button" v-else-if="action" @click="action">
+      {{ text }}
+    </button>
+    <a class="button" v-else-if="link && blank" :href="link" target="_blank">{{
+      text
+    }}</a>
+    <a class="button" v-else-if="link" :href="link">{{ text }}</a>
+  </div>
+</template>
+
+<static-query>
+query {
+  general: sanityGeneral(id: "general") {
+    bookRoom {
+      buttonText {
+        no
+        en
+      }
+      url {
+        no
+        en
+      }
+      info {
+        no
+        en
+      }
+    }
+    bookActivity {
+      buttonText {
+        no
+        en
+      }
+      url {
+        no
+        en
+      }
+      info {
+        no
+        en
+      }
+    }
+    bookTable {
+      buttonText {
+        no
+        en
+      }
+      url {
+        no
+        en
+      }
+      info {
+        no
+        en
+      }
+    }
+    giftcard {
+      buttonText {
+        no
+        en
+      }
+      url {
+        no
+        en
+      }
+      info {
+        no
+        en
+      }
+    }
+  }
+}
+</static-query>
+
+<script>
+export default {
+  props: {
+    text: {
+      type: String,
+      default: "Klikk her",
+    },
+    action: {
+      type: Function,
+      default: undefined,
+    },
+    link: {
+      type: String,
+      default: undefined,
+    },
+    blank: {
+      type: Boolean,
+      default: false,
+    },
+    type: {
+      type: String,
+      default: undefined,
+    },
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+.button {
+  display: inline-block;
+  background: var(--color-text);
+  color: var(--color-background);
+  outline: none;
+  border: none;
+  font-family: inherit;
+  font-size: var(--font-size-s);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.8rem 2rem;
+  border-radius: var(--border-radius-l);
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition-hover);
+  &:hover {
+    background: var(--color-hover);
+  }
+  &.large {
+    padding: 1rem 2.6rem;
+  }
+}
+.info {
+  font-size: var(--font-size-xs);
+  font-style: italic;
+  opacity: 0.6;
+  margin: 1em 0;
+
+  display: none;
+}
+</style>

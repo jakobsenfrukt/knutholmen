@@ -4,27 +4,42 @@
     <nav class="nav nav-main">
       <ul>
         <li>
-          <g-link class="nav__link" :to="$tp($t('slug.rooms'))"
+          <g-link
+            class="nav__link"
+            :to="$tp($t('slug.rooms'))"
+            :title="$t('menu.rooms')"
             ><span>{{ $t("menu.rooms") }}</span></g-link
           >
         </li>
         <li>
-          <g-link class="nav__link" :to="$tp($t('slug.activities'))"
+          <g-link
+            class="nav__link"
+            :to="$tp($t('slug.activities'))"
+            :title="$t('menu.activities')"
             ><span>{{ $t("menu.activities") }}</span></g-link
           >
         </li>
         <li>
-          <g-link class="nav__link" :to="$tp($t('slug.restaurant'))"
+          <g-link
+            class="nav__link"
+            :to="$tp($t('slug.restaurant'))"
+            :title="$t('menu.restaurant')"
             ><span>{{ $t("menu.restaurant") }}</span></g-link
           >
         </li>
         <li>
-          <g-link class="nav__link" :to="$tp($t('slug.meetings'))"
+          <g-link
+            class="nav__link"
+            :to="$tp($t('slug.meetings'))"
+            :title="$t('menu.meetings')"
             ><span>{{ $t("menu.meetings") }}</span></g-link
           >
         </li>
         <li>
-          <g-link class="nav__link" :to="$tp($t('slug.about'))"
+          <g-link
+            class="nav__link"
+            :to="$tp($t('slug.about'))"
+            :title="$t('menu.about')"
             ><span>{{ $t("menu.about") }}</span></g-link
           >
         </li>
@@ -102,7 +117,6 @@ export default {
 .site-header {
   width: 100%;
   padding: var(--spacing-sitepadding);
-  background: var(--color-background);
 
   a {
     color: inherit;
@@ -142,9 +156,21 @@ export default {
     z-index: 10;
   }
 
+  &:before {
+    display: block;
+    content: attr(title);
+    font-style: italic;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
+
   &.active--exact,
   &:hover {
     font-style: italic;
+  }
+  &.active--exact {
+    color: var(--color-active);
   }
 }
 

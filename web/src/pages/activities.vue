@@ -1,12 +1,9 @@
 <template>
   <Layout>
-    <PageHeader :pageHeader="$page.activityPage.pageHeader" />
-    <Button
-      :text="$t('links.bookActivity')"
-      :link="$page.general.activityUrl[$context.locale]"
-      blank
+    <PageHeader
+      :pageHeader="$page.activityPage.pageHeader"
+      button="bookActivity"
     />
-    <p>Her kjem du til ei eigen nettside for booking. Velkomen til havs!</p>
     <main class="page-content">
       <div class="body-content" v-if="$page.activityPage.tempbody">
         <block-content
@@ -59,30 +56,24 @@ query {
       _rawEn
     }
   }
-  general: sanityGeneral(id: "general") {
-    activityUrl {
-      no
-      en
-    }
-  }
 }
 </page-query>
 
 <script>
 import BlockContent from "~/components/tools/BlockContent";
 import PageHeader from "~/components/PageHeader";
-import Button from "~/components/Button";
 import ActivityGrid from "~/components/ActivityGrid";
 
 export default {
   components: {
     BlockContent,
     PageHeader,
-    Button,
     ActivityGrid,
   },
-  metaInfo: {
-    title: "Rooms",
+  metaInfo() {
+    return {
+      title: this.$page.activityPage.pageHeader.title[this.$context.locale],
+    };
   },
 };
 </script>

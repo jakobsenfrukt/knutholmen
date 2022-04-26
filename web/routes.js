@@ -27,6 +27,11 @@ module.exports = {
       ...otherPath("en", "/en/rooms")
     },
     {
+      path: "/pakker",
+      component: "./src/pages/offers.vue",
+      ...otherPath("en", "/en/offers")
+    },
+    {
       path: "/aktiviteter",
       component: "./src/pages/activities.vue",
       ...otherPath("en", "/en/activities")
@@ -40,6 +45,11 @@ module.exports = {
       path: "/moter",
       component: "./src/pages/meetings.vue",
       ...otherPath("en", "/en/meetings")
+    },
+    {
+      path: "/gjesteinfo",
+      component: "./src/pages/guestinfo.vue",
+      ...otherPath("en", "/en/guestinfo")
     },
   ],
   en: [
@@ -58,6 +68,11 @@ module.exports = {
       ...otherPath("no", "/rom")
     },
     {
+      path: "/en/offers",
+      component: "./src/pages/offers.vue",
+      ...otherPath("no", "/pakker")
+    },
+    {
       path: "/en/activities",
       component: "./src/pages/activities.vue",
       ...otherPath("no", "/aktiviteter")
@@ -71,6 +86,11 @@ module.exports = {
       path: "/en/meetings",
       component: "./src/pages/meetings.vue",
       ...otherPath("no", "/moter")
+    },
+    {
+      path: "/en/guestinfo",
+      component: "./src/pages/guestinfo.vue",
+      ...otherPath("no", "/gjesteinfo")
     },
   ],
 };

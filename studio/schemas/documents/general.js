@@ -3,25 +3,62 @@ export default {
   type: 'document',
   title: 'Generelt',
   __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'], 
-  fields: [
+  groups: [
     {
-      name: 'bookingUrl',
-      type: 'localeString',
-      title: 'Booking-URL for overnatting',
-      description: 'Hele URLen til booking av rom. Husk å inkludere https:// etc.',
-      validation: Rule => Rule.required()
+      name: 'rooms',
+      title: 'Overnatting',
     },
     {
-      name: 'activityUrl',
-      type: 'localeString',
-      title: 'URL til aktivitetskalender',
-      description: 'Hele URLen til aktivitetskalender. Husk å inkludere https:// etc.',
-      validation: Rule => Rule.required()
+      name: 'activities',
+      title: 'Aktiviteter',
+    },
+    {
+      name: 'restaurant',
+      title: 'Restaurant',
+    },
+    {
+      name: 'giftcard',
+      title: 'Gavekort',
+    },
+    {
+      name: 'seo',
+      title: 'SEO',
+    }
+  ],
+  fields: [
+    {
+      name: 'bookRoom',
+      type: 'booking',
+      title: 'Lenke til booking av rom',
+      validation: Rule => Rule.required(),
+      group: 'rooms'
+    },
+    {
+      name: 'bookActivity',
+      type: 'booking',
+      title: 'Lenke til aktivitetskalender',
+      validation: Rule => Rule.required(),
+      group: 'activities'
+    },
+    {
+      name: 'bookTable',
+      type: 'booking',
+      title: 'Lenke til bordreservasjon',
+      validation: Rule => Rule.required(),
+      group: 'restaurant'
+    },
+    {
+      name: 'giftcard',
+      type: 'booking',
+      title: 'Lenke til kjøp av gavekort',
+      validation: Rule => Rule.required(),
+      group: 'giftcard'
     },
     {
       name: 'seo',
       type: 'seo',
-      title: 'Deling & SEO'
+      title: 'Deling & SEO',
+      group: 'seo'
     }
   ]
 }

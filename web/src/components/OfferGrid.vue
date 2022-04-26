@@ -1,7 +1,7 @@
 <template>
   <section class="offer-grid">
     <div class="section-intro offer-intro" v-if="showIntro">
-      <g-link class="section-heading--link" :to="$tp('/offers')"
+      <g-link class="section-heading--link" :to="$tp(`${$t('slug.offers')}`)"
         ><span>{{ $t("menu.offers") }}</span></g-link
       >
       <h2 class="offer-heading">
@@ -23,7 +23,7 @@
       :offer="offer.node"
     />
     <div class="section-button">
-      <Button :text="$t('links.offers')" :link="$tp('/offers')" />
+      <Button :text="$t('links.offers')" :link="$tp(`${$t('slug.offers')}`)" />
     </div>
   </section>
 </template>
@@ -85,7 +85,7 @@ query {
 
 <script>
 import OfferItem from "@/components/OfferItem";
-import Button from "@/components/Button";
+import Button from "@/components/buttons/Button";
 
 export default {
   components: {

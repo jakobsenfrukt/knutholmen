@@ -1,12 +1,7 @@
 <template>
   <Layout>
-    <PageHeader :pageHeader="$page.roomPage.pageHeader" />
+    <PageHeader :pageHeader="$page.roomPage.pageHeader" button="bookRoom" />
     <main class="page-content">
-      <Button
-        :text="$t('links.bookRoom')"
-        :link="$page.general.bookingUrl[$context.locale]"
-        blank
-      />
       <p>Her kjem du til ei eigen nettside for booking. Velkomen til havs!</p>
       <div class="body-content" v-if="$page.roomPage.tempbody">
         <block-content
@@ -57,30 +52,24 @@ query {
       _rawEn
     }
   }
-  general: sanityGeneral(id: "general") {
-    bookingUrl {
-      no
-      en
-    }
-  }
 }
 </page-query>
 
 <script>
 import BlockContent from "~/components/tools/BlockContent";
 import PageHeader from "~/components/PageHeader";
-import Button from "~/components/Button";
 import RoomGrid from "~/components/RoomGrid";
 
 export default {
   components: {
     BlockContent,
     PageHeader,
-    Button,
     RoomGrid,
   },
-  metaInfo: {
-    title: "Rooms",
+  metaInfo() {
+    return {
+      title: this.$page.roomPage.pageHeader.title[this.$context.locale],
+    };
   },
 };
 </script>

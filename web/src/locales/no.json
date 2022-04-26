@@ -11,12 +11,11 @@
     "offers": "Pakker"
   },
   "links": {
-    "bookRoom": "Bestill rom",
-    "bookActivity": "Bestill en tur",
     "offers": "Sjå alle pakker",
     "rooms": "Sjå alle romma",
     "activities": "Sjå alle aktiviteter",
-    "restaurant": "Om restauranten"
+    "restaurant": "Om restauranten",
+    "giftcard": "Kjøp gavekort"
   },
   "slug": {
     "rooms": "/rom",

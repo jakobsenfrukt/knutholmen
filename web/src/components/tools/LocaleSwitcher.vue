@@ -10,7 +10,7 @@
       class="locale-button"
       :class="currentLocale === locale ? 'active' : ''"
     >
-      {{ locale }}
+      <span>{{ locale }}</span>
     </button>
   </div>
 </template>
@@ -32,8 +32,7 @@ export default {
     },*/
     changeLocale(locale) {
       this.currentLocale = locale;
-      console.log(this.$route)
-      const translatedPaths = this.$route.meta?.translatedPaths
+      const translatedPaths = this.$route.meta?.translatedPaths;
       if (translatedPaths) {
         this.$router.push({
           path: translatedPaths[this.currentLocale],
@@ -43,7 +42,6 @@ export default {
           path: this.$tp(this.$route.path, this.currentLocale, true),
         });
       }
-
     },
   },
 };
@@ -52,6 +50,7 @@ export default {
 <style lang="scss" scoped>
 .locale-switcher {
   display: flex;
+  color: var(--color-highlight);
 }
 .locale-button {
   outline: none;
@@ -64,15 +63,15 @@ export default {
   font-family: inherit;
   font-size: var(--font-size-xs);
   text-transform: uppercase;
-  color: var(--color-text);
-  border: 1px solid var(--color-text);
+  color: currentColor;
+  border: 1px solid currentColor;
   cursor: pointer;
-  &:hover {
-    background: var(--color-highlight);
-  }
+  &:hover,
   &.active {
-    color: var(--color-background);
-    background: var(--color-text);
+    background: currentColor;
+    span {
+      color: var(--color-background);
+    }
   }
   &:first-of-type {
     padding: 0.2em 0.2em 0.2em 0.4em;

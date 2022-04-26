@@ -62,8 +62,10 @@ export default {
     BlockContent,
     PageHeader,
   },
-  metaInfo: {
-    title: "About",
+  metaInfo() {
+    return {
+      title: this.$page.about.pageHeader.title[this.$context.locale],
+    };
   },
 };
 </script>

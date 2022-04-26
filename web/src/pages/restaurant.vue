@@ -1,6 +1,9 @@
 <template>
   <Layout>
-    <PageHeader :pageHeader="$page.restaurantPage.pageHeader" />
+    <PageHeader
+      :pageHeader="$page.restaurantPage.pageHeader"
+      button="bookTable"
+    />
     <main class="page-content">
       <div class="body-content" v-if="$page.restaurantPage.tempbody">
         <block-content
@@ -58,14 +61,18 @@ query {
 <script>
 import BlockContent from "~/components/tools/BlockContent";
 import PageHeader from "~/components/PageHeader";
+import Button from "~/components/buttons/Button";
 
 export default {
   components: {
     PageHeader,
     BlockContent,
+    Button,
   },
-  metaInfo: {
-    title: "Rooms",
+  metaInfo() {
+    return {
+      title: this.$page.restaurantPage.pageHeader.title[this.$context.locale],
+    };
   },
 };
 </script>

@@ -49,8 +49,10 @@ export default {
     PageHeader,
     OfferGrid,
   },
-  metaInfo: {
-    title: "Rooms",
+  metaInfo() {
+    return {
+      title: this.$page.offerPage.pageHeader.title[this.$context.locale],
+    };
   },
 };
 </script>

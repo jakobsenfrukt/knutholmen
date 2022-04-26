@@ -1,7 +1,7 @@
 <template>
   <section class="room-grid">
     <div class="section-intro room-intro" v-if="showIntro">
-      <g-link class="section-heading--link" :to="$tp('/rooms')"
+      <g-link class="section-heading--link" :to="$tp(`${$t('slug.rooms')}`)"
         ><span>{{ $t("menu.rooms") }}</span></g-link
       >
       <h2 class="room-heading">
@@ -17,7 +17,7 @@
       :room="room.node"
     />
     <div class="section-button">
-      <Button :text="$t('links.rooms')" :link="$tp('/rooms')" />
+      <Button :text="$t('links.rooms')" :link="$tp(`${$t('slug.rooms')}`)" />
     </div>
   </section>
 </template>
@@ -80,7 +80,7 @@ query {
 
 <script>
 import RoomItem from "@/components/RoomItem";
-import Button from "@/components/Button";
+import Button from "@/components/buttons/Button";
 
 export default {
   components: {
@@ -103,7 +103,7 @@ export default {
 <style lang="scss" scoped>
 .room-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: var(--spacing-sitepadding);
 }
 .room-heading {

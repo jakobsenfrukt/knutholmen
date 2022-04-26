@@ -1,7 +1,9 @@
 <template>
   <section class="restaurant-section">
     <div class="section-intro">
-      <g-link class="section-heading--link" :to="$tp('/restaurant')"
+      <g-link
+        class="section-heading--link"
+        :to="$tp(`${$t('slug.restaurant')}`)"
         ><span>{{ $t("menu.restaurant") }}</span></g-link
       >
       <h2 class="restaurant-heading">
@@ -10,7 +12,10 @@
       <p class="lead">
         {{ $static.restaurantPage.pageHeader.lead[$context.locale] }}
       </p>
-      <Button :text="$t('links.restaurant')" :link="$tp('/restaurant')" />
+      <Button
+        :text="$t('links.restaurant')"
+        :link="$tp(`${$t('slug.restaurant')}`)"
+      />
     </div>
   </section>
 </template>
@@ -37,7 +42,7 @@ query {
 </static-query>
 
 <script>
-import Button from "@/components/Button";
+import Button from "@/components/buttons/Button";
 
 export default {
   components: {

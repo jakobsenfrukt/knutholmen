@@ -1,8 +1,12 @@
 .page-content {
-  padding: var(--spacing-sitepadding);
+  padding: var(--spacing-sitepadding) var(--spacing-sitepadding) calc(var(--spacing-sitepadding) * 5);
   background: var(--color-background);
   border-bottom-left-radius: var(--border-radius-l);
   border-bottom-right-radius: var(--border-radius-l);
+
+  p {
+    margin: 0 auto 1rem;
+  }
 }
 
 .page-title {
@@ -15,6 +19,10 @@ section {
   position: relative;
   overflow: hidden;
   background: var(--color-background);
+  padding: calc(var(--spacing-sitepadding)*2) 0;
+}
+
+.index section {
   padding: calc(var(--spacing-sitepadding)*2) var(--spacing-sitepadding);
 }
 

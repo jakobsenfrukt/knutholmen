@@ -14,11 +14,7 @@
       <p class="lead">
         {{ $static.frontpage.text[$context.locale] }}
       </p>
-      <Button
-        :text="$t('links.bookRoom')"
-        :link="$static.general.bookingUrl[$context.locale]"
-        blank
-      />
+      <Button type="bookRoom" />
     </div>
   </section>
 </template>
@@ -47,17 +43,11 @@ query {
       }
     }
   }
-  general: sanityGeneral(id: "general") {
-    bookingUrl {
-      no
-      en
-    }
-  }
 }
 </static-query>
 
 <script>
-import Button from "@/components/Button";
+import Button from "@/components/buttons/Button";
 
 export default {
   components: {
@@ -66,7 +56,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .intro {
   background: var(--color-background);
   color: var(--color-text);
@@ -76,14 +66,14 @@ export default {
   img {
     display: block;
     border-radius: var(--border-radius);
-    max-width: 94%;
-    margin: 0 auto;
+    max-width: 86%;
+    margin: -1rem auto;
   }
   &-text {
     text-align: center;
   }
   .lead {
-    margin: var(--spacing-sitepadding) auto;
+    margin: calc(var(--spacing-sitepadding) * 2) auto var(--spacing-sitepadding);
     max-width: 24em;
   }
 }

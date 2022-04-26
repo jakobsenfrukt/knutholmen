@@ -9,6 +9,7 @@
       >
         {{ pageHeader.lead[$context.locale] }}
       </p>
+      <Button v-if="button" :type="button" />
     </div>
     <g-image
       v-if="pageHeader.image"
@@ -35,9 +36,15 @@ query {
 </static-query>
 
 <script>
+import Button from "@/components/buttons/Button";
+
 export default {
+  components: {
+    Button,
+  },
   props: {
     pageHeader: Object,
+    button: String,
   },
 };
 </script>
@@ -50,11 +57,16 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: var(--spacing-sitepadding);
-  min-height: 60vh;
+  gap: calc(var(--spacing-sitepadding) * 1.5);
+  min-height: 40vh;
+  max-width: 70rem;
+  margin: 0 auto;
   img {
     border-radius: var(--border-radius);
   }
+}
+.page-title {
+  display: none;
 }
 @media (max-width: 1000px) {
   .page-header {
@@ -67,6 +79,9 @@ export default {
     .text {
       order: 2;
     }
+  }
+  .page-title {
+    display: block;
   }
 }
 </style>
