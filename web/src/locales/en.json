@@ -17,5 +17,14 @@
     "rooms": "View all rooms",
     "activities": "View all activities",
     "restaurant": "About our restaurant"
+  },
+  "slug": {
+    "rooms": "/rooms",
+    "about": "/about",
+    "offers": "/offers",
+    "news": "/news",
+    "activities": "/activities",
+    "restaurant": "/restaurant",
+    "meetings": "/meetings"
   }
 }

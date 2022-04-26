@@ -14,12 +14,16 @@
     />
     <div class="room-text">
       <h3>{{ room.title[$context.locale] }}</h3>
-      <p>
+      <!--<p>
         {{ room.lead[$context.locale] }}
-      </p>
+      </p>-->
     </div>
     <!--<BlockContent :blocks="room._rawBio" v-if="room._rawBio" />-->
-    <g-link class="room-link" :to="`/rooms/${room.slug.current}`">Link</g-link>
+    <g-link
+      class="room-link"
+      :to="$tp(`${$t('slug.rooms')}/${$slugByLocale(room, this.$i18n.locale)}`)"
+      >Link</g-link
+    >
   </article>
 </template>
 
@@ -49,23 +53,21 @@ export default {
 
 <style lang="scss" scoped>
 .room {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
   position: relative;
-  border-radius: var(--border-radius);
   overflow: hidden;
+  border-radius: var(--border-radius);
   &-image {
-    height: 100%;
+    width: 100%;
     object-fit: cover;
   }
   &-text {
-    padding: 2rem;
+    padding: 1rem 2rem;
+    text-align: center;
 
     h3 {
       margin: 0 0 1rem;
-      font-family: var(--font-serif);
-      font-size: var(--font-size-xxl);
+      font-size: var(--font-size-l);
+      color: var(--color-yellow-dark);
     }
   }
   &-link {

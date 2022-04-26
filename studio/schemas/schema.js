@@ -35,6 +35,7 @@ import pageContent from './objects/pageContent'
 // localized objects
 import localeString from './objects/localeString'
 import localeText from './objects/localeText'
+import localeSlug from './objects/localeSlug'
 import localeSimpleBody from './objects/localeSimpleBody'
 import localeBody from './objects/localeBody'
 import localeFigure from './objects/localeFigure'
@@ -76,6 +77,7 @@ export default createSchema({
     // localized objects
     localeString,
     localeText,
+    localeSlug,
     localeSimpleBody,
     localeBody,
     localeFigure,

@@ -3,7 +3,10 @@
     <div class="text">
       <span class="page-title">{{ pageHeader.title[$context.locale] }}</span>
       <h1 class="page-heading">{{ pageHeader.heading[$context.locale] }}</h1>
-      <p class="lead" v-if="pageHeader.lead[$context.locale]">
+      <p
+        class="lead"
+        v-if="pageHeader.lead && pageHeader.lead[$context.locale]"
+      >
         {{ pageHeader.lead[$context.locale] }}
       </p>
     </div>

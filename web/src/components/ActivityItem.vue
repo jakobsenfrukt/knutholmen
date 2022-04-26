@@ -19,7 +19,16 @@
       </p>
     </div>
     <!--<BlockContent :blocks="activity._rawBio" v-if="activity._rawBio" />-->
-    <g-link class="activity-link" :to="`/activities/${activity.slug.current}`"
+    <g-link
+      class="activity-link"
+      :to="
+        $tp(
+          `${$t('slug.activities')}/${$slugByLocale(
+            activity,
+            this.$i18n.locale
+          )}`
+        )
+      "
       >Link</g-link
     >
   </article>

@@ -32,12 +32,18 @@ query ($id: ID!) {
     }
   }
   room: sanityRoom (id: $id) {
+    _type
     title {
       no
       en
     }
     slug {
-      current
+      no {
+        current
+      }
+      en {
+        current
+      }
     }
     image {
       asset {

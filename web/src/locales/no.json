@@ -17,5 +17,14 @@
     "rooms": "Sjå alle romma",
     "activities": "Sjå alle aktiviteter",
     "restaurant": "Om restauranten"
+  },
+  "slug": {
+    "rooms": "/rom",
+    "about": "/om",
+    "offers": "/pakker",
+    "news": "/aktuelt",
+    "activities": "/aktiviteter",
+    "restaurant": "/restaurant",
+    "meetings": "/moter"
   }
 }

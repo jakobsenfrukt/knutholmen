@@ -41,18 +41,23 @@ query {
     }
   }
   rooms: allSanityRoom(
-    filter: {slug: {current: {ne: null}}},
     sortBy: "title", order: DESC
   ) {
     edges {
       node {
+        _type
         id
         title {
           no
           en
         }
         slug {
-          current
+          no {
+            current
+          }
+          en {
+            current
+          }
         }
         image {
           asset {
@@ -106,7 +111,7 @@ export default {
 }
 @media (min-width: 1400px) {
   .room-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 </style>
