@@ -29,7 +29,7 @@
   --color-highlight: var(--color-purple);
 
   background-color: var(--color-background);
-  background-image: url('/assets/graphics/bgs/noise3.svg');
+  background-image: url('/assets/graphics/bgs/noise4.svg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -65,10 +65,10 @@
 .activities {
   --color-background: var(--color-red-light);
   --color-text: var(--color-blue-dark);
-  --color-highlight: var(--color-red);
+  --color-highlight: var(--color-green-text);
 
   background-color: var(--color-background);
-  background-image: url('/assets/graphics/bgs/noise1.svg');
+  background-image: url('/assets/graphics/bgs/noise3.svg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -86,7 +86,7 @@
 .restaurant {
   --color-background: var(--color-white);
   --color-text: var(--color-blue-dark);
-  --color-highlight: var(--color-green-text);
+  --color-highlight: var(--color-blue-text);
 
   background-color: var(--color-background);
   background-image: url('/assets/graphics/bgs/noise2.svg');

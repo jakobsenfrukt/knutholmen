@@ -32,6 +32,7 @@
   --color-blue-dark: #1C294B;
 
   --color-green-text: #36AB53;
+  --color-blue-text: #0D75BA;
 
   // sizes
   --border-radius: 16px;
@@ -53,7 +54,7 @@ body {
   --color-text: var(--color-blue-dark);
   --color-link: var(--color-green);
   --color-highlight: var(--color-green-text);
-  --color-active: var(--color-red);
+  --color-active: var(--color-yellow);
 
   --color-hover: var(--color-purple);
 }

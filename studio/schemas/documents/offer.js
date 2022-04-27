@@ -14,6 +14,12 @@ export default {
       title: 'Overskrift'
     },
     {
+      name: 'url',
+      type: 'localeString',
+      title: 'URL til bestilling',
+      description: 'Husk å inkludere hele URLen, inkludert https:// etc.'
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'localeSlug',
