@@ -3,44 +3,32 @@
     <header class="page-header">
       <div class="text">
         <!--<span class="page-title">{{
-          $page.room.title[$context.locale]
+          $page.article.title
         }}</span>-->
         <h1 class="page-heading">
-          {{ $page.room.title[$context.locale] }}
+          {{ $page.article.title }}
         </h1>
-        <p
-          class="lead"
-          v-if="$page.room.lead && $page.room.lead[$context.locale]"
-        >
-          {{ $page.room.lead[$context.locale] }}
+        <p class="lead" v-if="$page.article.lead && $page.article.lead">
+          {{ $page.article.lead }}
         </p>
       </div>
       <g-image
-        v-if="$page.room.image"
+        v-if="$page.article.image"
         :src="
-          $urlForImage($page.room.image.image, $page.metadata.sanityOptions)
+          $urlForImage($page.article.image.image, $page.metadata.sanityOptions)
             .width(1200)
             .auto('format')
             .url()
         "
-        :alt="$page.room.image.alt[$context.locale]"
+        :alt="$page.article.image.alt"
       />
     </header>
     <main class="page-content">
-      <div class="body-content" v-if="$page.room.body">
-        <block-content
-          :blocks="$page.room.body._rawNo"
-          v-if="$page.room.body._rawNo && $context.locale == 'no'"
-          class="block-content"
-        />
-        <block-content
-          :blocks="$page.room.body._rawEn"
-          v-else-if="$page.room.body._rawEn && $context.locale == 'en'"
-          class="block-content"
-        />
+      <div class="body-content" v-if="$page.article._rawBody">
+        <block-content :blocks="$page.article._rawBody" class="block-content" />
       </div>
     </main>
-    <RoomGrid />
+    <articleGrid />
   </Layout>
 </template>
 
@@ -52,7 +40,7 @@ query ($id: ID!) {
       dataset
     }
   }
-  room: sanityRoom (id: $id) {
+  article: sanityArticle (id: $id) {
     _type
     title {
       no
@@ -91,12 +79,12 @@ query ($id: ID!) {
 
 <script>
 import BlockContent from "~/components/tools/BlockContent";
-import RoomGrid from "~/components/RoomGrid";
+import ArticleGrid from "~/components/ArticleGrid";
 
 export default {
   components: {
     BlockContent,
-    RoomGrid,
+    ArticleGrid,
   },
 };
 </script>

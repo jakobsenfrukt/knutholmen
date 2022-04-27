@@ -16,7 +16,8 @@
     "rooms": "Sjå alle romma",
     "activities": "Sjå alle aktiviteter",
     "restaurant": "Om restauranten",
-    "giftcard": "Kjøp gavekort"
+    "giftcard": "Kjøp gavekort",
+    "bookOffer": "Bestill pakke"
   },
   "slug": {
     "rooms": "/rom",

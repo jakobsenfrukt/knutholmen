@@ -162,11 +162,13 @@ export default {
 .intro {
   padding-top: 0 !important;
   gap: var(--spacing-sitepadding);
+  overflow: visible;
   img {
     display: block;
     border-radius: var(--border-radius);
-    max-width: 60rem;
-    margin: 0 auto;
+    width: 60rem;
+    max-width: 100%;
+    margin: -2rem auto 0;
   }
   &-text {
     text-align: center;

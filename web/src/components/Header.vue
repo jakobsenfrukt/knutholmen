@@ -3,8 +3,8 @@
     <g-link class="logo" :to="$tp('/')"><Logo /></g-link>
     <nav class="nav nav-main">
       <MainMenu />
-      <LocaleSwitcher class="language" />
     </nav>
+    <LocaleSwitcher class="language" />
     <div class="nav-mobile-wrapper" :class="{ open: showMenu }">
       <div role="button" @click="toggleMenu" class="menu-toggle">
         <span class="menu-toggle-text">{{ $t("menu.menu") }}</span
@@ -58,14 +58,46 @@ export default {
   }
 }
 .logo {
-  width: 17rem;
+  width: 24rem;
+  max-width: 100%;
   margin: 0 auto;
 }
 .nav-main {
   display: inline-block;
-  border-top: 1px solid var(--color-text);
-  margin-top: 1.5rem;
-  padding-top: 0.8rem;
+  margin-top: 1rem;
+  padding: 0.6rem 1.6rem;
+  position: relative;
+  background: var(--color-text);
+  color: var(--color-white);
+
+  &:before {
+    content: "";
+    height: 0;
+    width: 0;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -1.3rem;
+    border-top: 1.3rem solid var(--color-text);
+    border-bottom: 1.3rem solid var(--color-text);
+    border-right: 1.3rem solid transparent;
+    border-left: 1.3rem solid transparent;
+    transition: var(--transition-hover);
+  }
+  &:after {
+    content: "";
+    height: 0;
+    width: 0;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -1.3rem;
+    border-top: 1.3rem solid var(--color-text);
+    border-bottom: 1.3rem solid var(--color-text);
+    border-right: 1.3rem solid transparent;
+    border-left: 1.3rem solid transparent;
+    transition: var(--transition-hover);
+  }
 }
 
 .nav-mobile-wrapper {
@@ -144,7 +176,7 @@ export default {
   right: var(--spacing-sitepadding);
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .logo {
     margin: 0.15rem 0;
   }
@@ -177,10 +209,7 @@ export default {
     display: flex;
   }
   .language {
-    position: absolute;
-    top: auto;
-    bottom: var(--spacing-sitepadding);
-    right: var(--spacing-sitepadding);
+    display: none;
   }
 }
 

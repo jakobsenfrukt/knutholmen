@@ -16,7 +16,8 @@
     "rooms": "View all rooms",
     "activities": "View all activities",
     "restaurant": "About our restaurant",
-    "giftcard": "Buy gift card"
+    "giftcard": "Buy gift card",
+    "bookOffer": "Book package"
   },
   "slug": {
     "rooms": "/rooms",

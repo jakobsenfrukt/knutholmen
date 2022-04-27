@@ -116,9 +116,6 @@ export default {
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-sitepadding);
 }
-.activity-heading {
-  color: var(--color-red);
-}
 @media (min-width: 800px) {
   .activity-grid {
     grid-template-columns: repeat(3, 1fr);

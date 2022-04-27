@@ -53,7 +53,7 @@
     <a class="button" v-else-if="link && blank" :href="link" target="_blank">{{
       text
     }}</a>
-    <a class="button ribbon" v-else-if="link" :href="link">{{ text }}</a>
+    <a class="button" v-else-if="link" :href="link">{{ text }}</a>
   </div>
 </template>
 
