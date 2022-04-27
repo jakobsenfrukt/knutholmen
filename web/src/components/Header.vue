@@ -2,58 +2,8 @@
   <header class="site-header">
     <g-link class="logo" :to="$tp('/')"><Logo /></g-link>
     <nav class="nav nav-main">
-      <ul>
-        <li>
-          <g-link
-            class="nav__link"
-            :to="$tp($t('slug.rooms'))"
-            :title="$t('menu.rooms')"
-            ><span>{{ $t("menu.rooms") }}</span></g-link
-          >
-        </li>
-        <li>
-          <g-link
-            class="nav__link"
-            :to="$tp($t('slug.activities'))"
-            :title="$t('menu.activities')"
-            ><span>{{ $t("menu.activities") }}</span></g-link
-          >
-        </li>
-        <li>
-          <g-link
-            class="nav__link"
-            :to="$tp($t('slug.restaurant'))"
-            :title="$t('menu.restaurant')"
-            ><span>{{ $t("menu.restaurant") }}</span></g-link
-          >
-        </li>
-        <li>
-          <g-link
-            class="nav__link"
-            :to="$tp($t('slug.meetings'))"
-            :title="$t('menu.meetings')"
-            ><span>{{ $t("menu.meetings") }}</span></g-link
-          >
-        </li>
-        <li>
-          <g-link
-            class="nav__link"
-            :to="$tp($t('slug.guestharbor'))"
-            :title="$t('menu.guestharbor')"
-            ><span>{{ $t("menu.guestharbor") }}</span></g-link
-          >
-        </li>
-        <li>
-          <g-link
-            class="nav__link"
-            :to="$tp($t('slug.about'))"
-            :title="$t('menu.about')"
-            ><span>{{ $t("menu.about") }}</span></g-link
-          >
-        </li>
-        <li><LocaleSwitcher /></li>
-        <!--<ToggleTheme />-->
-      </ul>
+      <MainMenu />
+      <LocaleSwitcher class="language" />
     </nav>
     <div class="nav-mobile-wrapper" :class="{ open: showMenu }">
       <div role="button" @click="toggleMenu" class="menu-toggle">
@@ -61,58 +11,8 @@
         ><MenuIcon class="menu-toggle-icon" :open="showMenu" />
       </div>
       <nav class="nav-mobile">
-        <ul>
-          <li>
-            <g-link
-              class="nav__link"
-              :to="$tp($t('slug.rooms'))"
-              :title="$t('menu.rooms')"
-              ><span>{{ $t("menu.rooms") }}</span></g-link
-            >
-          </li>
-          <li>
-            <g-link
-              class="nav__link"
-              :to="$tp($t('slug.activities'))"
-              :title="$t('menu.activities')"
-              ><span>{{ $t("menu.activities") }}</span></g-link
-            >
-          </li>
-          <li>
-            <g-link
-              class="nav__link"
-              :to="$tp($t('slug.restaurant'))"
-              :title="$t('menu.restaurant')"
-              ><span>{{ $t("menu.restaurant") }}</span></g-link
-            >
-          </li>
-          <li>
-            <g-link
-              class="nav__link"
-              :to="$tp($t('slug.meetings'))"
-              :title="$t('menu.meetings')"
-              ><span>{{ $t("menu.meetings") }}</span></g-link
-            >
-          </li>
-          <li>
-            <g-link
-              class="nav__link"
-              :to="$tp($t('slug.guestharbor'))"
-              :title="$t('menu.guestharbor')"
-              ><span>{{ $t("menu.guestharbor") }}</span></g-link
-            >
-          </li>
-          <li>
-            <g-link
-              class="nav__link"
-              :to="$tp($t('slug.about'))"
-              :title="$t('menu.about')"
-              ><span>{{ $t("menu.about") }}</span></g-link
-            >
-          </li>
-          <li><LocaleSwitcher /></li>
-          <!--<ToggleTheme />-->
-        </ul>
+        <MainMenu />
+        <LocaleSwitcher class="language" />
       </nav>
     </div>
   </header>
@@ -123,6 +23,7 @@ import Logo from "@/components/Logo";
 import LocaleSwitcher from "@/components/tools/LocaleSwitcher";
 import ToggleTheme from "@/components/tools/ToggleTheme";
 import MenuIcon from "@/components/icons/MenuIcon.vue";
+import MainMenu from "@/components/MainMenu";
 
 export default {
   components: {
@@ -130,6 +31,7 @@ export default {
     LocaleSwitcher,
     ToggleTheme,
     MenuIcon,
+    MainMenu,
   },
   data() {
     return {
@@ -160,49 +62,6 @@ export default {
 }
 .nav-main {
   width: 100%;
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    li {
-      display: block;
-    }
-  }
-}
-.nav__link {
-  display: block;
-  color: inherit;
-  text-decoration: none;
-  position: relative;
-
-  font-family: var(--font-sans);
-  text-transform: uppercase;
-
-  span {
-    position: relative;
-    z-index: 10;
-  }
-
-  &:before {
-    display: block;
-    content: attr(title);
-    font-style: italic;
-    height: 0;
-    overflow: hidden;
-    visibility: hidden;
-  }
-
-  &.active--exact,
-  &:hover {
-    font-style: italic;
-  }
-  &.active--exact {
-    color: var(--color-active);
-  }
 }
 
 .nav-mobile-wrapper {
@@ -248,7 +107,7 @@ export default {
   }
 }
 .menu-toggle {
-  position: fixed;
+  position: absolute;
   height: 2rem;
   display: flex;
   align-items: center;
@@ -273,6 +132,12 @@ export default {
     text-transform: uppercase;
     font-size: var(--font-size-m);
   }
+}
+
+.language {
+  position: absolute;
+  top: var(--spacing-sitepadding);
+  right: var(--spacing-sitepadding);
 }
 
 @media (max-width: 1000px) {
@@ -306,6 +171,12 @@ export default {
   }
   .menu-toggle {
     display: flex;
+  }
+  .language {
+    position: absolute;
+    top: auto;
+    bottom: var(--spacing-sitepadding);
+    right: var(--spacing-sitepadding);
   }
 }
 
