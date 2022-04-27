@@ -1,9 +1,9 @@
 <template>
-  <article class="article-item room">
+  <article class="article-item room" :class="{ expanded: expanded }">
     <img
-      v-if="room.image"
+      v-if="room.image.image"
       :src="
-        $urlForImage(room.image, $static.metadata.sanityOptions)
+        $urlForImage(room.image.image, $static.metadata.sanityOptions)
           .width(600)
           .height(400)
           .auto('format')
@@ -14,9 +14,9 @@
     />
     <div class="room-text">
       <h3>{{ room.title[$context.locale] }}</h3>
-      <!--<p>
+      <p class="room-lead">
         {{ room.lead[$context.locale] }}
-      </p>-->
+      </p>
     </div>
     <!--<BlockContent :blocks="room._rawBio" v-if="room._rawBio" />-->
     <g-link
@@ -47,6 +47,10 @@ export default {
   },
   props: {
     room: Object,
+    expanded: {
+      type: Boolean,
+      default: false,
+    },
   },
 };
 </script>
@@ -70,6 +74,9 @@ export default {
       color: var(--color-yellow-dark);
     }
   }
+  &-lead {
+    display: none;
+  }
   &-link {
     position: absolute;
     top: 0;
@@ -80,6 +87,29 @@ export default {
     overflow: hidden;
     text-indent: -9999px;
     z-index: 0;
+  }
+}
+
+@media (min-width: 1400px) {
+  .room {
+    grid-column: span 2;
+  }
+}
+
+.room.expanded {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+
+  .room-text {
+    text-align: left;
+
+    h3 {
+      font-size: var(--font-size-xl);
+    }
+    .room-lead {
+      display: block;
+    }
   }
 }
 </style>

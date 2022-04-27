@@ -64,8 +64,10 @@ query {
           }
         }
         image {
-          asset {
-            url
+          image {
+            asset {
+              url
+            }
           }
           alt {
             no

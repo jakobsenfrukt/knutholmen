@@ -9,17 +9,30 @@ export default {
       title: 'Innholdsblokker',
       of: [
         {
+          name: 'localeBody',
           type: 'localeBody',
-          title: 'Brødtekst'
+          title: 'Tekstblokk'
         },
         {
+          name: 'textAndImage',
+          type: 'textAndImage',
+          title: 'Tekst + bilde'
+        },
+        {
+          name: 'localeFigureCaptioned',
           type: 'localeFigureCaptioned',
-          title: 'Bilde med bildetekst'
+          title: 'Bilde (fullbredde)'
         },
         {
-          type: 'localeFigure',
-          title: 'Bilde uten bildetekst'
-        }
+          name: 'imageColumns',
+          type: 'imageColumns',
+          title: 'Bilder i kolonner'
+        },
+        {
+          name: 'sectionWithHeading',
+          type: 'sectionWithHeading',
+          title: 'Seksjon med overskrift'
+        },
       ]
     }
   ]

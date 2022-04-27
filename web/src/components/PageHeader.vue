@@ -12,9 +12,9 @@
       <Button v-if="button" :type="button" />
     </div>
     <g-image
-      v-if="pageHeader.image"
+      v-if="pageHeader.image.image"
       :src="
-        $urlForImage(pageHeader.image, $static.metadata.sanityOptions)
+        $urlForImage(pageHeader.image.image, $static.metadata.sanityOptions)
           .width(1200)
           .auto('format')
           .url()

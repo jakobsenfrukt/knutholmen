@@ -1,9 +1,9 @@
 <template>
   <article class="article-item article">
     <img
-      v-if="article.image"
+      v-if="article.image.image"
       :src="
-        $urlForImage(article.image, $static.metadata.sanityOptions)
+        $urlForImage(article.image.image, $static.metadata.sanityOptions)
           .width(600)
           .height(400)
           .auto('format')
@@ -66,8 +66,8 @@ export default {
     background: var(--color-white);
 
     h3 {
-      margin: 0 0 0.8rem;
-      font-family: var(--font-serif);
+      margin: 0.5rem 0 1rem;
+      font-weight: 300;
       font-size: var(--font-size-l);
       color: var(--color-yellow-dark);
       span {

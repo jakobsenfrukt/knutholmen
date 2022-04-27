@@ -37,7 +37,7 @@ export default {
   preview: {
     select: {
       title: 'title.no',
-      media: 'image'
+      media: 'image.image'
     }
   }
 }

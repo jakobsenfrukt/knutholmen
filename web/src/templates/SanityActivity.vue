@@ -26,8 +26,10 @@ query activity ($id: ID!) {
       }
     }
     image {
-      asset {
-        url
+      image {
+        asset {
+          url
+        }
       }
       alt {
         no

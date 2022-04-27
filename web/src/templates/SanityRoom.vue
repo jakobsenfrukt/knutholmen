@@ -3,9 +3,9 @@
     <main class="page-content">
       <h1>{{ $page.room.title[$context.locale] }}</h1>
       <img
-        v-if="$page.room.image"
+        v-if="$page.room.image.image"
         :src="
-          $urlForImage($page.room.image, $page.metadata.sanityOptions)
+          $urlForImage($page.room.image.image, $page.metadata.sanityOptions)
             .width(600)
             .height(400)
             .auto('format')
@@ -46,8 +46,10 @@ query ($id: ID!) {
       }
     }
     image {
-      asset {
-        url
+      image {
+        asset {
+          url
+        }
       }
       alt {
         no

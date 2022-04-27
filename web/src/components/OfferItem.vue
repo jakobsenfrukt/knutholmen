@@ -1,9 +1,9 @@
 <template>
   <article class="article-item offer">
     <img
-      v-if="offer.image"
+      v-if="offer.image.image"
       :src="
-        $urlForImage(offer.image, $static.metadata.sanityOptions)
+        $urlForImage(offer.image.image, $static.metadata.sanityOptions)
           .width(600)
           .height(400)
           .auto('format')

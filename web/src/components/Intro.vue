@@ -1,9 +1,12 @@
 <template>
   <section class="intro">
     <g-image
-      v-if="$static.frontpage.image"
+      v-if="$static.frontpage.image.image"
       :src="
-        $urlForImage($static.frontpage.image, $static.metadata.sanityOptions)
+        $urlForImage(
+          $static.frontpage.image.image,
+          $static.metadata.sanityOptions
+        )
           .width(1200)
           .auto('format')
           .url()
@@ -33,9 +36,11 @@ query {
       en
     }
     image {
-      asset {
-        _id
-        url
+      image {
+        asset {
+          _id
+          url
+        }
       }
       alt {
         no

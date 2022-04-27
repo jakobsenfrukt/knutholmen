@@ -30,8 +30,10 @@ query offer ($id: ID!) {
       }
     }
     image {
-      asset {
-        url
+      image {
+        asset {
+          url
+        }
       }
       alt {
         no

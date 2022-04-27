@@ -1,5 +1,5 @@
 <template>
-  <section class="room-grid">
+  <section class="room-grid" :class="{ expanded: expanded }">
     <div class="section-intro room-intro" v-if="showIntro">
       <g-link class="section-heading--link" :to="$tp(`${$t('slug.rooms')}`)"
         ><span>{{ $t("menu.rooms") }}</span></g-link
@@ -15,6 +15,8 @@
       v-for="room in $static.rooms.edges.slice(0, limit)"
       :key="room.id"
       :room="room.node"
+      :expanded="expanded"
+      class="room"
     />
     <div class="section-button" v-if="!hideButton">
       <Button :text="$t('links.rooms')" :link="$tp(`${$t('slug.rooms')}`)" />
@@ -60,8 +62,10 @@ query {
           }
         }
         image {
-          asset {
-            url
+          image {
+            asset {
+              url
+            }
           }
           alt {
             no
@@ -100,22 +104,42 @@ export default {
       type: Boolean,
       default: false,
     },
+    expanded: {
+      type: Boolean,
+      default: false,
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .room-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: var(--spacing-sitepadding);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.room-intro {
+  width: 100%;
 }
 .room-heading {
   color: var(--color-yellow-dark);
 }
-@media (min-width: 1400px) {
-  .room-grid {
-    grid-template-columns: repeat(3, 1fr);
+.room {
+  width: calc(34% - var(--spacing-sitepadding));
+}
+.section-button {
+  width: 100%;
+}
+
+.room-grid.expanded {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 70rem;
+  margin: 0 auto;
+
+  .room {
+    width: 100%;
   }
 }
 </style>

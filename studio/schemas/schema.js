@@ -32,6 +32,9 @@ import seo from './objects/seo'
 import pageHeader from './objects/pageHeader'
 import pageContent from './objects/pageContent'
 import booking from './objects/booking'
+import imageColumns from './objects/imageColumns'
+import textAndImage from './objects/textAndImage'
+import sectionWithHeading from './objects/sectionWithHeading'
 
 // localized objects
 import localeString from './objects/localeString'
@@ -76,6 +79,9 @@ export default createSchema({
     pageHeader,
     pageContent,
     booking,
+    imageColumns,
+    textAndImage,
+    sectionWithHeading,
     // localized objects
     localeString,
     localeText,

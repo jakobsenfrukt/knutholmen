@@ -1,11 +1,16 @@
 export default {
   name: 'localeFigureCaptioned',
-  type: 'image',
+  type: 'object',
   title: 'Bilde med bildetekst',
-  options: {
-    hotspot: true
-  },
   fields: [
+    {
+      name: 'image',
+      type: 'image',
+      title: 'Bilde',
+      options: {
+        hotspot: true
+      },
+    },
     {
       name: 'caption',
       type: 'localeString',
@@ -27,8 +32,8 @@ export default {
   ],
   preview: {
     select: {
-      imageUrl: 'asset.url',
-      title: 'caption'
+      imageUrl: 'image.asset.url',
+      title: 'caption.no'
     }
   }
 }

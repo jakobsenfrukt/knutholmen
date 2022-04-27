@@ -1,9 +1,9 @@
 <template>
   <article class="article-item activity">
     <img
-      v-if="activity.image"
+      v-if="activity.image.image"
       :src="
-        $urlForImage(activity.image, $static.metadata.sanityOptions)
+        $urlForImage(activity.image.image, $static.metadata.sanityOptions)
           .width(600)
           .height(400)
           .auto('format')

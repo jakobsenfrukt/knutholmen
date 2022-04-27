@@ -1,11 +1,16 @@
 export default {
   name: 'localeFigure',
-  type: 'image',
-  title: 'Bilde',
-  options: {
-    hotspot: true
-  },
+  type: 'object',
+  title: 'Bilde med alternativ tekst',
   fields: [
+    {
+      name: 'image',
+      type: 'image',
+      title: 'Bilde',
+      options: {
+        hotspot: true
+      },
+    },
     {
       name: 'alt',
       type: 'localeString',
@@ -19,8 +24,8 @@ export default {
   ],
   preview: {
     select: {
-      imageUrl: 'asset.url',
-      title: 'alt.en'
+      imageUrl: 'image.asset.url',
+      title: 'alt.no'
     }
   }
 }

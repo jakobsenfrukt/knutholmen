@@ -35,9 +35,11 @@ query {
         en
       }
       image {
-        asset {
-          _id
-          url
+        image {
+          asset {
+            _id
+            url
+          }
         }
         alt {
           no

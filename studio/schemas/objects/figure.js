@@ -1,11 +1,16 @@
 export default {
   name: 'figure',
-  type: 'image',
-  title: 'Bilde',
-  options: {
-    hotspot: true
-  },
+  type: 'object',
+  title: 'Bilde med alternativ tekst',
   fields: [
+    {
+      name: 'image',
+      type: 'image',
+      title: 'Bilde',
+      options: {
+        hotspot: true
+      },
+    },
     {
       name: 'alt',
       type: 'string',
@@ -18,7 +23,7 @@ export default {
   ],
   preview: {
     select: {
-      imageUrl: 'asset.url',
+      imageUrl: 'image.asset.url',
       title: 'alt'
     }
   }

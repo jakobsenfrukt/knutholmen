@@ -1,11 +1,16 @@
 export default {
   name: 'figureCaptioned',
-  type: 'image',
+  type: 'object',
   title: 'Bilde med bildetekst',
-  options: {
-    hotspot: true
-  },
   fields: [
+    {
+      name: 'image',
+      type: 'image',
+      title: 'Bilde',
+      options: {
+        hotspot: true
+      },
+    },
     {
       name: 'caption',
       type: 'string',
@@ -26,7 +31,7 @@ export default {
   ],
   preview: {
     select: {
-      imageUrl: 'asset.url',
+      imageUrl: 'image.asset.url',
       title: 'caption'
     }
   }

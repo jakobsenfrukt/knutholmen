@@ -58,9 +58,11 @@ query {
         locale
         lead
         image {
-          asset {
-            _id
-            url
+          image {
+            asset {
+              _id
+              url
+            }
           }
           alt
         }

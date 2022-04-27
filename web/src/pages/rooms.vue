@@ -2,7 +2,6 @@
   <Layout>
     <PageHeader :pageHeader="$page.roomPage.pageHeader" button="bookRoom" />
     <main class="page-content">
-      <p>Her kjem du til ei eigen nettside for booking. Velkomen til havs!</p>
       <div class="body-content" v-if="$page.roomPage.tempbody">
         <block-content
           :blocks="$page.roomPage.tempbody._rawNo"
@@ -15,7 +14,7 @@
           class="block-content"
         />
       </div>
-      <RoomGrid hideButton />
+      <RoomGrid expanded hideButton />
     </main>
   </Layout>
 </template>
@@ -37,9 +36,11 @@ query {
         en
       }
       image {
-        asset {
-          _id
-          url
+        image {
+          asset {
+            _id
+            url
+          }
         }
         alt {
           no
