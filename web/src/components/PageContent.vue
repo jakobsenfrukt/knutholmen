@@ -162,7 +162,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .page-content img {
   display: block;
   border-radius: var(--border-radius);
@@ -208,6 +208,12 @@ figcaption {
   margin: 0 calc(var(--spacing-sitepadding) * -2);
   padding: calc(var(--spacing-sitepadding) * 2);
 
+  + .sectionWithHeading {
+    &:nth-of-type(odd) {
+      background-color: var(--color-background);
+    }
+  }
+
   .wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -218,9 +224,9 @@ figcaption {
     &.noimage {
       grid-template-columns: 1fr;
       .block-content {
-        margin: 3rem auto;
+        margin: 3rem 0;
         p {
-          margin: 0 auto;
+          margin: 0;
         }
       }
     }
@@ -247,6 +253,28 @@ figcaption {
     display: block;
     figure {
       margin-bottom: 2rem;
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .textAndImage,
+  .sectionWithHeading {
+    &:nth-child(odd) {
+      .text {
+        order: 2;
+      }
+      .image {
+        order: 1;
+      }
+    }
+    &:nth-child(even) {
+      .text {
+        order: 1;
+      }
+      .image {
+        order: 2;
+      }
     }
   }
 }

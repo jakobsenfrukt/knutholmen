@@ -1,5 +1,5 @@
 .page-content {
-  padding: var(--spacing-sitepadding) var(--spacing-sitepadding) calc(var(--spacing-sitepadding) * 5);
+  padding: var(--spacing-sitepadding) var(--spacing-sitepadding) 0;
   background: var(--color-background);
   border-bottom-left-radius: var(--border-radius-l);
   border-bottom-right-radius: var(--border-radius-l);
@@ -35,6 +35,12 @@
 }
 p.block-content {
   margin: 1rem auto 1.5rem;
+}
+.sectionWithHeading .block-content {
+  margin: 3rem 0;
+  p {
+    margin: 0;
+  }
 }
 
 .page-title {
