@@ -8,7 +8,8 @@
     "meetings": "Meetings & events",
     "about": "About",
     "contact": "Contact",
-    "offers": "Offers"
+    "offers": "Offers",
+    "guestharbor": "Guest harbor"
   },
   "links": {
     "offers": "View all offers",
@@ -24,7 +25,8 @@
     "news": "/news",
     "activities": "/activities",
     "restaurant": "/restaurant",
-    "meetings": "/meetings"
+    "meetings": "/meetings",
+    "guestharbor": "/guestharbor"
   },
   "headings": {
     "address": "Visit us",

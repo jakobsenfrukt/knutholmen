@@ -1,9 +1,9 @@
 import S from '@sanity/desk-tool/structure-builder'
 
-import { MdSettings, MdInfo, MdArticle, MdOutlineArticle, MdHome, MdEmail, MdLocalOffer, MdHotel, MdRestaurant, MdDirectionsBoatFilled, MdFolder, MdCake, MdAnchor } from 'react-icons/md'
+import { MdSettings, MdInfo, MdArticle, MdOutlineArticle, MdHome, MdEmail, MdLocalOffer, MdHotel, MdRestaurant, MdDirectionsBoatFilled, MdFolder, MdCake, MdAnchor, MdHouseboat } from 'react-icons/md'
 
 const hiddenDocTypes = listItem =>
-  !['general', 'article', 'articlePage', 'about', 'frontpage', 'contact', 'offer', 'room', 'roomPage', 'restaurantPage', 'offerPage', 'activityPage', 'activity', 'eventPage', 'guestinfo'].includes(listItem.getId())
+  !['general', 'article', 'articlePage', 'about', 'frontpage', 'contact', 'offer', 'room', 'roomPage', 'restaurantPage', 'offerPage', 'activityPage', 'activity', 'eventPage', 'guestinfo', 'guestHarbor'].includes(listItem.getId())
 
 export default () =>
   S.list()
@@ -144,6 +144,16 @@ export default () =>
             .id('eventPage')
             .schemaType('eventPage')
             .documentId('eventPage')
+        ),
+      S.listItem()
+        .title('Gjestehavn')
+        .icon(MdHouseboat)
+        .child(
+          S.editor()
+            .title('Gjestehavn')
+            .id('guestHarbor')
+            .schemaType('guestHarbor')
+            .documentId('guestHarbor')
         ),
       S.listItem()
         .title('Aktuelt')

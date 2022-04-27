@@ -8,7 +8,8 @@
     "meetings": "Møter & selskap",
     "about": "Om oss",
     "contact": "Kontakt",
-    "offers": "Pakker"
+    "offers": "Pakker",
+    "guestharbor": "Gjestehamn"
   },
   "links": {
     "offers": "Sjå alle pakker",
@@ -24,7 +25,8 @@
     "news": "/aktuelt",
     "activities": "/aktiviteter",
     "restaurant": "/restaurant",
-    "meetings": "/moter"
+    "meetings": "/moter",
+    "guestharbor": "/gjestehamn"
   },
   "headings": {
     "address": "Besøk oss",

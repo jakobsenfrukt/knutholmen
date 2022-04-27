@@ -1,15 +1,15 @@
 <template>
   <Layout>
-    <PageHeader :pageHeader="$page.about.pageHeader" />
-    <main class="page-content about-content">
-      <PageContent :content="$page.about.pageContent.blocks" />
+    <PageHeader :pageHeader="$page.guestHarbor.pageHeader" />
+    <main class="page-content">
+      <PageContent :content="$page.guestHarbor.pageContent.blocks" />
     </main>
   </Layout>
 </template>
 
 <page-query>
 query {
-  about: sanityAbout(id: "about") {
+  guestHarbor: sanityGuestHarbor(id: "guestHarbor") {
     pageHeader {
       title {
         no
@@ -140,19 +140,17 @@ query {
 </page-query>
 
 <script>
-import BlockContent from "~/components/tools/BlockContent";
 import PageHeader from "~/components/PageHeader";
 import PageContent from "~/components/PageContent";
 
 export default {
   components: {
-    BlockContent,
     PageHeader,
     PageContent,
   },
   metaInfo() {
     return {
-      title: this.$page.about.pageHeader.title[this.$context.locale],
+      title: this.$page.guestHarbor.pageHeader.title[this.$context.locale],
     };
   },
 };

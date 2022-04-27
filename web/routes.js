@@ -51,6 +51,11 @@ module.exports = {
       component: "./src/pages/guestinfo.vue",
       ...otherPath("en", "/en/guestinfo")
     },
+    {
+      path: "/gjestehamn",
+      component: "./src/pages/guestharbor.vue",
+      ...otherPath("en", "/en/guestharbor")
+    },
   ],
   en: [
     {
@@ -91,6 +96,11 @@ module.exports = {
       path: "/en/guestinfo",
       component: "./src/pages/guestinfo.vue",
       ...otherPath("no", "/gjesteinfo")
+    },
+    {
+      path: "/en/guestharbor",
+      component: "./src/pages/guestharbor.vue",
+      ...otherPath("no", "/gjestehamn")
     },
   ],
 };

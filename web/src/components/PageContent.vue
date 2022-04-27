@@ -162,8 +162,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-img {
+<style lang="scss">
+.page-content img {
   display: block;
   border-radius: var(--border-radius);
 }
@@ -205,12 +205,13 @@ figcaption {
 }
 .sectionWithHeading {
   background-color: var(--color-red-light);
-  margin: var(--spacing-sitepadding) calc(var(--spacing-sitepadding) * -2);
-  padding: var(--spacing-sitepadding);
+  margin: 0 calc(var(--spacing-sitepadding) * -2);
+  padding: calc(var(--spacing-sitepadding) * 2);
 
   .wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: calc(var(--spacing-sitepadding) * 2);
     align-items: center;
     max-width: 70rem;
     margin: 0 auto;
@@ -218,10 +219,12 @@ figcaption {
       grid-template-columns: 1fr;
       .block-content {
         margin: 3rem auto;
+        p {
+          margin: 0 auto;
+        }
       }
     }
   }
-
   .text {
     width: 100%;
     max-width: 70rem;
@@ -229,6 +232,22 @@ figcaption {
   }
   .block-content {
     margin: 3rem 0;
+    p {
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .textAndImage,
+  .sectionWithHeading .wrapper {
+    grid-template-columns: 1fr;
+  }
+  .imageColumns {
+    display: block;
+    figure {
+      margin-bottom: 2rem;
+    }
   }
 }
 </style>
