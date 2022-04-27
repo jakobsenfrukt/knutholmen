@@ -72,14 +72,13 @@ export default {
     h3 {
       margin: 0 0 0.8rem;
       font-size: var(--font-size-l);
-      color: var(--color-yellow-dark);
       span {
         display: block;
         font-family: var(--font-sans);
         font-size: var(--font-size-xs);
         text-transform: uppercase;
         margin-bottom: 0.8rem;
-        color: var(--color-red-dark);
+        color: var(--color-text);
       }
     }
   }

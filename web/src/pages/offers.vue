@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Layout class="offers">
     <PageHeader :pageHeader="$page.offerPage.pageHeader" />
     <main class="page-content">
       <OfferGrid hideButton />

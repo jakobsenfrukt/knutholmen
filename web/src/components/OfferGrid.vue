@@ -1,5 +1,5 @@
 <template>
-  <section class="offer-grid">
+  <section class="offers offer-grid">
     <div class="section-intro offer-intro" v-if="showIntro">
       <g-link class="section-heading--link" :to="$tp(`${$t('slug.offers')}`)"
         ><span>{{ $t("menu.offers") }}</span></g-link
@@ -116,7 +116,6 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-sitepadding);
-  background: var(--color-red-light);
 }
 @media (min-width: 1200px) {
   .offer-grid {

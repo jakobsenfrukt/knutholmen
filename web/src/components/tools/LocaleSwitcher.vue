@@ -50,7 +50,7 @@ export default {
 <style lang="scss" scoped>
 .locale-switcher {
   display: flex;
-  color: var(--color-highlight);
+  color: var(--color-text);
 }
 .locale-button {
   outline: none;

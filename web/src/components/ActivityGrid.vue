@@ -1,5 +1,5 @@
 <template>
-  <section class="activity-grid">
+  <section class="activities activity-grid">
     <div class="section-intro activity-intro" v-if="showIntro">
       <g-link
         class="section-heading--link"

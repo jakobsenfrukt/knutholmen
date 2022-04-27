@@ -60,6 +60,7 @@ export default {
   position: relative;
   overflow: hidden;
   border-radius: var(--border-radius);
+  background: var(--color-white);
   &-image {
     width: 100%;
     object-fit: cover;

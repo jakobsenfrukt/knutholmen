@@ -50,6 +50,7 @@ export default {
 .site-header {
   width: 100%;
   padding: var(--spacing-sitepadding);
+  text-align: center;
 
   a {
     color: inherit;
@@ -57,11 +58,14 @@ export default {
   }
 }
 .logo {
-  width: 20rem;
-  margin: calc(var(--spacing-sitepadding) / 2) auto var(--spacing-sitepadding);
+  width: 17rem;
+  margin: 0 auto;
 }
 .nav-main {
-  width: 100%;
+  display: inline-block;
+  border-top: 1px solid var(--color-text);
+  margin-top: 1.5rem;
+  padding-top: 0.8rem;
 }
 
 .nav-mobile-wrapper {

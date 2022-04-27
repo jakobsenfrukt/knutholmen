@@ -1,5 +1,5 @@
 <template>
-  <section class="restaurant-section">
+  <section class="restaurant restaurant-section">
     <div class="section-intro">
       <g-link
         class="section-heading--link"
@@ -16,6 +16,7 @@
         :text="$t('links.restaurant')"
         :link="$tp(`${$t('slug.restaurant')}`)"
       />
+      <Button type="bookTable" />
     </div>
   </section>
 </template>

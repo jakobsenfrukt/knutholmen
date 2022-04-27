@@ -1,9 +1,11 @@
 <template>
-  <section class="article-grid">
+  <section class="news article-grid">
     <div class="section-intro article-intro" v-if="showIntro">
-      <span class="section-heading">{{
-        $static.articlePage.pageHeader.title[$context.locale]
-      }}</span>
+      <span class="section-heading"
+        ><span>{{
+          $static.articlePage.pageHeader.title[$context.locale]
+        }}</span></span
+      >
       <h2 class="article-heading">
         {{ $static.articlePage.pageHeader.heading[$context.locale] }}
       </h2>
@@ -110,7 +112,6 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-sitepadding);
-  background: var(--color-red-light);
 }
 @media (min-width: 1200px) {
   .article-grid {

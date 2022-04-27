@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Layout class="restaurant">
     <PageHeader
       :pageHeader="$page.restaurantPage.pageHeader"
       button="bookTable"

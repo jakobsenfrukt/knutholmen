@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="button-wrapper">
     <!-- Book room -->
     <div v-if="type && type === 'bookRoom'">
       <a
@@ -53,7 +53,7 @@
     <a class="button" v-else-if="link && blank" :href="link" target="_blank">{{
       text
     }}</a>
-    <a class="button" v-else-if="link" :href="link">{{ text }}</a>
+    <a class="button ribbon" v-else-if="link" :href="link">{{ text }}</a>
   </div>
 </template>
 
@@ -150,6 +150,7 @@ export default {
 <style lang="scss" scoped>
 .button {
   display: inline-block;
+  position: relative;
   background: var(--color-text);
   color: var(--color-background);
   outline: none;
@@ -169,6 +170,43 @@ export default {
   &.large {
     padding: 1rem 2.6rem;
   }
+  &.ribbon {
+    &:before {
+      content: "";
+      height: 0;
+      width: 0;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -1.5rem;
+      border-top: 1.5rem solid var(--color-text);
+      border-bottom: 1.5rem solid var(--color-text);
+      border-right: 1.5rem solid transparent;
+      border-left: 1.5rem solid transparent;
+      transition: var(--transition-hover);
+    }
+    &:after {
+      content: "";
+      height: 0;
+      width: 0;
+      display: block;
+      position: absolute;
+      top: 0;
+      right: -1.5rem;
+      border-top: 1.5rem solid var(--color-text);
+      border-bottom: 1.5rem solid var(--color-text);
+      border-right: 1.5rem solid transparent;
+      border-left: 1.5rem solid transparent;
+      transition: var(--transition-hover);
+    }
+    &:hover {
+      &:before,
+      &:after {
+        border-top-color: var(--color-hover);
+        border-bottom-color: var(--color-hover);
+      }
+    }
+  }
 }
 .info {
   font-size: var(--font-size-xs);
@@ -177,5 +215,12 @@ export default {
   margin: 1em 0;
 
   display: none;
+}
+.button-wrapper + .button-wrapper {
+  margin-top: 0.5rem;
+}
+.site-footer .button {
+  color: var(--color-blue-dark);
+  background: var(--color-white);
 }
 </style>

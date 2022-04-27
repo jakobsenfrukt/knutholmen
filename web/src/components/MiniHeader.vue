@@ -1,9 +1,11 @@
 <template>
   <header class="site-header-wrapper">
     <div class="site-header mini" :class="{ inview: isInView }">
+      <g-link class="logo" :to="$tp('/')"><Logo icon/></g-link>
       <nav class="nav nav-main">
         <MainMenu />
       </nav>
+      <Totop />
 
       <div class="nav-mobile-wrapper" :class="{ open: showMenu }">
         <div class="menu-toggle-wrapper">
@@ -28,17 +30,21 @@
 </template>
 
 <script>
+import Logo from "@/components/Logo.vue";
 import MainMenu from "@/components/MainMenu.vue";
 import MenuIcon from "@/components/icons/MenuIcon.vue";
 import IntersectionObserver from "~/components/tools/IntersectionObserver";
 import LocaleSwitcher from "~/components/tools/LocaleSwitcher";
+import Totop from "~/components/tools/Totop";
 
 export default {
   components: {
+    Logo,
     MainMenu,
     MenuIcon,
     IntersectionObserver,
     LocaleSwitcher,
+    Totop,
   },
   data() {
     return {
@@ -101,6 +107,13 @@ export default {
     height: 100%;
     z-index: 100;
   }
+}
+
+.logo {
+  width: 1.5rem;
+  position: absolute;
+  top: calc(var(--spacing-sitepadding) / 4);
+  left: calc(var(--spacing-sitepadding) / 4);
 }
 
 .observer {

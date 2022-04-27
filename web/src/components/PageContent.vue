@@ -163,6 +163,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.content-block {
+  &:first-of-type {
+    margin-top: 0;
+  }
+  &:last-of-type {
+    padding-bottom: 6rem;
+  }
+}
 .page-content img {
   display: block;
   border-radius: var(--border-radius);
@@ -209,9 +217,10 @@ figcaption {
   padding: calc(var(--spacing-sitepadding) * 2);
 
   + .sectionWithHeading {
-    &:nth-of-type(odd) {
-      background-color: var(--color-background);
-    }
+    background-color: var(--color-background);
+  }
+  + .sectionWithHeading + .sectionWithHeading {
+    background-color: var(--color-background);
   }
 
   .wrapper {

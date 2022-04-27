@@ -1,23 +1,8 @@
 <template>
   <footer class="site-footer">
-    <div class="logo-wrapper">
+    <!--<div class="logo-wrapper">
       <g-link :to="$tp('/')" class="logo"><Logo /></g-link>
-    </div>
-    <ul class="contact-list">
-      <li>
-        <h2>{{ $t("headings.address") }}</h2>
-      </li>
-      <li v-if="$static.contact.address">
-        <block-content
-          :blocks="$static.contact.address._rawNo"
-          v-if="$static.contact.address._rawNo && $context.locale == 'no'"
-        />
-        <block-content
-          :blocks="$static.contact.address._rawEn"
-          v-else-if="$static.contact.address._rawEn && $context.locale == 'en'"
-        />
-      </li>
-    </ul>
+    </div>-->
     <ul class="contact-list">
       <li>
         <h2>{{ $t("headings.contact") }}</h2>
@@ -50,7 +35,23 @@
         >
       </li>
     </ul>
+    <ul class="contact-list">
+      <li>
+        <h2>{{ $t("headings.address") }}</h2>
+      </li>
+      <li v-if="$static.contact.address">
+        <block-content
+          :blocks="$static.contact.address._rawNo"
+          v-if="$static.contact.address._rawNo && $context.locale == 'no'"
+        />
+        <block-content
+          :blocks="$static.contact.address._rawEn"
+          v-else-if="$static.contact.address._rawEn && $context.locale == 'en'"
+        />
+      </li>
+    </ul>
     <div class="giftcard">
+      <h2>{{ $t("headings.giftcard") }}</h2>
       <Button type="giftcard" />
     </div>
     <ul class="footer-logos">
@@ -111,18 +112,24 @@ export default {
   }
   .logo {
     display: inline-block;
+    width: 20rem;
   }
   a {
     color: inherit;
   }
   h2 {
     font-size: var(--font-size-l);
+    color: currentColor;
   }
 }
 .contact-list {
   list-style: none;
-  margin: 0 0 6rem;
+  margin: 0 0 3rem;
   padding: 0;
+}
+.giftcard {
+  grid-column: span 2;
+  margin-bottom: 12rem;
 }
 .footer-logos {
   list-style: none;
@@ -142,17 +149,16 @@ export default {
   }
 }
 .footer-logos--visa {
-  background: white;
+  background: #000;
   margin: 0 calc(var(--spacing-sitepadding) * -1);
   padding: calc(var(--spacing-sitepadding) / 4) var(--spacing-sitepadding);
   justify-content: flex-end;
 
   li {
-    height: 2rem;
+    height: 1.2rem;
     img {
       max-height: 100%;
       opacity: 0.8;
-      filter: grayscale(0.3);
     }
   }
 }

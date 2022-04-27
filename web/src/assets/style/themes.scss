@@ -1,0 +1,126 @@
+.layout {
+  background-attachment: fixed;
+}
+
+.intro {
+  --color-background: var(--color-white);
+  --color-text: var(--color-blue-dark);
+  --color-highlight: var(--color-red);
+
+  background-color: var(--color-background);
+  background-image: url('/assets/graphics/bgs/noise2.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  color: var(--color-text);
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-highlight);
+  }
+  .intro {
+    background: none;
+  }
+}
+
+.rooms {
+  --color-background: var(--color-white);
+  --color-text: var(--color-blue-dark);
+  --color-highlight: var(--color-purple);
+
+  background-color: var(--color-background);
+  background-image: url('/assets/graphics/bgs/noise3.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  color: var(--color-text);
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-highlight);
+  }
+  .rooms {
+    background: none;
+  }
+}
+
+.offers {
+  --color-background: var(--color-red-light);
+  --color-text: var(--color-blue-dark);
+  --color-highlight: var(--color-purple);
+
+  background-color: var(--color-background);
+  background-image: url('/assets/graphics/bgs/noise1.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  color: var(--color-text);
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-highlight);
+  }
+}
+
+.activities {
+  --color-background: var(--color-red-light);
+  --color-text: var(--color-blue-dark);
+  --color-highlight: var(--color-red);
+
+  background-color: var(--color-background);
+  background-image: url('/assets/graphics/bgs/noise1.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  color: var(--color-text);
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-highlight);
+  }
+  .activities {
+    background: none;
+  }
+}
+
+.restaurant {
+  --color-background: var(--color-white);
+  --color-text: var(--color-blue-dark);
+  --color-highlight: var(--color-green-text);
+
+  background-color: var(--color-background);
+  background-image: url('/assets/graphics/bgs/noise2.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  color: var(--color-text);
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-highlight);
+  }
+  .restaurant {
+    background: none;
+  }
+}
+
+.news {
+  --color-background: var(--color-red-light);
+  --color-text: var(--color-blue-dark);
+  --color-highlight: var(--color-red);
+
+  background-color: var(--color-background);
+  background-image: url('/assets/graphics/bgs/noise1.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  color: var(--color-text);
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-highlight);
+  }
+  .news {
+    background: none;
+  }
+}

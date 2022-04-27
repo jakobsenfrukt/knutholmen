@@ -1,5 +1,5 @@
 <template>
-  <section class="room-grid" :class="{ expanded: expanded }">
+  <section class="rooms room-grid" :class="{ expanded: expanded }">
     <div class="section-intro room-intro" v-if="showIntro">
       <g-link class="section-heading--link" :to="$tp(`${$t('slug.rooms')}`)"
         ><span>{{ $t("menu.rooms") }}</span></g-link

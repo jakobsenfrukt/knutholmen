@@ -51,7 +51,6 @@ export default {
 
 <style lang="scss" scoped>
 .page-header {
-  background: var(--color-background);
   color: var(--color-text);
   padding: var(--spacing-sitepadding);
   display: grid;

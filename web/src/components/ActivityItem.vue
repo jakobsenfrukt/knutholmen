@@ -63,6 +63,7 @@ export default {
   position: relative;
   border-radius: var(--border-radius);
   overflow: hidden;
+  background: var(--color-white);
   &-image {
     display: block;
   }
@@ -73,10 +74,6 @@ export default {
       margin: 0.5rem 0 1rem;
       font-weight: 300;
       font-size: var(--font-size-l);
-      color: var(--color-red);
-    }
-    p {
-      color: var(--color-text);
     }
   }
   &-link {

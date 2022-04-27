@@ -69,7 +69,7 @@ export default {
       margin: 0.5rem 0 1rem;
       font-weight: 300;
       font-size: var(--font-size-l);
-      color: var(--color-yellow-dark);
+      color: var(--color-highlight);
       span {
         display: block;
         font-family: var(--font-sans);
@@ -77,7 +77,7 @@ export default {
         font-style: italic;
         text-transform: uppercase;
         margin-bottom: 0.8rem;
-        color: var(--color-red-dark);
+        color: var(--color-text);
       }
     }
   }

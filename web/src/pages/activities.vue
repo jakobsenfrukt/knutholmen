@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Layout class="activities">
     <PageHeader
       :pageHeader="$page.activityPage.pageHeader"
       button="bookActivity"

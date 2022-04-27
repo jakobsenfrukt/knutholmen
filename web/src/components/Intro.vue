@@ -63,14 +63,12 @@ export default {
 
 <style lang="scss">
 .intro {
-  background: var(--color-background);
-  color: var(--color-text);
   padding-top: 0 !important;
   gap: var(--spacing-sitepadding);
   img {
     display: block;
     border-radius: var(--border-radius);
-    max-width: 86%;
+    max-width: 60rem;
     margin: 0 auto;
   }
   &-text {
