@@ -21,7 +21,9 @@
       >
         {{ pageHeader.lead[$context.locale] }}
       </p>
-      <Button v-if="button" :type="button" />
+      <div class="button-wrapper" v-if="button">
+        <Button :type="button" />
+      </div>
     </div>
   </header>
 </template>
@@ -60,11 +62,15 @@ export default {
   .text {
     width: 100%;
     text-align: center;
-    h1,
-    p {
-      margin: 3rem auto;
-    }
+    padding: 0 calc(var(--spacing-sitepadding) * 2);
   }
+}
+.page-heading,
+.lead {
+  margin: 3rem auto;
+}
+.page-heading {
+  color: var(--color-highlight);
 }
 .illustration {
   width: 100%;
@@ -84,24 +90,16 @@ export default {
 .page-title {
   display: none;
 }
+.button-wrapper {
+  margin-bottom: 3rem;
+}
 @media (max-width: 1000px) {
-  .page-header {
-    grid-template-columns: 1fr;
-    min-height: 0;
-    text-align: center;
-
-    img {
-      order: 1;
-    }
-    .text {
-      order: 2;
-    }
-    .lead {
-      margin: 0 auto 2rem;
-    }
-  }
   .page-title {
     display: block;
+    margin-top: 3rem;
+  }
+  .page-heading {
+    margin-top: 2rem;
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Layout class="about">
     <PageHeader :pageHeader="$page.about.pageHeader" />
     <main class="page-content about-content">
       <PageContent :content="$page.about.pageContent.blocks" />

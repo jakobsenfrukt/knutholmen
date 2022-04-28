@@ -217,7 +217,7 @@ figcaption {
   margin: 0;
 }
 .sectionWithHeading {
-  background-color: var(--color-red-light);
+  background-color: #f6f6f6;
   margin: 0 calc(var(--spacing-sitepadding) * -2);
   padding: calc(var(--spacing-sitepadding) * 2);
 

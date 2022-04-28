@@ -53,7 +53,7 @@ body {
   --color-background: var(--color-white);
   --color-text: var(--color-blue-dark);
   --color-link: var(--color-green);
-  --color-highlight: var(--color-green-text);
+  --color-highlight: var(--color-blue-dark);
   --color-active: var(--color-yellow);
 
   --color-hover: var(--color-purple);
@@ -79,6 +79,5 @@ body[data-theme="dark"] {
 
     --border-radius: 10px;
     --border-radius-l: 30px;
-    --spacing-sitepadding: 1rem;
   }
 }

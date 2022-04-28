@@ -24,8 +24,6 @@
 
     <svg
       v-else
-      width="683"
-      height="61"
       viewBox="0 0 683 61"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -111,6 +109,8 @@ export default {
 
   svg {
     width: 100%;
+    display: inline-block;
+    vertical-align: center;
     path {
       fill: currentColor;
     }

@@ -21,13 +21,13 @@
 .rooms {
   --color-background: var(--color-white);
   --color-text: var(--color-blue-dark);
-  --color-highlight: var(--color-purple);
+  --color-highlight: var(--color-yellow-dark);
 
   background-color: var(--color-background);
-  background-image: url('/assets/graphics/bgs/noise4.svg');
+  /*background-image: url('/assets/graphics/bgs/noise4.svg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center;*/
 
   color: var(--color-text);
 
@@ -40,16 +40,11 @@
 }
 
 .offers {
-  --color-background: var(--color-red-light);
+  --color-background: var(--color-white);
   --color-text: var(--color-blue-dark);
   --color-highlight: var(--color-purple);
 
   background-color: var(--color-background);
-  background-image: url('/assets/graphics/bgs/noise1.svg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-
   color: var(--color-text);
 
   h1, h2, h3, h4, h5, h6 {
@@ -63,11 +58,6 @@
   --color-highlight: var(--color-green-text);
 
   background-color: var(--color-background);
-  background-image: url('/assets/graphics/bgs/noise3.svg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-
   color: var(--color-text);
 
   h1, h2, h3, h4, h5, h6 {
@@ -84,11 +74,6 @@
   --color-highlight: var(--color-blue-text);
 
   background-color: var(--color-background);
-  background-image: url('/assets/graphics/bgs/noise2.svg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-
   color: var(--color-text);
 
   h1, h2, h3, h4, h5, h6 {
@@ -100,16 +85,27 @@
 }
 
 .news {
-  --color-background: var(--color-red-light);
+  --color-background: var(--color-white);
   --color-text: var(--color-blue-dark);
   --color-highlight: var(--color-red);
 
   background-color: var(--color-background);
-  background-image: url('/assets/graphics/bgs/noise1.svg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  color: var(--color-text);
 
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-highlight);
+  }
+  .news {
+    background: none;
+  }
+}
+
+.about {
+  --color-background: var(--color-white);
+  --color-text: var(--color-blue-dark);
+  --color-highlight: var(--color-blue-dark);
+
+  background-color: var(--color-background);
   color: var(--color-text);
 
   h1, h2, h3, h4, h5, h6 {

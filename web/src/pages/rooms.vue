@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Layout class="rooms">
     <PageHeader :pageHeader="$page.roomPage.pageHeader" button="bookRoom" />
     <main class="page-content">
       <div class="body-content" v-if="$page.roomPage.tempbody">
