@@ -63,6 +63,8 @@ export default {
   overflow: hidden;
   &-image {
     display: block;
+    width: 100%;
+    object-fit: cover;
   }
   &-text {
     padding: calc(var(--spacing-sitepadding) * 0.75);

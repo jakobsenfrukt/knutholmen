@@ -66,6 +66,8 @@ export default {
   background: var(--color-white);
   &-image {
     display: block;
+    width: 100%;
+    object-fit: cover;
   }
   &-text {
     padding: calc(var(--spacing-sitepadding) * 0.75);

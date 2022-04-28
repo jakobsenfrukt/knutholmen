@@ -59,7 +59,7 @@ query {
     }
   }
   rooms: allSanityRoom(
-    sortBy: "title", order: DESC
+    sortBy: "title", order: ASC
   ) {
     edges {
       node {
@@ -150,22 +150,13 @@ export default {
 
 <style lang="scss" scoped>
 .room-grid {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-sitepadding);
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.room-intro {
-  width: 100%;
-}
-.room-heading {
-  color: var(--color-yellow-dark);
-}
-.room {
-  width: calc(34% - var(--spacing-sitepadding));
-}
-.section-button {
-  width: 100%;
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .room-grid.expanded {

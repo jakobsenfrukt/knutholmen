@@ -91,12 +91,6 @@ export default {
   }
 }
 
-@media (min-width: 1400px) {
-  .room {
-    grid-column: span 2;
-  }
-}
-
 .room.expanded {
   display: grid;
   grid-template-columns: 1fr 1fr;
