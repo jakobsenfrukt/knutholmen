@@ -35,7 +35,9 @@
       </div>
     </div>
     <div class="booker-launch">
-      <a :href="searchUrl()" target="_blank" class="button">Søk</a>
+      <a :href="searchUrl()" target="_blank" class="button"
+        >Sjekk tilgjengelighet</a
+      >
     </div>
   </div>
 </template>
@@ -108,6 +110,19 @@ export default {
 
 <style lang="scss" scoped>
 .booker {
+  background: var(--color-white);
+  color: var(--color-blue-dark);
+  display: flex;
+  padding: 0.5rem;
+
   display: none;
+
+  &-date-picker {
+  }
+  &-launch {
+  }
+  .button {
+    word-wrap: nowrap;
+  }
 }
 </style>

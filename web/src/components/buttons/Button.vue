@@ -151,7 +151,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .button {
   display: inline-block;
   position: relative;
@@ -161,9 +161,10 @@ export default {
   border: none;
   font-family: inherit;
   font-size: var(--font-size-s);
+  line-height: 1;
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding: 0.8rem 2rem;
+  padding: 1.2rem 2rem;
   border-radius: var(--border-radius-l);
   text-decoration: none;
   cursor: pointer;

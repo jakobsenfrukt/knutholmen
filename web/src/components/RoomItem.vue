@@ -63,10 +63,11 @@ export default {
   background: var(--color-white);
   &-image {
     width: 100%;
+    height: 100%;
     object-fit: cover;
   }
   &-text {
-    padding: 1rem 2rem;
+    padding: 2rem 2rem;
     text-align: center;
 
     h3 {
@@ -105,6 +106,9 @@ export default {
     .room-lead {
       display: block;
     }
+  }
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
   }
 }
 </style>

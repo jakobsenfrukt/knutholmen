@@ -119,12 +119,11 @@ export default {
 <style lang="scss" scoped>
 .article-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-sitepadding);
-}
-@media (min-width: 1200px) {
-  .article-grid {
-    grid-template-columns: repeat(3, 1fr);
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
   }
 }
 </style>

@@ -135,12 +135,11 @@ export default {
 <style lang="scss" scoped>
 .activity-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-sitepadding);
-}
-@media (min-width: 800px) {
-  .activity-grid {
-    grid-template-columns: repeat(3, 1fr);
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
   }
 }
 </style>
