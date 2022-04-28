@@ -131,6 +131,32 @@
           </figure>
         </div>
       </template>
+
+      <!-- Image gallery blocks -->
+      <template v-if="block._type === 'imageGallery'">
+        <h2>
+          <span>{{ $t("headings.imageGallery") }}</span>
+        </h2>
+        <figure
+          v-for="(image, index) in block.images"
+          :key="index"
+          class="image"
+        >
+          <img
+            v-if="image.image"
+            :src="
+              $urlForImage(image.image, $static.metadata.sanityOptions)
+                .width(600)
+                .auto('format')
+                .url()
+            "
+            :alt="image.alt[$context.locale]"
+          />
+          <figcaption v-if="image.caption && image.caption[$context.locale]">
+            {{ image.caption[$context.locale] }}
+          </figcaption>
+        </figure>
+      </template>
     </div>
   </div>
 </template>
@@ -258,6 +284,53 @@ figcaption {
   }
 }
 
+.imageGallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-sitepadding);
+  margin: var(--spacing-sitepadding) auto;
+  background-color: #f6f6f6;
+  margin: 0 calc(var(--spacing-sitepadding) * -2);
+  padding: calc(var(--spacing-sitepadding) * 2);
+
+  h2 {
+    grid-column: 1 / -1;
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 25rem;
+    margin: 0 auto 1rem;
+    text-decoration: none;
+    font-size: var(--font-size-s);
+    font-style: italic;
+    text-transform: uppercase;
+    color: inherit;
+    text-align: center;
+    &:before {
+      content: " ";
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: var(--color-text);
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+    }
+    span {
+      display: inline-block;
+      background-color: #f6f6f6;
+      padding: 0 1rem;
+      position: relative;
+      z-index: 10;
+    }
+  }
+}
+@media (max-width: 1000px) {
+  .imageGallery {
+    grid-template-columns: 1fr;
+  }
+}
 @media (max-width: 800px) {
   .textAndImage,
   .sectionWithHeading .wrapper {

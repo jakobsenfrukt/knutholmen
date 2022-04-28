@@ -108,9 +108,12 @@
 @media (max-width: 1000px) {
   .main-menu {
     flex-direction: column;
+    &:before {
+      display: none;
+    }
   }
   .nav__link {
-    font-size: var(--font-size-m);
+    font-size: var(--font-size-xl);
   }
 }
 </style>

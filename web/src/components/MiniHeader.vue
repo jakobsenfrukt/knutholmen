@@ -62,6 +62,7 @@ export default {
     },
     onEnterViewport(value) {
       this.isInView = value;
+      this.showMenu = false;
     },
     toggleMenu() {
       this.showMenu = !this.showMenu;
@@ -114,6 +115,7 @@ export default {
   position: absolute;
   top: calc(var(--spacing-sitepadding) / 4);
   left: calc(var(--spacing-sitepadding) / 4);
+  z-index: 1000;
 }
 
 .observer {
@@ -159,28 +161,6 @@ export default {
   flex-direction: column;
 
   display: none;
-
-  &__link {
-    position: relative;
-    display: block;
-    margin-bottom: 1.5rem;
-    font-size: var(--font-m);
-    font-family: var(--font-main);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: var(--letter-spacing);
-    cursor: pointer;
-
-    &.active--exact {
-      font-style: italic;
-      cursor: default;
-      &:hover {
-        &:after {
-          display: none;
-        }
-      }
-    }
-  }
 
   &-wrapper {
     height: 2rem;
@@ -241,6 +221,12 @@ export default {
   }
   .menu-toggle {
     display: flex;
+  }
+  .language {
+    position: absolute;
+    top: auto;
+    bottom: calc(var(--spacing-sitepadding) * 2);
+    right: var(--spacing-sitepadding);
   }
 }
 

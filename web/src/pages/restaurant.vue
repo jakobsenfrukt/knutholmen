@@ -137,6 +137,25 @@ query {
             }
           }
         }
+        ... on SanityImageGallery {
+          _type
+          images {
+            image {
+              asset {
+                _id
+                url
+              }
+            }
+            alt {
+              no
+              en
+            }
+            caption {
+              no
+              en
+            }
+          }
+        }
       }
     }
   }

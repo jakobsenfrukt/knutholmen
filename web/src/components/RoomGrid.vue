@@ -165,6 +165,7 @@ export default {
   max-width: 70rem;
   margin: 0 auto;
   padding-top: 0;
+  overflow: visible;
 
   .room {
     width: 100%;

@@ -8,18 +8,10 @@
       button="bookRoom"
     />
     <main class="page-content">
-      <div class="body-content" v-if="$page.room.body">
-        <block-content
-          :blocks="$page.room.body._rawNo"
-          v-if="$page.room.body._rawNo && $context.locale == 'no'"
-          class="block-content"
-        />
-        <block-content
-          :blocks="$page.room.body._rawEn"
-          v-else-if="$page.room.body._rawEn && $context.locale == 'en'"
-          class="block-content"
-        />
-      </div>
+      <PageContent
+        v-if="$page.room.pageContent"
+        :content="$page.room.pageContent.blocks"
+      />
       <RoomGrid :heading="$t('headings.rooms')" :limit="3" />
     </main>
   </Layout>
@@ -62,9 +54,123 @@ query ($id: ID!) {
       no
       en
     }
-    body {
-      _rawNo
-      _rawEn
+    pageContent {
+      blocks {
+        ... on SanityLocaleBody {
+          _type
+          _rawNo
+          _rawEn
+        }
+        ... on SanityTextAndImage {
+          _type
+          text {
+            _rawNo
+            _rawEn
+          }
+          image {
+            image {
+              asset {
+                _id
+                url
+              }
+            }
+            alt {
+              no
+              en
+            }
+            caption {
+              no
+              en
+            }
+          }
+        }
+        ... on SanityLocaleFigureCaptioned {
+          _type
+          image {
+            asset {
+              _id
+              url
+            }
+          }
+          alt {
+            no
+            en
+          }
+          caption {
+            no
+            en
+          }
+        }
+        ... on SanityImageColumns {
+          _type
+          images {
+            image {
+              asset {
+                _id
+                url
+              }
+            }
+            alt {
+              no
+              en
+            }
+            caption {
+              no
+              en
+            }
+          }
+        }
+        ... on SanitySectionWithHeading {
+          _type
+          title {
+            no
+            en
+          }
+          heading {
+            no
+            en
+          }
+          text {
+            _rawNo
+            _rawEn
+          }
+          image {
+            image {
+              asset {
+                _id
+                url
+              }
+            }
+            alt {
+              no
+              en
+            }
+            caption {
+              no
+              en
+            }
+          }
+        }
+        ... on SanityImageGallery {
+          _type
+          images {
+            image {
+              asset {
+                _id
+                url
+              }
+            }
+            alt {
+              no
+              en
+            }
+            caption {
+              no
+              en
+            }
+          }
+        }
+      }
     }
   }
   roomPage: sanityRoomPage(id: "roomPage") {
@@ -80,12 +186,14 @@ query ($id: ID!) {
 
 <script>
 import PageHeader from "~/components/PageHeaderSecondary";
+import PageContent from "~/components/PageContent";
 import BlockContent from "~/components/tools/BlockContent";
 import RoomGrid from "~/components/RoomGrid";
 
 export default {
   components: {
     PageHeader,
+    PageContent,
     BlockContent,
     RoomGrid,
   },

@@ -63,6 +63,8 @@ export default {
   width: 20rem;
   max-width: 100%;
   margin: 0 auto;
+  position: relative;
+  z-index: 1000;
 }
 .nav-main {
   display: inline-block;
@@ -82,30 +84,11 @@ export default {
   height: 100%;
   width: 100%;
   z-index: 100;
-  background: var(--color-background);
-  color: var(--color-text);
+  background: var(--color-blue-dark);
+  color: var(--color-white);
   display: flex;
   justify-content: center;
   flex-direction: column;
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: var(--spacing-sitepadding);
-  }
-
-  .nav__link {
-    margin-bottom: calc(var(--spacing-sitepadding) * 1.2);
-    font-size: var(--font-size-xl);
-    letter-spacing: var(--letter-spacing);
-    cursor: pointer;
-
-    &.active--exact,
-    &:hover {
-      &:before {
-        display: none;
-      }
-    }
-  }
 
   &-wrapper {
     &.open {
@@ -166,7 +149,7 @@ export default {
     display: block;
   }
   .open {
-    color: var(--color-text);
+    color: var(--color-white);
     .nav-mobile {
       opacity: 1;
       transform: translateY(0);
@@ -181,7 +164,9 @@ export default {
     display: flex;
   }
   .language {
-    display: none;
+    top: auto;
+    bottom: var(--spacing-sitepadding);
+    right: var(--spacing-sitepadding);
   }
 }
 

@@ -80,4 +80,9 @@ export default {
   &:last-of-type {
   }
 }
+@media (max-width: 1000px) {
+  .locale-button {
+    font-size: var(--font-size-m);
+  }
+}
 </style>
