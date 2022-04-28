@@ -4,7 +4,7 @@
     <nav class="nav nav-main">
       <MainMenu />
     </nav>
-    <LocaleSwitcher class="language" />
+    <LocaleSwitcher class="language language-main" />
     <div class="nav-mobile-wrapper" :class="{ open: showMenu }">
       <div role="button" @click="toggleMenu" class="menu-toggle">
         <span class="menu-toggle-text">{{ $t("menu.menu") }}</span
@@ -130,7 +130,7 @@ export default {
   right: var(--spacing-sitepadding);
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1000px) {
   .logo {
     margin: 0;
     max-width: 15rem;
@@ -167,6 +167,10 @@ export default {
     top: auto;
     bottom: var(--spacing-sitepadding);
     right: var(--spacing-sitepadding);
+
+    &-main {
+      display: none;
+    }
   }
 }
 

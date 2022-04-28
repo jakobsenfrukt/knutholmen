@@ -118,7 +118,7 @@ export default {
     color: inherit;
   }
   h2 {
-    font-size: var(--font-size-l);
+    font-size: var(--font-size-xl);
     color: currentColor;
   }
 }
@@ -161,6 +161,23 @@ export default {
       max-height: 100%;
       opacity: 0.8;
     }
+  }
+}
+
+@media (max-width: 1200px) {
+  .site-footer {
+    grid-template-columns: 1fr 1fr;
+  }
+  .giftcard {
+    order: 1;
+    margin-bottom: 3rem;
+  }
+  .contact-list {
+    order: 2;
+    margin-bottom: 6rem;
+  }
+  .footer-logos {
+    order: 3;
   }
 }
 
