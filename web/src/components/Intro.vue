@@ -134,7 +134,7 @@ export default {
 .booker {
   &-wrapper {
     position: absolute;
-    bottom: -1rem;
+    bottom: -1.5rem;
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
