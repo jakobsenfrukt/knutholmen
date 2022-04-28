@@ -63,7 +63,6 @@ export default {
   background: var(--color-white);
   &-image {
     width: 100%;
-    height: 100%;
     object-fit: cover;
   }
   &-text {
@@ -96,6 +95,10 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+
+  .room-image {
+    height: 100%;
+  }
 
   .room-text {
     text-align: left;
