@@ -166,6 +166,10 @@ export default {
 .content-block {
   &:first-of-type {
     margin-top: 0;
+
+    &.localeFigureCaptioned {
+      margin-top: 5rem;
+    }
   }
   &:last-of-type {
     padding-bottom: 6rem;
@@ -173,7 +177,6 @@ export default {
 }
 .page-content img {
   display: block;
-  border-radius: var(--border-radius);
 }
 .localeBody {
   margin: var(--spacing-sitepadding) auto;
@@ -187,11 +190,13 @@ export default {
   max-width: 70rem;
 }
 .localeFigureCaptioned {
-  margin: var(--spacing-sitepadding) auto;
-  max-width: 70rem;
-
+  display: block;
+  margin: 0 calc(var(--spacing-sitepadding) * -2);
   img {
+    display: block;
     width: 100%;
+    max-height: 90vh;
+    object-fit: cover;
   }
   figcaption {
     text-align: center;

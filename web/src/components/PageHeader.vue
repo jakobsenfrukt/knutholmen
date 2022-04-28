@@ -1,5 +1,17 @@
 <template>
   <header class="page-header">
+    <div class="illustration">
+      <g-image
+        v-if="pageHeader.image"
+        :src="
+          $urlForImage(pageHeader.image.image, $static.metadata.sanityOptions)
+            .width(1200)
+            .auto('format')
+            .url()
+        "
+        :alt="pageHeader.image.alt[$context.locale]"
+      />
+    </div>
     <div class="text">
       <span class="page-title">{{ pageHeader.title[$context.locale] }}</span>
       <h1 class="page-heading">{{ pageHeader.heading[$context.locale] }}</h1>
@@ -11,16 +23,6 @@
       </p>
       <Button v-if="button" :type="button" />
     </div>
-    <g-image
-      v-if="pageHeader.image"
-      :src="
-        $urlForImage(pageHeader.image.image, $static.metadata.sanityOptions)
-          .width(1200)
-          .auto('format')
-          .url()
-      "
-      :alt="pageHeader.image.alt[$context.locale]"
-    />
   </header>
 </template>
 
@@ -52,16 +54,31 @@ export default {
 <style lang="scss" scoped>
 .page-header {
   color: var(--color-text);
-  padding: var(--spacing-sitepadding);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: calc(var(--spacing-sitepadding) * 1.5);
-  min-height: 40vh;
-  max-width: 70rem;
   margin: 0 auto;
+  .text {
+    width: 100%;
+    text-align: center;
+    h1,
+    p {
+      margin: 3rem auto;
+    }
+  }
+}
+.illustration {
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    var(--color-blue-dark) 50%,
+    var(--color-white) 50%
+  );
+
   img {
-    border-radius: var(--border-radius);
+    display: block;
+    width: 90%;
+    max-width: 40rem;
+    margin: 0 auto;
   }
 }
 .page-title {

@@ -5,7 +5,12 @@
         ><span>{{ $t("menu.offers") }}</span></g-link
       >
       <h2 class="offer-heading">
-        {{ $static.offerPage.pageHeader.heading[$context.locale] }}
+        <template v-if="heading">
+          {{ heading }}
+        </template>
+        <template v-else>
+          {{ $static.offerPage.pageHeader.heading[$context.locale] }}
+        </template>
       </h2>
       <p
         class="lead"
@@ -106,6 +111,10 @@ export default {
     hideButton: {
       type: Boolean,
       default: false,
+    },
+    heading: {
+      type: String,
+      default: undefined,
     },
   },
 };

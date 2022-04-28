@@ -50,38 +50,34 @@ export default {
 <style lang="scss" scoped>
 .locale-switcher {
   display: flex;
-  color: var(--color-text);
 }
 .locale-button {
   outline: none;
   border: none;
   background: none;
   margin: 0;
-  width: 2.6em;
+  padding: 0;
   text-align: center;
   display: inline-block;
   font-family: inherit;
   font-size: var(--font-size-xs);
   text-transform: uppercase;
   color: currentColor;
-  border: 1px solid currentColor;
   cursor: pointer;
   &:hover,
   &.active {
-    background: currentColor;
     span {
-      color: var(--color-background);
+      color: var(--color-yellow);
     }
   }
   &:first-of-type {
-    padding: 0.2em 0.2em 0.2em 0.4em;
-    border-top-left-radius: var(--border-radius-l);
-    border-bottom-left-radius: var(--border-radius-l);
+    &:after {
+      content: "/";
+      display: inline-block;
+      margin: 0 0.5rem;
+    }
   }
   &:last-of-type {
-    padding: 0.2em 0.4em 0.2em 0.2em;
-    border-top-right-radius: var(--border-radius-l);
-    border-bottom-right-radius: var(--border-radius-l);
   }
 }
 </style>

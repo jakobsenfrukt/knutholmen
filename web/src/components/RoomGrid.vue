@@ -5,7 +5,12 @@
         ><span>{{ $t("menu.rooms") }}</span></g-link
       >
       <h2 class="room-heading">
-        {{ $static.roomPage.pageHeader.heading[$context.locale] }}
+        <template v-if="heading">
+          {{ heading }}
+        </template>
+        <template v-else>
+          {{ $static.roomPage.pageHeader.heading[$context.locale] }}
+        </template>
       </h2>
       <p class="lead">
         {{ $static.roomPage.pageHeader.lead[$context.locale] }}
@@ -107,6 +112,10 @@ export default {
     expanded: {
       type: Boolean,
       default: false,
+    },
+    heading: {
+      type: String,
+      default: undefined,
     },
   },
 };

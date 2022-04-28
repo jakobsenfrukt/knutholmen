@@ -3,16 +3,11 @@
 }
 
 .intro {
-  --color-background: var(--color-white);
-  --color-text: var(--color-blue-dark);
-  --color-highlight: var(--color-red);
+  --color-background: var(--color-blue-dark);
+  --color-text: var(--color-white);
+  --color-highlight: var(--color-green);
 
   background-color: var(--color-background);
-  background-image: url('/assets/graphics/bgs/noise2.svg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-
   color: var(--color-text);
 
   h1, h2, h3, h4, h5, h6 {

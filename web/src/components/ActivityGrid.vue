@@ -7,7 +7,12 @@
         ><span>{{ $t("menu.activities") }}</span></g-link
       >
       <h2 class="activity-heading">
-        {{ $static.activityPage.pageHeader.heading[$context.locale] }}
+        <template v-if="heading">
+          {{ heading }}
+        </template>
+        <template v-else>
+          {{ $static.activityPage.pageHeader.heading[$context.locale] }}
+        </template>
       </h2>
       <p class="lead">
         {{ $static.activityPage.pageHeader.lead[$context.locale] }}
@@ -105,6 +110,10 @@ export default {
     hideButton: {
       type: Boolean,
       default: false,
+    },
+    heading: {
+      type: String,
+      default: undefined,
     },
   },
 };

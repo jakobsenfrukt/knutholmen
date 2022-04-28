@@ -39,7 +39,7 @@ export default {
 .site-main {
   min-height: 60vh;
 }
-
+/*
 .fade-enter-active {
   transition: opacity 0.6s;
 }
@@ -47,4 +47,5 @@ export default {
 .fade-enter {
   opacity: 0;
 }
+*/
 </style>

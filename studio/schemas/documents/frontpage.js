@@ -17,7 +17,13 @@ export default {
     {
       name: 'image',
       type: 'localeFigure',
-      title: 'Bilde'
+      title: 'Toppbilde / illustrasjon'
+    },
+    {
+      name: 'image2',
+      type: 'localeFigure',
+      title: 'Bilde',
+      description: 'Foto i fullbredde under bestillingslenke'
     }
   ]
 }

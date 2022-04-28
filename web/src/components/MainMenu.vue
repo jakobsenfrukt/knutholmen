@@ -62,6 +62,16 @@
   gap: 2rem;
   li {
     display: block;
+    z-index: 2;
+  }
+  &:before {
+    content: " ";
+    height: 1px;
+    width: calc(100% - var(--spacing-sitepadding) * 2);
+    display: block;
+    background-color: var(--color-white);
+    position: absolute;
+    z-index: 1;
   }
 }
 .nav__link {
@@ -71,7 +81,9 @@
   position: relative;
 
   font-family: var(--font-sans);
-  text-transform: uppercase;
+  font-style: italic;
+  background: var(--color-blue-dark);
+  padding: 0 0.5rem;
 
   span {
     position: relative;
@@ -87,11 +99,8 @@
     visibility: hidden;
   }
 
-  &.active--exact,
+  &.active,
   &:hover {
-    font-style: italic;
-  }
-  &.active--exact {
     color: var(--color-active);
   }
 }

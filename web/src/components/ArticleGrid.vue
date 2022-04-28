@@ -7,7 +7,12 @@
         }}</span></span
       >
       <h2 class="article-heading">
-        {{ $static.articlePage.pageHeader.heading[$context.locale] }}
+        <template v-if="heading">
+          {{ heading }}
+        </template>
+        <template v-else>
+          {{ $static.articlePage.pageHeader.heading[$context.locale] }}
+        </template>
       </h2>
       <p
         class="lead"
@@ -95,6 +100,10 @@ export default {
     hideButton: {
       type: Boolean,
       default: false,
+    },
+    heading: {
+      type: String,
+      default: undefined,
     },
   },
   methods: {

@@ -3,7 +3,7 @@
     <!-- Book room -->
     <div v-if="type && type === 'bookRoom'">
       <a
-        class="button large"
+        class="button large blank"
         :href="$static.general.bookRoom.url[$context.locale]"
         target="_blank"
         >{{ $static.general.bookRoom.buttonText[$context.locale] }}</a
@@ -14,7 +14,7 @@
     <!-- Book activity -->
     <div v-if="type && type === 'bookActivity'">
       <a
-        class="button large"
+        class="button large blank"
         :href="$static.general.bookActivity.url[$context.locale]"
         target="_blank"
         >{{ $static.general.bookActivity.buttonText[$context.locale] }}</a
@@ -27,7 +27,7 @@
     <!-- Book table -->
     <div v-if="type && type === 'bookTable'">
       <a
-        class="button large"
+        class="button large blank"
         :href="$static.general.bookTable.url[$context.locale]"
         target="_blank"
         >{{ $static.general.bookTable.buttonText[$context.locale] }}</a
@@ -37,22 +37,26 @@
 
     <!-- Buy gift card -->
     <div v-if="type && type === 'giftcard'">
+      <p>{{ $static.general.giftcard.info[$context.locale] }}</p>
       <a
-        class="button large"
+        class="button large blank"
         :href="$static.general.giftcard.url[$context.locale]"
         target="_blank"
         >{{ $static.general.giftcard.buttonText[$context.locale] }}</a
       >
-      <p class="info">{{ $static.general.giftcard.info[$context.locale] }}</p>
     </div>
 
     <!-- Other buttons -->
     <button class="button" v-else-if="action" @click="action">
       {{ text }}
     </button>
-    <a class="button" v-else-if="link && blank" :href="link" target="_blank">{{
-      text
-    }}</a>
+    <a
+      class="button blank"
+      v-else-if="link && blank"
+      :href="link"
+      target="_blank"
+      >{{ text }}</a
+    >
     <a class="button" v-else-if="link" :href="link">{{ text }}</a>
   </div>
 </template>
@@ -151,7 +155,7 @@ export default {
 .button {
   display: inline-block;
   position: relative;
-  background: var(--color-text);
+  background: var(--color-highlight);
   color: var(--color-background);
   outline: none;
   border: none;
@@ -167,8 +171,13 @@ export default {
   &:hover {
     background: var(--color-hover);
   }
-  &.large {
-    padding: 1rem 2.6rem;
+  &.blank {
+    &:after {
+      content: "↑";
+      display: inline-block;
+      transform: rotate(45deg);
+      margin-left: 1rem;
+    }
   }
   &.ribbon {
     &:before {

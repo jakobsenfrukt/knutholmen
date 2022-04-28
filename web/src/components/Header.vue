@@ -51,6 +51,8 @@ export default {
   width: 100%;
   padding: var(--spacing-sitepadding);
   text-align: center;
+  color: var(--color-white);
+  background: var(--color-blue-dark);
 
   a {
     color: inherit;
@@ -58,7 +60,7 @@ export default {
   }
 }
 .logo {
-  width: 24rem;
+  width: 20rem;
   max-width: 100%;
   margin: 0 auto;
 }
@@ -67,37 +69,6 @@ export default {
   margin-top: 1rem;
   padding: 0.6rem 1.6rem;
   position: relative;
-  background: var(--color-text);
-  color: var(--color-white);
-
-  &:before {
-    content: "";
-    height: 0;
-    width: 0;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: -1.3rem;
-    border-top: 1.3rem solid var(--color-text);
-    border-bottom: 1.3rem solid var(--color-text);
-    border-right: 1.3rem solid transparent;
-    border-left: 1.3rem solid transparent;
-    transition: var(--transition-hover);
-  }
-  &:after {
-    content: "";
-    height: 0;
-    width: 0;
-    display: block;
-    position: absolute;
-    top: 0;
-    right: -1.3rem;
-    border-top: 1.3rem solid var(--color-text);
-    border-bottom: 1.3rem solid var(--color-text);
-    border-right: 1.3rem solid transparent;
-    border-left: 1.3rem solid transparent;
-    transition: var(--transition-hover);
-  }
 }
 
 .nav-mobile-wrapper {
