@@ -33,6 +33,11 @@ export default {
           type: 'sectionWithHeading',
           title: 'Seksjon med overskrift'
         },
+        {
+          name: 'imageGallery',
+          type: 'imageGallery',
+          title: 'Bildegalleri'
+        },
       ]
     }
   ]

@@ -36,6 +36,7 @@ import booking from './objects/booking'
 import imageColumns from './objects/imageColumns'
 import textAndImage from './objects/textAndImage'
 import sectionWithHeading from './objects/sectionWithHeading'
+import imageGallery from './objects/imageGallery'
 
 // localized objects
 import localeString from './objects/localeString'
@@ -84,6 +85,7 @@ export default createSchema({
     imageColumns,
     textAndImage,
     sectionWithHeading,
+    imageGallery,
     // localized objects
     localeString,
     localeText,

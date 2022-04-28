@@ -12,14 +12,6 @@ export default {
       },
     },
     {
-      name: 'caption',
-      type: 'localeString',
-      title: 'Bildetekst',
-      options: {
-        isHighlighted: true
-      }
-    },
-    {
       name: 'alt',
       type: 'localeString',
       title: 'Alternativ tekst',
@@ -28,6 +20,14 @@ export default {
         isHighlighted: true
       },
       validation: Rule => Rule.required()
+    },
+    {
+      name: 'caption',
+      type: 'localeString',
+      title: 'Bildetekst',
+      options: {
+        isHighlighted: true
+      }
     }
   ],
   preview: {

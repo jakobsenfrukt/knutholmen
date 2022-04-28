@@ -24,21 +24,10 @@ export default {
       title: 'Ingress'
     },
     {
-      name: 'body',
-      type: 'localeBody',
+      name: 'pageContent',
+      type: 'pageContent',
       title: 'Innhold'
     },
-    {
-      name: 'gallery',
-      type: 'array',
-      title: 'Bildegalleri',
-      of: [
-        {
-          type: 'localeFigure',
-          title: 'Bilde uten bildetekst'
-        }
-      ]
-    }
   ],
   preview: {
     select: {
