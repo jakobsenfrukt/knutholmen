@@ -18,11 +18,20 @@
         {{ $static.activityPage.pageHeader.lead[$context.locale] }}
       </p>
     </div>
-    <ActivityItem
-      v-for="activity in $static.activities.edges.slice(0, limit)"
-      :key="activity.id"
-      :activity="activity.node"
-    />
+    <template v-if="items">
+      <ActivityItem
+        v-for="activity in items.slice(0, limit)"
+        :key="activity.id"
+        :activity="activity"
+      />
+    </template>
+    <template v-else>
+      <ActivityItem
+        v-for="activity in $static.activities.edges.slice(0, limit)"
+        :key="activity.id"
+        :activity="activity.node"
+      />
+    </template>
     <div class="section-button" v-if="!hideButton">
       <Button
         :text="$t('links.activities')"
@@ -99,6 +108,10 @@ export default {
     Button,
   },
   props: {
+    items: {
+      type: Array,
+      default: undefined,
+    },
     limit: {
       type: Number,
       default: undefined,

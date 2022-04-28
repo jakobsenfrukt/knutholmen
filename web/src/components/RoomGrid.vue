@@ -16,13 +16,24 @@
         {{ $static.roomPage.pageHeader.lead[$context.locale] }}
       </p>
     </div>
-    <RoomItem
-      v-for="room in $static.rooms.edges.slice(0, limit)"
-      :key="room.id"
-      :room="room.node"
-      :expanded="expanded"
-      class="room"
-    />
+    <template v-if="items">
+      <RoomItem
+        v-for="room in items.slice(0, limit)"
+        :key="room.id"
+        :room="room"
+        :expanded="expanded"
+        class="room"
+      />
+    </template>
+    <template v-else>
+      <RoomItem
+        v-for="room in $static.rooms.edges.slice(0, limit)"
+        :key="room.id"
+        :room="room.node"
+        :expanded="expanded"
+        class="room"
+      />
+    </template>
     <div class="section-button" v-if="!hideButton">
       <Button :text="$t('links.rooms')" :link="$tp(`${$t('slug.rooms')}`)" />
     </div>
@@ -97,6 +108,10 @@ export default {
     Button,
   },
   props: {
+    items: {
+      type: Array,
+      default: undefined,
+    },
     limit: {
       type: Number,
       default: undefined,
@@ -116,6 +131,18 @@ export default {
     heading: {
       type: String,
       default: undefined,
+    },
+  },
+  methods: {
+    selectedItems() {
+      if (this.items) {
+        return this.items;
+      } else {
+        return this.$static.rooms.edges;
+      }
+      /*return this.$static.articles.edges.filter((article) => {
+        return article.node.locale === this.$context.locale;
+      });*/
     },
   },
 };

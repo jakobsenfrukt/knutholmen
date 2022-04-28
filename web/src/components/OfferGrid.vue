@@ -22,11 +22,20 @@
         {{ $static.offerPage.pageHeader.lead[$context.locale] }}
       </p>
     </div>
-    <OfferItem
-      v-for="offer in $static.offers.edges.slice(0, limit)"
-      :key="offer.id"
-      :offer="offer.node"
-    />
+    <template v-if="items">
+      <OfferItem
+        v-for="offer in items.slice(0, limit)"
+        :key="offer.id"
+        :offer="offer"
+      />
+    </template>
+    <template v-else>
+      <OfferItem
+        v-for="offer in $static.offers.edges.slice(0, limit)"
+        :key="offer.id"
+        :offer="offer.node"
+      />
+    </template>
     <div class="section-button" v-if="!hideButton">
       <Button :text="$t('links.offers')" :link="$tp(`${$t('slug.offers')}`)" />
     </div>
@@ -100,6 +109,10 @@ export default {
     Button,
   },
   props: {
+    items: {
+      type: Array,
+      default: undefined,
+    },
     limit: {
       type: Number,
       default: undefined,
@@ -123,12 +136,11 @@ export default {
 <style lang="scss" scoped>
 .offer-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-sitepadding);
-}
-@media (min-width: 1200px) {
-  .offer-grid {
-    grid-template-columns: repeat(3, 1fr);
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
   }
 }
 </style>

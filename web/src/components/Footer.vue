@@ -144,6 +144,7 @@ export default {
     height: 3rem;
     img {
       height: 100%;
+      object-fit: contain;
       filter: grayscale(0.3);
     }
   }
@@ -166,6 +167,9 @@ export default {
 @media (max-width: 800px) {
   .site-footer {
     grid-template-columns: 1fr;
+  }
+  .giftcard {
+    grid-column: span 1;
   }
 }
 </style>

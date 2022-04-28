@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Layout class="news">
     <header class="page-header">
       <div class="text">
         <!--<span class="page-title">{{
@@ -27,8 +27,9 @@
       <div class="body-content" v-if="$page.article._rawBody">
         <block-content :blocks="$page.article._rawBody" class="block-content" />
       </div>
+
+      <ArticleGrid />
     </main>
-    <articleGrid />
   </Layout>
 </template>
 

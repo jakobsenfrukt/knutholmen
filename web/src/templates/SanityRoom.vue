@@ -20,8 +20,8 @@
           class="block-content"
         />
       </div>
+      <RoomGrid :heading="$t('headings.rooms')" />
     </main>
-    <RoomGrid :heading="$t('headings.rooms')" />
   </Layout>
 </template>
 

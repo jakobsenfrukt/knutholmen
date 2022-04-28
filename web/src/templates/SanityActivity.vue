@@ -1,31 +1,12 @@
 <template>
-  <Layout>
-    <header class="page-header">
-      <div class="text">
-        <!--<span class="page-title">{{
-          $page.activity.title[$context.locale]
-        }}</span>-->
-        <h1 class="page-heading">
-          {{ $page.activity.title[$context.locale] }}
-        </h1>
-        <p
-          class="lead"
-          v-if="$page.activity.lead && $page.activity.lead[$context.locale]"
-        >
-          {{ $page.activity.lead[$context.locale] }}
-        </p>
-      </div>
-      <g-image
-        v-if="$page.activity.image"
-        :src="
-          $urlForImage($page.activity.image.image, $page.metadata.sanityOptions)
-            .width(1200)
-            .auto('format')
-            .url()
-        "
-        :alt="$page.activity.image.alt[$context.locale]"
-      />
-    </header>
+  <Layout class="activities">
+    <PageHeader
+      :title="$page.activityPage.pageHeader.title[$context.locale]"
+      :heading="$page.activity.title[$context.locale]"
+      :image="$page.activity.image"
+      :lead="$page.activity.lead[$context.locale]"
+      button="bookActivity"
+    />
     <main class="page-content">
       <div class="body-content" v-if="$page.activity.body">
         <block-content
@@ -39,8 +20,9 @@
           class="block-content"
         />
       </div>
+
+      <ActivityGrid />
     </main>
-    <ActivityGrid />
   </Layout>
 </template>
 
@@ -85,11 +67,19 @@ query activity ($id: ID!) {
       _rawEn
     }
   }
+  activityPage: sanityActivityPage(id: "activityPage") {
+    pageHeader {
+      title {
+        no
+        en
+      }
+    }
+  }
 }
 </page-query>
 
 <script>
-import PageHeader from "~/components/PageHeader";
+import PageHeader from "~/components/PageHeaderSecondary";
 import BlockContent from "~/components/tools/BlockContent";
 import ActivityGrid from "~/components/ActivityGrid";
 
@@ -102,42 +92,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.page-header {
-  color: var(--color-text);
-  padding: var(--spacing-sitepadding);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: calc(var(--spacing-sitepadding) * 1.5);
-  min-height: 40vh;
-  max-width: 70rem;
-  margin: 0 auto;
-  img {
-    border-radius: var(--border-radius);
-  }
-}
-.page-title {
-  display: none;
-}
-@media (max-width: 1000px) {
-  .page-header {
-    grid-template-columns: 1fr;
-    min-height: 0;
-    text-align: center;
-
-    img {
-      order: 1;
-    }
-    .text {
-      order: 2;
-    }
-    .lead {
-      margin: 0 auto 2rem;
-    }
-  }
-  .page-title {
-    display: block;
-  }
-}
-</style>
+<style lang="scss" scoped></style>

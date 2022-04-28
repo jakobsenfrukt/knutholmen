@@ -12,17 +12,38 @@
       <p class="lead">
         {{ $static.restaurantPage.pageHeader.lead[$context.locale] }}
       </p>
-      <Button
-        :text="$t('links.restaurant')"
-        :link="$tp(`${$t('slug.restaurant')}`)"
+      <div class="button-wrapper">
+        <Button type="bookTable" />
+        <Button
+          :text="$t('links.restaurant')"
+          :link="$tp(`${$t('slug.restaurant')}`)"
+        />
+      </div>
+    </div>
+    <div class="grid">
+      <g-image
+        v-for="(image, index) in images.slice(0, limit)"
+        :key="index"
+        :src="
+          $urlForImage(image.image, $static.metadata.sanityOptions)
+            .width(600)
+            .auto('format')
+            .url()
+        "
+        :alt="image.alt[$context.locale]"
       />
-      <Button type="bookTable" />
     </div>
   </section>
 </template>
 
 <static-query>
 query {
+  metadata {
+    sanityOptions {
+      projectId
+      dataset
+    }
+  }
   restaurantPage: sanityRestaurantPage (id: "restaurantPage") {
     pageHeader {
       title {
@@ -49,12 +70,23 @@ export default {
   components: {
     Button,
   },
+  props: {
+    images: {
+      type: Array,
+      default: undefined,
+    },
+    limit: {
+      type: Number,
+      default: 1,
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .restaurant-section {
   color: var(--color-blue-dark);
+  padding-bottom: 0;
 
   h2 {
     color: var(--color-green-text);
@@ -75,5 +107,21 @@ export default {
     top: -1rem;
     right: -2rem;
   }
+}
+.section-intro {
+  position: relative;
+}
+.grid {
+  margin: -1.5rem calc(var(--spacing-sitepadding) * -1);
+  img {
+    display: block;
+    width: 100%;
+    max-height: 50vh;
+    object-fit: cover;
+  }
+}
+.button-wrapper {
+  width: 100%;
+  z-index: 2;
 }
 </style>

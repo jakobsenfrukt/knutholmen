@@ -69,6 +69,7 @@ export default {
     width: 100%;
     max-width: 70em;
     margin: 0 auto;
+    padding: 0 calc(var(--spacing-sitepadding) * 2);
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -78,7 +79,6 @@ export default {
   }
   .text {
     width: 100%;
-    padding: 0 calc(var(--spacing-sitepadding) * 2);
     position: relative;
   }
   .text-top {
@@ -113,15 +113,17 @@ export default {
   width: 100%;
   position: absolute;
   bottom: -1.2rem;
-  left: calc(var(--spacing-sitepadding) * 1);
+  left: 0;
   z-index: 2;
 }
 @media (max-width: 1000px) {
   .page-header .grid {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, auto);
+    padding: 0;
     .text {
       text-align: center;
+      padding: 0 calc(var(--spacing-sitepadding) * 2);
     }
     .text-top {
       order: 1;

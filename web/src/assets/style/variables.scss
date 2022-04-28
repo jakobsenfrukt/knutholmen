@@ -51,6 +51,7 @@ body {
   --font-main: var(--font-sans);
 
   --color-background: var(--color-white);
+  --color-background-header: var(--color-blue-dark);
   --color-text: var(--color-blue-dark);
   --color-link: var(--color-green);
   --color-highlight: var(--color-blue-dark);
@@ -77,7 +78,7 @@ body[data-theme="dark"] {
     --font-size-xl: 1.5rem;
     --font-size-xxl: 1.8rem;
 
-    --border-radius: 10px;
+    --border-radius: 0;
     --border-radius-l: 30px;
   }
 }

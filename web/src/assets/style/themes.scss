@@ -42,7 +42,7 @@
 .offers {
   --color-background: var(--color-white);
   --color-text: var(--color-blue-dark);
-  --color-highlight: var(--color-purple);
+  --color-highlight: var(--color-blue-text);
 
   background-color: var(--color-background);
   color: var(--color-text);
@@ -55,7 +55,7 @@
 .activities {
   --color-background: var(--color-white);
   --color-text: var(--color-blue-dark);
-  --color-highlight: var(--color-green-text);
+  --color-highlight: var(--color-red);
 
   background-color: var(--color-background);
   color: var(--color-text);
@@ -71,7 +71,7 @@
 .restaurant {
   --color-background: var(--color-white);
   --color-text: var(--color-blue-dark);
-  --color-highlight: var(--color-blue-text);
+  --color-highlight: var(--color-green-text);
 
   background-color: var(--color-background);
   color: var(--color-text);
@@ -87,7 +87,7 @@
 .news {
   --color-background: var(--color-white);
   --color-text: var(--color-blue-dark);
-  --color-highlight: var(--color-red);
+  --color-highlight: var(--color-purple);
 
   background-color: var(--color-background);
   color: var(--color-text);
