@@ -172,14 +172,14 @@ export default {
     }
   }
   &:last-of-type {
-    padding-bottom: 6rem;
+    //padding-bottom: 3rem;
   }
 }
 .page-content img {
   display: block;
 }
 .localeBody {
-  margin: var(--spacing-sitepadding) auto;
+  margin: calc(var(--spacing-sitepadding) * 2) auto;
 }
 .textAndImage {
   display: grid;

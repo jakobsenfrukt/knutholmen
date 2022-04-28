@@ -20,7 +20,7 @@
         />
       </div>
     </div>
-    <div class="grid">
+    <div class="grid" v-if="images">
       <g-image
         v-for="(image, index) in images.slice(0, limit)"
         :key="index"
@@ -33,6 +33,7 @@
         :alt="image.alt[$context.locale]"
       />
     </div>
+    <div class="separator" v-else></div>
   </section>
 </template>
 
@@ -123,5 +124,9 @@ export default {
 .button-wrapper {
   width: 100%;
   z-index: 2;
+}
+.separator {
+  display: block;
+  height: 6rem;
 }
 </style>

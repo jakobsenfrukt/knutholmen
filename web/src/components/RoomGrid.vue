@@ -173,6 +173,7 @@ export default {
   grid-template-columns: 1fr;
   max-width: 70rem;
   margin: 0 auto;
+  padding-top: 0;
 
   .room {
     width: 100%;

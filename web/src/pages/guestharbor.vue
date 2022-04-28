@@ -3,6 +3,7 @@
     <PageHeader :pageHeader="$page.guestHarbor.pageHeader" />
     <main class="page-content">
       <PageContent :content="$page.guestHarbor.pageContent.blocks" />
+      <RoomGrid showIntro :limit="3" />
     </main>
   </Layout>
 </template>
@@ -142,11 +143,13 @@ query {
 <script>
 import PageHeader from "~/components/PageHeader";
 import PageContent from "~/components/PageContent";
+import RoomGrid from "~/components/RoomGrid";
 
 export default {
   components: {
     PageHeader,
     PageContent,
+    RoomGrid,
   },
   metaInfo() {
     return {

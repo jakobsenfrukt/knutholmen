@@ -10,9 +10,9 @@ export default {
       title: 'Intro'
     },
     {
-      name: 'tempbody',
-      type: 'localeBody',
-      title: 'Innhold (MIDLERTIDIG)'
+      name: 'pageContent',
+      type: 'pageContent',
+      title: 'Innhold'
     }
   ]
 }

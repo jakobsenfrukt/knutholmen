@@ -2,19 +2,9 @@
   <Layout>
     <PageHeader :pageHeader="$page.eventPage.pageHeader" />
     <main class="page-content">
-      <div class="body-content" v-if="$page.eventPage.tempbody">
-        <block-content
-          :blocks="$page.eventPage.tempbody._rawNo"
-          v-if="$page.eventPage.tempbody._rawNo && $context.locale == 'no'"
-          class="block-content"
-        />
-        <block-content
-          :blocks="$page.eventPage.tempbody._rawEn"
-          v-else-if="$page.eventPage.tempbody._rawEn && $context.locale == 'en'"
-          class="block-content"
-        />
-      </div>
       <PageContent :content="$page.eventPage.pageContent.blocks" />
+      <RoomGrid showIntro :limit="3" />
+      <RestaurantSection />
     </main>
   </Layout>
 </template>
@@ -147,10 +137,6 @@ query {
         }
       }
     }
-    tempbody {
-      _rawNo
-      _rawEn
-    }
   }
 }
 </page-query>
@@ -159,12 +145,16 @@ query {
 import BlockContent from "~/components/tools/BlockContent";
 import PageHeader from "~/components/PageHeader";
 import PageContent from "~/components/PageContent";
+import RoomGrid from "~/components/RoomGrid";
+import RestaurantSection from "~/components/RestaurantSection";
 
 export default {
   components: {
     BlockContent,
     PageHeader,
     PageContent,
+    RoomGrid,
+    RestaurantSection,
   },
   metaInfo() {
     return {

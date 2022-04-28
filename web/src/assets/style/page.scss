@@ -64,6 +64,15 @@ section {
   }
 }
 
+.page-content section {
+  margin: 0 calc(var(--spacing-sitepadding) * -1);
+  padding: calc(var(--spacing-sitepadding)*2) var(--spacing-sitepadding);
+  background-color: #F6F6F6;
+  .section-heading--link span {
+    background-color: #F6F6F6 !important;
+  }
+}
+
 .section-intro {
   grid-column: 1 / -1;
   text-align: center;

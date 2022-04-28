@@ -5,20 +5,8 @@
       button="bookTable"
     />
     <main class="page-content">
-      <div class="body-content" v-if="$page.restaurantPage.tempbody">
-        <block-content
-          :blocks="$page.restaurantPage.tempbody._rawNo"
-          v-if="$page.restaurantPage.tempbody._rawNo && $context.locale == 'no'"
-          class="block-content"
-        />
-        <block-content
-          :blocks="$page.restaurantPage.tempbody._rawEn"
-          v-else-if="
-            $page.restaurantPage.tempbody._rawEn && $context.locale == 'en'
-          "
-          class="block-content"
-        />
-      </div>
+      <PageContent :content="$page.restaurantPage.pageContent.blocks" />
+      <ActivityGrid showIntro :limit="3" />
     </main>
   </Layout>
 </template>
@@ -52,9 +40,104 @@ query {
         }
       }
     }
-    tempbody {
-      _rawNo
-      _rawEn
+    pageContent {
+      blocks {
+        ... on SanityLocaleBody {
+          _type
+          _rawNo
+          _rawEn
+        }
+        ... on SanityTextAndImage {
+          _type
+          text {
+            _rawNo
+            _rawEn
+          }
+          image {
+            image {
+              asset {
+                _id
+                url
+              }
+            }
+            alt {
+              no
+              en
+            }
+            caption {
+              no
+              en
+            }
+          }
+        }
+        ... on SanityLocaleFigureCaptioned {
+          _type
+          image {
+            asset {
+              _id
+              url
+            }
+          }
+          alt {
+            no
+            en
+          }
+          caption {
+            no
+            en
+          }
+        }
+        ... on SanityImageColumns {
+          _type
+          images {
+            image {
+              asset {
+                _id
+                url
+              }
+            }
+            alt {
+              no
+              en
+            }
+            caption {
+              no
+              en
+            }
+          }
+        }
+        ... on SanitySectionWithHeading {
+          _type
+          title {
+            no
+            en
+          }
+          heading {
+            no
+            en
+          }
+          text {
+            _rawNo
+            _rawEn
+          }
+          image {
+            image {
+              asset {
+                _id
+                url
+              }
+            }
+            alt {
+              no
+              en
+            }
+            caption {
+              no
+              en
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -63,13 +146,17 @@ query {
 <script>
 import BlockContent from "~/components/tools/BlockContent";
 import PageHeader from "~/components/PageHeader";
+import PageContent from "~/components/PageContent";
 import Button from "~/components/buttons/Button";
+import ActivityGrid from "~/components/ActivityGrid";
 
 export default {
   components: {
     PageHeader,
     BlockContent,
     Button,
+    PageContent,
+    ActivityGrid,
   },
   metaInfo() {
     return {

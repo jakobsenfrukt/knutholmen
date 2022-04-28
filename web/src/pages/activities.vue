@@ -5,21 +5,9 @@
       button="bookActivity"
     />
     <main class="page-content">
-      <div class="body-content" v-if="$page.activityPage.tempbody">
-        <block-content
-          :blocks="$page.activityPage.tempbody._rawNo"
-          v-if="$page.activityPage.tempbody._rawNo && $context.locale == 'no'"
-          class="block-content"
-        />
-        <block-content
-          :blocks="$page.activityPage.tempbody._rawEn"
-          v-else-if="
-            $page.activityPage.tempbody._rawEn && $context.locale == 'en'
-          "
-          class="block-content"
-        />
-      </div>
+      <PageContent :content="$page.activityPage.pageContent.blocks" />
       <ActivityGrid hideButton />
+      <RoomGrid showIntro :limit="3" />
     </main>
   </Layout>
 </template>
@@ -53,9 +41,104 @@ query {
         }
       }
     }
-    tempbody {
-      _rawNo
-      _rawEn
+    pageContent {
+      blocks {
+        ... on SanityLocaleBody {
+          _type
+          _rawNo
+          _rawEn
+        }
+        ... on SanityTextAndImage {
+          _type
+          text {
+            _rawNo
+            _rawEn
+          }
+          image {
+            image {
+              asset {
+                _id
+                url
+              }
+            }
+            alt {
+              no
+              en
+            }
+            caption {
+              no
+              en
+            }
+          }
+        }
+        ... on SanityLocaleFigureCaptioned {
+          _type
+          image {
+            asset {
+              _id
+              url
+            }
+          }
+          alt {
+            no
+            en
+          }
+          caption {
+            no
+            en
+          }
+        }
+        ... on SanityImageColumns {
+          _type
+          images {
+            image {
+              asset {
+                _id
+                url
+              }
+            }
+            alt {
+              no
+              en
+            }
+            caption {
+              no
+              en
+            }
+          }
+        }
+        ... on SanitySectionWithHeading {
+          _type
+          title {
+            no
+            en
+          }
+          heading {
+            no
+            en
+          }
+          text {
+            _rawNo
+            _rawEn
+          }
+          image {
+            image {
+              asset {
+                _id
+                url
+              }
+            }
+            alt {
+              no
+              en
+            }
+            caption {
+              no
+              en
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -64,13 +147,17 @@ query {
 <script>
 import BlockContent from "~/components/tools/BlockContent";
 import PageHeader from "~/components/PageHeader";
+import PageContent from "~/components/PageContent";
 import ActivityGrid from "~/components/ActivityGrid";
+import RoomGrid from "~/components/RoomGrid";
 
 export default {
   components: {
     BlockContent,
     PageHeader,
+    PageContent,
     ActivityGrid,
+    RoomGrid,
   },
   metaInfo() {
     return {
