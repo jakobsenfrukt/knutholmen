@@ -140,4 +140,11 @@ export default {
     z-index: 2;
   }
 }
+@media (max-width: 1000px) {
+  .intro {
+    .illustration {
+      padding: 3rem 0 0;
+    }
+  }
+}
 </style>
