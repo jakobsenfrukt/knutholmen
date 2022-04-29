@@ -3,7 +3,7 @@
     "menu": "Meny",
     "home": "Hjem",
     "rooms": "Overnatting",
-    "activities": "Aktiviteter",
+    "activities": "Aktivitetar",
     "restaurant": "Restaurant",
     "meetings": "Møter & selskap",
     "about": "Om oss",
@@ -14,7 +14,7 @@
   "links": {
     "offers": "Sjå alle pakker",
     "rooms": "Sjå alle romma",
-    "activities": "Sjå alle aktiviteter",
+    "activities": "Sjå alle aktivitetar",
     "restaurant": "Om restauranten",
     "giftcard": "Kjøp gavekort",
     "bookOffer": "Bestill pakke"
