@@ -293,6 +293,10 @@ figcaption {
   margin: 0 calc(var(--spacing-sitepadding) * -2);
   padding: calc(var(--spacing-sitepadding) * 2);
 
+  img {
+    width: 100%;
+  }
+
   h2 {
     grid-column: 1 / -1;
     position: relative;
