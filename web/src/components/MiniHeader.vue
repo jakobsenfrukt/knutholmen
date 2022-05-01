@@ -114,7 +114,7 @@ export default {
   width: 1.5rem;
   position: absolute;
   top: calc(var(--spacing-sitepadding) / 4);
-  left: calc(var(--spacing-sitepadding) / 4);
+  left: calc(var(--spacing-sitepadding) / 3);
   z-index: 1000;
 }
 
@@ -173,11 +173,12 @@ export default {
   position: fixed;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 1.25rem;
   min-width: 5rem;
-  top: calc(var(--spacing-sitepadding) / 2);
-  right: 0.25rem;
-  padding: 0 var(--spacing-sitepadding);
+  top: 1rem;
+  right: 0;
+  padding: 0 calc(var(--spacing-sitepadding) * 0.75);
   z-index: 101;
   cursor: pointer;
   display: none;
@@ -227,6 +228,14 @@ export default {
     top: auto;
     bottom: calc(var(--spacing-sitepadding) * 2);
     right: var(--spacing-sitepadding);
+  }
+}
+
+@media (max-width: 400px) {
+  .menu-toggle {
+    &-text {
+      display: none;
+    }
   }
 }
 

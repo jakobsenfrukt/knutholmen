@@ -1,5 +1,5 @@
 <template>
-  <header class="site-header">
+  <header class="site-header" :class="{ inview: isInView }">
     <g-link class="logo" :to="$tp('/')"><Logo /></g-link>
     <nav class="nav nav-main">
       <MainMenu />
@@ -15,6 +15,12 @@
         <LocaleSwitcher class="language" />
       </nav>
     </div>
+
+    <IntersectionObserver
+      id="observer"
+      class="observer"
+      @on-enter-viewport="onEnterViewport"
+    ></IntersectionObserver>
   </header>
 </template>
 
@@ -24,12 +30,14 @@ import LocaleSwitcher from "@/components/tools/LocaleSwitcher";
 import ToggleTheme from "@/components/tools/ToggleTheme";
 import MenuIcon from "@/components/icons/MenuIcon.vue";
 import MainMenu from "@/components/MainMenu";
+import IntersectionObserver from "~/components/tools/IntersectionObserver";
 
 export default {
   components: {
     Logo,
     LocaleSwitcher,
     ToggleTheme,
+    IntersectionObserver,
     MenuIcon,
     MainMenu,
   },
@@ -41,6 +49,17 @@ export default {
   methods: {
     toggleMenu() {
       this.showMenu = !this.showMenu;
+    },
+    toAnchor(anchor) {
+      document.querySelector(anchor).scrollIntoView({
+        behavior: "smooth",
+      });
+      // close menu if on mobile
+      this.showMenu = false;
+    },
+    onEnterViewport(value) {
+      this.isInView = value;
+      this.showMenu = false;
     },
   },
 };
@@ -101,11 +120,12 @@ export default {
   height: 2rem;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 1.25rem;
   min-width: 5rem;
   top: calc(var(--spacing-sitepadding) - 0.3rem);
-  right: 0.25rem;
-  padding: 0 var(--spacing-sitepadding);
+  right: 0;
+  padding: 0 calc(var(--spacing-sitepadding) * 0.75);
   z-index: 101;
   cursor: pointer;
   display: none;
@@ -207,5 +227,11 @@ export default {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.observer {
+  position: absolute;
+  top: 110vh;
+  height: 100%;
 }
 </style>
