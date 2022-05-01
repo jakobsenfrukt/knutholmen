@@ -1,14 +1,14 @@
 <template>
   <Layout>
-    <section>
-      <h1>Oh no! This page is missing!</h1>
+    <section class="page-content">
+      <h1>{{ $t("error.heading") }}</h1>
       <p class="lead">
-        For some reason we can't find the page you're looking for. Did you check
-        the spelling in the URL? If you know for sure there was supposed to be a
-        page here, please let us know. If not, try again from our front page :)
+        {{ $t("error.body") }}
+      </p>
+      <p>
+        &rarr; <a href="/">{{ $t("error.link") }}</a>
       </p>
     </section>
-    <p>&rarr; <a href="/">Go home</a></p>
   </Layout>
 </template>
 
@@ -19,3 +19,15 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.page-content {
+  max-width: 50rem;
+  margin: 2rem auto;
+}
+h1,
+p,
+.lead {
+  margin: 1rem 0 2rem;
+}
+</style>

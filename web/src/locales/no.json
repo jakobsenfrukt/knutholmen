@@ -33,6 +33,15 @@
     "address": "Besøk oss",
     "contact": "Kontakt oss",
     "giftcard": "Gavekort",
-    "imageGallery": "Bildegalleri"
+    "imageGallery": "Bildegalleri",
+    "moreRooms": "Fleire typar rom",
+    "moreActivities": "Fleire aktivitetar",
+    "moreOffers": "Fleire pakketilbod",
+    "moreArticles": "Fleire artiklar"
+  },
+  "error": {
+    "heading": "Ånei! Denne sida finner vi ikkje!",
+    "body": "Vi kan ikkje finne sida du leitar etter. Sjekka du om det var skrivefeil i URLen? Om du veit sikkert at det skulle vore ei side her, fortel det gjerne til oss. Hvis ikkje, prøv igjen fra forsida vår!",
+    "link": "Til forsida"
   }
 }
