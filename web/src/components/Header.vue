@@ -69,7 +69,7 @@ export default {
 .nav-main {
   display: inline-block;
   margin-top: 1rem;
-  padding: 0.6rem 1.6rem;
+  padding: 0.6rem 1.6rem 0;
   position: relative;
 }
 
@@ -103,7 +103,7 @@ export default {
   align-items: center;
   gap: 1.25rem;
   min-width: 5rem;
-  top: var(--spacing-sitepadding);
+  top: calc(var(--spacing-sitepadding) - 0.3rem);
   right: 0.25rem;
   padding: 0 var(--spacing-sitepadding);
   z-index: 101;
@@ -171,6 +171,12 @@ export default {
     &-main {
       display: none;
     }
+  }
+}
+
+@media (max-width: 400px) {
+  .menu-toggle-text {
+    display: none;
   }
 }
 

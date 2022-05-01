@@ -138,6 +138,8 @@ export default {
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
+    width: 100%;
+    text-align: center;
   }
 }
 @media (max-width: 1000px) {
