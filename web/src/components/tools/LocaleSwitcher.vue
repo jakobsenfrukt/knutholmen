@@ -18,7 +18,7 @@
 <script>
 export default {
   name: "LocaleSwitcher",
-  data: function() {
+  data: function () {
     return {
       currentLocale: this.$i18n.locale.toString(),
       availableLocales: this.$i18n.availableLocales,
@@ -38,9 +38,14 @@ export default {
           path: translatedPaths[this.currentLocale],
         });
       } else {
-        this.$router.push({
-          path: this.$tp(this.$route.path, this.currentLocale, true),
-        });
+        let path = this.$tp(this.$route.path, this.currentLocale, true);
+        if (this.$route.meta?.pageType === "article") {
+          path = this.$tp(
+            this.$t("slug.news", this.currentLocale),
+            this.currentLocale
+          );
+        }
+        this.$router.push({ path });
       }
     },
   },

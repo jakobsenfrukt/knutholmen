@@ -24,9 +24,9 @@
       />
     </header>
     <main class="page-content">
-      <div class="body-content" v-if="$page.article._rawBody">
+      <!-- <div class="body-content" v-if="$page.article._rawBody">
         <block-content :blocks="$page.article._rawBody" class="block-content" />
-      </div>
+      </div> -->
 
       <ArticleGrid
         :heading="$t('headings.moreArticles')"
@@ -48,17 +48,9 @@ query ($id: ID!) {
   article: sanityArticle (id: $id) {
     _id
     _type
-    title {
-      no
-      en
-    }
+    title
     slug {
-      no {
-        current
-      }
-      en {
-        current
-      }
+      current
     }
     image {
       image {
@@ -66,19 +58,9 @@ query ($id: ID!) {
           url
         }
       }
-      alt {
-        no
-        en
-      }
+      alt
     }
-    lead {
-      no
-      en
-    }
-    body {
-      _rawNo
-      _rawEn
-    }
+    lead
   }
 }
 </page-query>

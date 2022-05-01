@@ -1,7 +1,7 @@
 const slugByLocale = (page, locale) => page.slug[locale].current;
 
 const pathToPage = (page, locale) => {
-  const slug = slugByLocale(page, locale);
+  const slug = page.slug.current ?? slugByLocale(page, locale);
   const type = {
     no: {
       room: "rom",

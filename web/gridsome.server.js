@@ -73,6 +73,18 @@ module.exports = function(api) {
             }
           }
         }
+        articles: allSanityArticle {
+          edges {
+            node {
+              _type
+              id
+              slug {
+                current
+              }
+              locale
+            }
+          }
+        }
       }
     `);
 
@@ -137,19 +149,40 @@ module.exports = function(api) {
         .forEach((page) => handlePageWithLocalizedSlugs(page, component));
     };
 
+    // Rooms
     handleEdges({
       edges: response.data.rooms.edges,
       component: "./src/templates/SanityRoom.vue",
     });
 
+    // Offers
     handleEdges({
       edges: response.data.offers.edges,
       component: "./src/templates/SanityOffer.vue",
     });
 
+    // Activities
     handleEdges({
       edges: response.data.activities.edges,
       component: "./src/templates/SanityActivity.vue",
     });
+
+    // Articles
+    const articles = response.data.articles.edges;
+    articles
+      .map((edge) => edge.node)
+      .filter((node) => node.slug?.current)
+      .forEach((page) =>
+        createPageWithLocale({
+          page: page,
+          locale: page.locale,
+          path: makePath({
+            page,
+            locale: page.locale,
+            slug: page.slug.current,
+          }),
+          component: "./src/templates/SanityArticle.vue",
+        })
+      );
   });
 };
