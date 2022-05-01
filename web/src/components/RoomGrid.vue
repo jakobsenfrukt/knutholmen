@@ -164,7 +164,7 @@ export default {
   grid-template-columns: 1fr;
   max-width: 70rem;
   margin: 0 auto;
-  padding-top: 0;
+  padding: 0 0 var(--spacing-sitepadding);
   overflow: visible;
 
   .room {

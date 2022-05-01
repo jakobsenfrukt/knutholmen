@@ -112,6 +112,10 @@ export default {
   }
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
+    align-items: flex-start;
+    .room-image {
+      height: auto;
+    }
   }
 }
 </style>
