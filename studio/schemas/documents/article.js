@@ -44,7 +44,12 @@ export default {
       name: 'lead',
       type: 'text',
       title: 'Ingress'
-    }
+    },
+    {
+      name: 'pageContent',
+      type: 'pageContent',
+      title: 'Innhold'
+    },
   ],
   preview: {
     select: {

@@ -59,4 +59,11 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss">
+.layout.news .lead {
+  margin-bottom: 0;
+}
+.layout.news .section-intro {
+  display: none;
+}
+</style>

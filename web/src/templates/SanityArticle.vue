@@ -1,33 +1,15 @@
 <template>
   <Layout class="news">
-    <header class="page-header">
-      <div class="text">
-        <!--<span class="page-title">{{
-          $page.article.title
-        }}</span>-->
-        <h1 class="page-heading">
-          {{ $page.article.title }}
-        </h1>
-        <p class="lead" v-if="$page.article.lead && $page.article.lead">
-          {{ $page.article.lead }}
-        </p>
-      </div>
-      <g-image
-        v-if="$page.article.image"
-        :src="
-          $urlForImage($page.article.image.image, $page.metadata.sanityOptions)
-            .width(1200)
-            .auto('format')
-            .url()
-        "
-        :alt="$page.article.image.alt"
-      />
-    </header>
+    <PageHeader
+      :heading="$page.article.title"
+      :image="$page.article.image"
+      :lead="$page.article.lead"
+    />
     <main class="page-content">
-      <!-- <div class="body-content" v-if="$page.article._rawBody">
-        <block-content :blocks="$page.article._rawBody" class="block-content" />
-      </div> -->
-
+      <PageContent
+        v-if="$page.article.pageContent"
+        :content="$page.article.pageContent.blocks"
+      />
       <ArticleGrid
         :heading="$t('headings.moreArticles')"
         :limit="3"
@@ -61,17 +43,137 @@ query ($id: ID!) {
       alt
     }
     lead
+    pageContent {
+      blocks {
+        ... on SanityLocaleBody {
+          _type
+          _rawNo
+          _rawEn
+        }
+        ... on SanityTextAndImage {
+          _type
+          text {
+            _rawNo
+            _rawEn
+          }
+          image {
+            image {
+              asset {
+                _id
+                url
+              }
+            }
+            alt {
+              no
+              en
+            }
+            caption {
+              no
+              en
+            }
+          }
+        }
+        ... on SanityLocaleFigureCaptioned {
+          _type
+          image {
+            asset {
+              _id
+              url
+            }
+          }
+          alt {
+            no
+            en
+          }
+          caption {
+            no
+            en
+          }
+        }
+        ... on SanityImageColumns {
+          _type
+          images {
+            image {
+              asset {
+                _id
+                url
+              }
+            }
+            alt {
+              no
+              en
+            }
+            caption {
+              no
+              en
+            }
+          }
+        }
+        ... on SanitySectionWithHeading {
+          _type
+          title {
+            no
+            en
+          }
+          heading {
+            no
+            en
+          }
+          text {
+            _rawNo
+            _rawEn
+          }
+          image {
+            image {
+              asset {
+                _id
+                url
+              }
+            }
+            alt {
+              no
+              en
+            }
+            caption {
+              no
+              en
+            }
+          }
+        }
+        ... on SanityImageGallery {
+          _type
+          images {
+            image {
+              asset {
+                _id
+                url
+              }
+            }
+            alt {
+              no
+              en
+            }
+            caption {
+              no
+              en
+            }
+          }
+        }
+      }
+    }
   }
 }
 </page-query>
 
 <script>
 import BlockContent from "~/components/tools/BlockContent";
+import PageHeader from "~/components/PageHeaderSecondary";
 import ArticleGrid from "~/components/ArticleGrid";
 
 export default {
   components: {
     BlockContent,
+    PageHeader,
     ArticleGrid,
   },
 };
