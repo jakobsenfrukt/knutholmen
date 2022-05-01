@@ -21,7 +21,11 @@
         />
       </div>
 
-      <ActivityGrid />
+      <ActivityGrid
+        :heading="$t('headings.moreActivities')"
+        :limit="3"
+        :current="$page.activity._id"
+      />
     </main>
   </Layout>
 </template>
@@ -35,6 +39,7 @@ query activity ($id: ID!) {
     }
   }
   activity: sanityActivity (id: $id) {
+    _id
     title {
       no
       en

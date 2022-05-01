@@ -53,7 +53,11 @@
         />
       </div>
 
-      <OfferGrid />
+      <OfferGrid
+        :heading="$t('headings.moreOffers')"
+        :limit="3"
+        :current="$page.offer._id"
+      />
     </main>
   </Layout>
 </template>
@@ -67,6 +71,7 @@ query offer ($id: ID!) {
     }
   }
   offer: sanityOffer (id: $id) {
+    _id
     title {
       no
       en

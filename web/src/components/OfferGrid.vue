@@ -29,6 +29,13 @@
         :offer="offer"
       />
     </template>
+    <template v-else-if="current">
+      <OfferItem
+        v-for="offer in shuffle($static.offers.edges).slice(0, limit)"
+        :key="offer.id"
+        :offer="offer.node"
+      />
+    </template>
     <template v-else>
       <OfferItem
         v-for="offer in $static.offers.edges.slice(0, limit)"
@@ -128,6 +135,17 @@ export default {
     heading: {
       type: String,
       default: undefined,
+    },
+    current: {
+      type: String,
+      default: undefined,
+    },
+  },
+  methods: {
+    shuffle(array) {
+      return array
+        .filter((item) => item.node.id != this.current)
+        .sort(() => Math.random() - Math.random());
     },
   },
 };

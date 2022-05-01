@@ -43,6 +43,7 @@ export default {
   },
   data() {
     return {
+      isInView: false,
       showMenu: false,
     };
   },

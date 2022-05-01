@@ -291,7 +291,8 @@ figcaption {
   margin: var(--spacing-sitepadding) auto;
   background-color: #f6f6f6;
   margin: 0 calc(var(--spacing-sitepadding) * -2);
-  padding: calc(var(--spacing-sitepadding) * 2);
+  padding: calc(var(--spacing-sitepadding) * 1.5)
+    calc(var(--spacing-sitepadding) * 2);
 
   img {
     width: 100%;

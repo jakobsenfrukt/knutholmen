@@ -24,11 +24,20 @@
         {{ $static.articlePage.pageHeader.lead[$context.locale] }}
       </p>
     </div>
-    <ArticleItem
-      v-for="article in getLocaleArticles().slice(0, limit)"
-      :key="article.id"
-      :article="article.node"
-    />
+    <template v-if="current">
+      <ArticleItem
+        v-for="article in shuffle(getLocaleArticles()).slice(0, limit)"
+        :key="article.id"
+        :article="article.node"
+      />
+    </template>
+    <template v-else>
+      <ArticleItem
+        v-for="article in getLocaleArticles().slice(0, limit)"
+        :key="article.id"
+        :article="article.node"
+      />
+    </template>
   </section>
 </template>
 
@@ -111,6 +120,11 @@ export default {
       return this.$static.articles.edges.filter((article) => {
         return article.node.locale === this.$context.locale;
       });
+    },
+    shuffle(array) {
+      return array
+        .filter((item) => item.node.id != this.current)
+        .sort(() => Math.random() - Math.random());
     },
   },
 };

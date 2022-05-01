@@ -143,7 +143,7 @@ export default {
     margin-top: 2rem;
   }
   .lead {
-    margin-top: 0;
+    margin-top: 1rem;
   }
   .button-wrapper {
     width: 100%;

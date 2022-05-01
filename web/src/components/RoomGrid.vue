@@ -25,6 +25,15 @@
         class="room"
       />
     </template>
+    <template v-else-if="current">
+      <RoomItem
+        v-for="room in shuffle($static.rooms.edges).slice(0, limit)"
+        :key="room.id"
+        :room="room.node"
+        :expanded="expanded"
+        class="room"
+      />
+    </template>
     <template v-else>
       <RoomItem
         v-for="room in $static.rooms.edges.slice(0, limit)"
@@ -132,17 +141,16 @@ export default {
       type: String,
       default: undefined,
     },
+    current: {
+      type: String,
+      default: undefined,
+    },
   },
   methods: {
-    selectedItems() {
-      if (this.items) {
-        return this.items;
-      } else {
-        return this.$static.rooms.edges;
-      }
-      /*return this.$static.articles.edges.filter((article) => {
-        return article.node.locale === this.$context.locale;
-      });*/
+    shuffle(array) {
+      return array
+        .filter((item) => item.node.id != this.current)
+        .sort(() => Math.random() - Math.random());
     },
   },
 };

@@ -12,7 +12,11 @@
         v-if="$page.room.pageContent"
         :content="$page.room.pageContent.blocks"
       />
-      <RoomGrid :heading="$t('headings.rooms')" :limit="3" />
+      <RoomGrid
+        :heading="$t('headings.moreRooms')"
+        :limit="3"
+        :current="$page.room._id"
+      />
     </main>
   </Layout>
 </template>
@@ -26,6 +30,7 @@ query ($id: ID!) {
     }
   }
   room: sanityRoom (id: $id) {
+    _id
     _type
     title {
       no

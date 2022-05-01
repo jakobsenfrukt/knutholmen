@@ -28,7 +28,11 @@
         <block-content :blocks="$page.article._rawBody" class="block-content" />
       </div>
 
-      <ArticleGrid />
+      <ArticleGrid
+        :heading="$t('headings.moreArticles')"
+        :limit="3"
+        :current="$page.article._id"
+      />
     </main>
   </Layout>
 </template>
@@ -42,6 +46,7 @@ query ($id: ID!) {
     }
   }
   article: sanityArticle (id: $id) {
+    _id
     _type
     title {
       no

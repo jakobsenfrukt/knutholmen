@@ -108,6 +108,9 @@ export default {
   .page-heading {
     margin-top: 1.5rem;
   }
+  .lead {
+    margin-bottom: 3rem;
+  }
   .illustration {
     padding-top: var(--spacing-sitepadding);
   }

@@ -25,6 +25,13 @@
         :activity="activity"
       />
     </template>
+    <template v-else-if="current">
+      <ActivityItem
+        v-for="activity in shuffle($static.activities.edges).slice(0, limit)"
+        :key="activity.id"
+        :activity="activity.node"
+      />
+    </template>
     <template v-else>
       <ActivityItem
         v-for="activity in $static.activities.edges.slice(0, limit)"
@@ -127,6 +134,17 @@ export default {
     heading: {
       type: String,
       default: undefined,
+    },
+    current: {
+      type: String,
+      default: undefined,
+    },
+  },
+  methods: {
+    shuffle(array) {
+      return array
+        .filter((item) => item.node.id != this.current)
+        .sort(() => Math.random() - Math.random());
     },
   },
 };
