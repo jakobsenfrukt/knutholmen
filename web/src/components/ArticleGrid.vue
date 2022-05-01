@@ -1,7 +1,7 @@
 <template>
   <section class="news article-grid">
-    <div class="section-intro article-intro" v-if="showIntro">
-      <span class="section-heading"
+    <div class="section-intro article-intro">
+      <span class="section-heading" v-if="showIntro"
         ><span>{{
           $static.articlePage.pageHeader.title[$context.locale]
         }}</span></span
@@ -17,7 +17,8 @@
       <p
         class="lead"
         v-if="
-          $static.articlePage.pageHeader.lead &&
+          showIntro &&
+            $static.articlePage.pageHeader.lead &&
             $static.articlePage.pageHeader.lead[$context.locale]
         "
       >

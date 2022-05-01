@@ -1,9 +1,10 @@
 <template>
   <section class="activities activity-grid">
-    <div class="section-intro activity-intro" v-if="showIntro">
+    <div class="section-intro activity-intro">
       <g-link
         class="section-heading--link"
         :to="$tp(`${$t('slug.activities')}`)"
+        v-if="showIntro"
         ><span>{{ $t("menu.activities") }}</span></g-link
       >
       <h2 class="activity-heading">
@@ -14,7 +15,7 @@
           {{ $static.activityPage.pageHeader.heading[$context.locale] }}
         </template>
       </h2>
-      <p class="lead">
+      <p class="lead" v-if="showIntro">
         {{ $static.activityPage.pageHeader.lead[$context.locale] }}
       </p>
     </div>

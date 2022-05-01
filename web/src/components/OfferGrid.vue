@@ -1,7 +1,10 @@
 <template>
   <section class="offers offer-grid">
-    <div class="section-intro offer-intro" v-if="showIntro">
-      <g-link class="section-heading--link" :to="$tp(`${$t('slug.offers')}`)"
+    <div class="section-intro offer-intro">
+      <g-link
+        class="section-heading--link"
+        :to="$tp(`${$t('slug.offers')}`)"
+        v-if="showIntro"
         ><span>{{ $t("menu.offers") }}</span></g-link
       >
       <h2 class="offer-heading">
@@ -15,7 +18,8 @@
       <p
         class="lead"
         v-if="
-          $static.offerPage.pageHeader.lead &&
+          showIntro &&
+            $static.offerPage.pageHeader.lead &&
             $static.offerPage.pageHeader.lead[$context.locale]
         "
       >

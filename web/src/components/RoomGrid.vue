@@ -1,7 +1,10 @@
 <template>
   <section class="rooms room-grid" :class="{ expanded: expanded }">
-    <div class="section-intro room-intro" v-if="showIntro">
-      <g-link class="section-heading--link" :to="$tp(`${$t('slug.rooms')}`)"
+    <div class="section-intro room-intro">
+      <g-link
+        class="section-heading--link"
+        :to="$tp(`${$t('slug.rooms')}`)"
+        v-if="showIntro"
         ><span>{{ $t("menu.rooms") }}</span></g-link
       >
       <h2 class="room-heading">
@@ -12,7 +15,7 @@
           {{ $static.roomPage.pageHeader.heading[$context.locale] }}
         </template>
       </h2>
-      <p class="lead">
+      <p class="lead" v-if="showIntro">
         {{ $static.roomPage.pageHeader.lead[$context.locale] }}
       </p>
     </div>
