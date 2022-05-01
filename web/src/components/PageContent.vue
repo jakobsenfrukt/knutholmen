@@ -264,7 +264,7 @@ figcaption {
     &.noimage {
       grid-template-columns: 1fr;
       .block-content {
-        margin: 3rem 0;
+        margin: 2rem 0;
         p {
           margin: 0;
         }
@@ -277,7 +277,7 @@ figcaption {
     margin: 0 auto;
   }
   .block-content {
-    margin: 3rem 0;
+    margin: 2rem 0;
     p {
       margin: 0;
     }
@@ -336,9 +336,18 @@ figcaption {
   }
 }
 @media (max-width: 800px) {
+  .page-content {
+    padding: 0;
+  }
   .textAndImage,
   .sectionWithHeading .wrapper {
     grid-template-columns: 1fr;
+    gap: var(--spacing-sitepadding);
+  }
+  .sectionWithHeading {
+    .block-content {
+      margin: 2rem auto;
+    }
   }
   .imageColumns {
     display: block;

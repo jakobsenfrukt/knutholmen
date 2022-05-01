@@ -94,12 +94,22 @@ export default {
   margin-bottom: 3rem;
 }
 @media (max-width: 1000px) {
+  .page-header .text {
+    padding: 0 var(--spacing-sitepadding);
+  }
   .page-title {
     display: block;
-    margin-top: 3rem;
+    margin-top: 2rem;
+  }
+  .page-heading,
+  .lead {
+    margin: 2rem auto;
   }
   .page-heading {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
+  }
+  .illustration {
+    padding-top: var(--spacing-sitepadding);
   }
 }
 </style>

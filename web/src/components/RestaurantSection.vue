@@ -93,8 +93,7 @@ export default {
     color: var(--color-green-text);
   }
 
-  &:before,
-  &:after {
+  &:before {
     content: " ";
     background-size: contain;
     background-repeat: no-repeat;
@@ -102,9 +101,7 @@ export default {
     width: 12rem;
     height: 12rem;
     position: absolute;
-  }
-  &:after {
-    background-image: url("/assets/images/illustrations/test/skisse-eple.png");
+    //background-image: url("/assets/images/illustrations/test/skisse-eple.png");
     top: -1rem;
     right: -2rem;
   }
@@ -128,5 +125,10 @@ export default {
 .separator {
   display: block;
   height: 6rem;
+}
+@media (max-width: 1000px) {
+  .restaurant-section:before {
+    display: none;
+  }
 }
 </style>

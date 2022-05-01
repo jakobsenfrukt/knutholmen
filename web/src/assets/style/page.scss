@@ -62,10 +62,6 @@ section {
       background-color: #F6F6F6 !important;
     }
   }
-
-  h2 {
-    font-size: var(--font-size-xxl);
-  }
 }
 
 .page-content section {
@@ -84,6 +80,7 @@ section {
   h2 {
     margin: 1rem auto 2rem;
     color: var(--color-purple);
+    font-size: var(--font-size-xxl);
   }
 
   .lead {

@@ -66,11 +66,11 @@ export default {
     object-fit: cover;
   }
   &-text {
-    padding: 2rem 2rem;
+    padding: var(--spacing-sitepadding);
     text-align: center;
 
     h3 {
-      margin: 0 0 1rem;
+      margin: 0 0 0.5rem;
       font-size: var(--font-size-l);
       color: var(--color-yellow-dark);
     }
