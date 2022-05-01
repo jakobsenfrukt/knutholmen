@@ -3,6 +3,7 @@
     <PageHeader :pageHeader="$page.about.pageHeader" />
     <main class="page-content about-content">
       <PageContent :content="$page.about.pageContent.blocks" />
+      <RoomGrid :heading="$t('headings.enterRooms')" :limit="3" showIntro />
     </main>
   </Layout>
 </template>
@@ -162,12 +163,14 @@ query {
 import BlockContent from "~/components/tools/BlockContent";
 import PageHeader from "~/components/PageHeader";
 import PageContent from "~/components/PageContent";
+import RoomGrid from "~/components/RoomGrid";
 
 export default {
   components: {
     BlockContent,
     PageHeader,
     PageContent,
+    RoomGrid,
   },
   metaInfo() {
     return {

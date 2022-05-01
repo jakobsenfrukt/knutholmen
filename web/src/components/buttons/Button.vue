@@ -170,7 +170,8 @@ export default {
   cursor: pointer;
   transition: var(--transition-hover);
   &:hover {
-    background: var(--color-hover);
+    background: var(--color-hover-background);
+    color: var(--color-hover);
   }
   &.blank {
     &:after {
@@ -232,5 +233,10 @@ export default {
 .site-footer .button {
   color: var(--color-blue-dark);
   background: var(--color-white);
+
+  &:hover {
+    color: var(--color-hover);
+    background: var(--color-hover-background);
+  }
 }
 </style>

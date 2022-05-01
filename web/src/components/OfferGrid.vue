@@ -11,7 +11,7 @@
         <template v-if="heading">
           {{ heading }}
         </template>
-        <template v-else>
+        <template v-else-if="showIntro">
           {{ $static.offerPage.pageHeader.heading[$context.locale] }}
         </template>
       </h2>
