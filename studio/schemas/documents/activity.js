@@ -12,6 +12,7 @@ export default {
       name: 'slug',
       title: 'Slug',
       type: 'localeSlug',
+      validation: Rule => Rule.required()
     },
     {
       name: 'image',

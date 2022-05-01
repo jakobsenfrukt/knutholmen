@@ -11,6 +11,7 @@ export default {
         source: (doc) => doc.title.no,
         maxLength: 96,
       },
+      validation: Rule => Rule.required()
     },
     {
       name: "en",
@@ -20,6 +21,7 @@ export default {
         source: (doc) => doc.title.en,
         maxLength: 96,
       },
+      validation: Rule => Rule.required()
     },
   ],
 };
