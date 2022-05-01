@@ -356,7 +356,8 @@ figcaption {
       margin-bottom: 2rem;
     }
   }
-  .imageGallery {
+  .imageGallery,
+  .sectionWithHeading {
     margin: 0 calc(var(--spacing-sitepadding) * -1);
     padding: var(--spacing-sitepadding);
   }
