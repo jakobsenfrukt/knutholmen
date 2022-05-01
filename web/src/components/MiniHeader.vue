@@ -1,5 +1,5 @@
 <template>
-  <header class="site-header-wrapper">
+  <header class="site-header-wrapper" aria-hidden="true">
     <div class="site-header mini" :class="{ inview: isInView }">
       <g-link class="logo" :to="$tp('/')"><Logo icon/></g-link>
       <nav class="nav nav-main">
