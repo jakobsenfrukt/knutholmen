@@ -57,9 +57,9 @@ section {
 .index section {
   padding: calc(var(--spacing-sitepadding)*2) var(--spacing-sitepadding);
   &:nth-of-type(odd):not(.intro) {
-    background-color: #F6F6F6;
+    background-color: var(--color-offwhite);
     .section-heading--link span {
-      background-color: #F6F6F6 !important;
+      background-color: var(--color-offwhite) !important;
     }
   }
 }
@@ -67,9 +67,9 @@ section {
 .page-content section {
   margin: 0 calc(var(--spacing-sitepadding) * -1);
   padding: calc(var(--spacing-sitepadding)*2) var(--spacing-sitepadding);
-  background-color: #F6F6F6;
+  background-color: var(--color-offwhite);
   .section-heading--link span {
-    background-color: #F6F6F6 !important;
+    background-color: var(--color-offwhite) !important;
   }
 }
 

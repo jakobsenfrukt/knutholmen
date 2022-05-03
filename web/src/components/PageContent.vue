@@ -243,7 +243,7 @@ figcaption {
   margin: 0;
 }
 .sectionWithHeading {
-  background-color: #f6f6f6;
+  background-color: var(--color-offwhite);
   margin: 0 calc(var(--spacing-sitepadding) * -2);
   padding: calc(var(--spacing-sitepadding) * 2);
 
@@ -289,7 +289,7 @@ figcaption {
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-sitepadding);
   margin: var(--spacing-sitepadding) auto;
-  background-color: #f6f6f6;
+  background-color: var(--color-offwhite);
   margin: 0 calc(var(--spacing-sitepadding) * -2);
   padding: calc(var(--spacing-sitepadding) * 1.5)
     calc(var(--spacing-sitepadding) * 2);
@@ -324,7 +324,7 @@ figcaption {
     }
     span {
       display: inline-block;
-      background-color: #f6f6f6;
+      background-color: var(--color-offwhite);
       padding: 0 1rem;
       position: relative;
       z-index: 10;
