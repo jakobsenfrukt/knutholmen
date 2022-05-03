@@ -12,7 +12,8 @@ export default {
       name: 'slug',
       title: 'Slug',
       type: 'localeSlug',
-      validation: Rule => Rule.required()
+      validation: Rule => Rule.required(),
+      description: 'Slutten på URLen til denne siden. Klikk på Generate-knappen etter at tittel er skrevet inn for å lage en slug.'
     },
     {
       name: 'image',

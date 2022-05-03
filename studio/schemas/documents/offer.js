@@ -9,6 +9,13 @@ export default {
       title: 'Tittel'
     },
     {
+      name: 'slug',
+      title: 'Slug',
+      type: 'localeSlug',
+      validation: Rule => Rule.required(),
+      description: 'Slutten på URLen til denne siden. Klikk på Generate-knappen etter at tittel er skrevet inn for å lage en slug.'
+    },
+    {
       name: 'heading',
       type: 'localeString',
       title: 'Overskrift'
@@ -18,12 +25,6 @@ export default {
       type: 'localeString',
       title: 'URL til bestilling',
       description: 'Husk å inkludere hele URLen, inkludert https:// etc.'
-    },
-    {
-      name: 'slug',
-      title: 'Slug',
-      type: 'localeSlug',
-      validation: Rule => Rule.required()
     },
     {
       name: 'image',
