@@ -80,12 +80,12 @@ module.exports = {
     {
       path: "/en/offers",
       component: "./src/pages/offers.vue",
-      ...otherPath("no", "/pakker")
+      ...otherPath("no", "/pakkar")
     },
     {
       path: "/en/activities",
       component: "./src/pages/activities.vue",
-      ...otherPath("no", "/aktiviteter")
+      ...otherPath("no", "/aktivitetar")
     },
     {
       path: "/en/restaurant",
@@ -95,7 +95,7 @@ module.exports = {
     {
       path: "/en/meetings",
       component: "./src/pages/meetings.vue",
-      ...otherPath("no", "/moter")
+      ...otherPath("no", "/mote")
     },
     {
       path: "/en/guestinfo",
