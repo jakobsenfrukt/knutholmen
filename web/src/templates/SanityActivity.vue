@@ -26,6 +26,7 @@
       :limit="3"
       :current="$page.activity._id"
     />
+    <OfferGrid showIntro :limit="3" />
   </Layout>
 </template>
 
@@ -86,12 +87,14 @@ query activity ($id: ID!) {
 import PageHeader from "~/components/PageHeaderSecondary";
 import BlockContent from "~/components/tools/BlockContent";
 import ActivityGrid from "~/components/ActivityGrid";
+import OfferGrid from "~/components/OfferGrid";
 
 export default {
   components: {
     PageHeader,
     BlockContent,
     ActivityGrid,
+    OfferGrid,
   },
 };
 </script>

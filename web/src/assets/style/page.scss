@@ -55,11 +55,10 @@ p.block-content {
 
 section {
   position: relative;
-  padding: calc(var(--spacing-sitepadding)*2) 0;
+  padding: calc(var(--spacing-sitepadding)*2) var(--spacing-sitepadding);
 }
 
 .index section {
-  padding: calc(var(--spacing-sitepadding)*2) var(--spacing-sitepadding);
   &:nth-of-type(odd):not(.intro) {
     background-color: var(--color-offwhite);
     .section-heading--link span {
@@ -69,12 +68,18 @@ section {
 }
 
 main.page-content + section.grid {
-  padding: calc(var(--spacing-sitepadding)*2) var(--spacing-sitepadding);
   background-color: var(--color-offwhite);
   .section-heading--link span {
     background-color: var(--color-offwhite) !important;
   }
 }
+main.page-content section.grid {
+  padding-top: 0;
+  .section-intro {
+    display: none;
+  }
+}
+
 
 .section-intro {
   grid-column: 1 / -1;
