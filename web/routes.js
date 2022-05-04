@@ -27,12 +27,12 @@ module.exports = {
       ...otherPath("en", "/en/rooms")
     },
     {
-      path: "/pakker",
+      path: "/pakkar",
       component: "./src/pages/offers.vue",
       ...otherPath("en", "/en/offers")
     },
     {
-      path: "/aktiviteter",
+      path: "/aktivitetar",
       component: "./src/pages/activities.vue",
       ...otherPath("en", "/en/activities")
     },
@@ -42,7 +42,7 @@ module.exports = {
       ...otherPath("en", "/en/restaurant")
     },
     {
-      path: "/moter",
+      path: "/mote",
       component: "./src/pages/meetings.vue",
       ...otherPath("en", "/en/meetings")
     },
