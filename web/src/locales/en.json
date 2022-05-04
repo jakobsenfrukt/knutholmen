@@ -21,7 +21,8 @@
     "bookOffer": "Book package",
     "news": "Read more articles",
     "roomItem": "More info and images",
-    "offerItem": "Read more and book"
+    "offerItem": "Read more and book",
+    "activityItem": "Read more and book"
   },
   "slug": {
     "rooms": "/rooms",
