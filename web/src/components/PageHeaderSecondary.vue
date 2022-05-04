@@ -149,7 +149,13 @@ export default {
     margin-top: 3rem;
   }
   .page-heading {
-    margin-top: 2rem;
+    margin-top: 1rem;
+  }
+  .hasButton {
+    .page-heading,
+    .lead {
+      margin: 1rem auto 3rem;
+    }
   }
   .lead {
     margin-top: 1rem;
