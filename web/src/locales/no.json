@@ -1,23 +1,23 @@
 {
   "menu": {
     "menu": "Meny",
-    "home": "Hjem",
+    "home": "Heim",
     "rooms": "Overnatting",
     "activities": "Aktivitetar",
     "restaurant": "Restaurant",
-    "meetings": "Møter & selskap",
+    "meetings": "Møte & selskap",
     "about": "Om oss",
     "contact": "Kontakt",
-    "offers": "Pakker",
+    "offers": "Pakkar",
     "guestharbor": "Gjestehamn",
     "news": "Aktuelt"
   },
   "links": {
-    "offers": "Sjå alle pakker",
+    "offers": "Sjå alle pakkar",
     "rooms": "Sjå alle romma",
     "activities": "Sjå alle aktivitetar",
     "restaurant": "Om restauranten",
-    "giftcard": "Kjøp gavekort",
+    "giftcard": "Kjøp gåvekort",
     "bookOffer": "Bestill pakke",
     "news": "Les fleire artiklar",
     "roomItem": "Meir info og bilete",
@@ -27,11 +27,11 @@
   "slug": {
     "rooms": "/rom",
     "about": "/om",
-    "offers": "/pakker",
+    "offers": "/pakkar",
     "news": "/aktuelt",
-    "activities": "/aktiviteter",
+    "activities": "/aktivitetar",
     "restaurant": "/restaurant",
-    "meetings": "/moter",
+    "meetings": "/mote",
     "guestharbor": "/gjestehamn"
   },
   "headings": {
@@ -46,8 +46,8 @@
     "enterRooms": "Her kan du bu på Knutholmen"
   },
   "error": {
-    "heading": "Ånei! Denne sida finner vi ikkje!",
+    "heading": "Ånei! Denne sida finn vi ikkje!",
     "body": "Vi kan ikkje finne sida du leitar etter. Sjekka du om det var skrivefeil i URLen? Om du veit sikkert at det skulle vore ei side her, fortel det gjerne til oss. Hvis ikkje, prøv igjen fra forsida vår!",
-    "link": "Til forsida"
+    "link": "Til framsida"
   }
 }
