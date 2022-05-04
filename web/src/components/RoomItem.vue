@@ -99,19 +99,22 @@ export default {
     }
   }
   .room-link span,
-  .room-text h3 {
+  .room-text h3,
+  .room-lead {
     transition: all 0.3s ease;
   }
   &:hover {
     .room-link span,
-    .room-text h3 {
+    .room-text h3,
+    .room-lead {
       transition: all 0.3s ease;
     }
     .room-link span {
       opacity: 1;
       bottom: 1.5rem;
     }
-    .room-text h3 {
+    .room-text h3,
+    .room-lead {
       transform: translateY(-1rem);
     }
   }
@@ -135,6 +138,13 @@ export default {
     .room-lead {
       display: block;
     }
+  }
+  .room-link span {
+    left: 50%;
+    width: 50%;
+    text-align: right;
+    padding-right: var(--spacing-sitepadding);
+    color: var(--color-highlight);
   }
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
