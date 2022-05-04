@@ -27,7 +27,9 @@
       :to="
         $tp(`${$t('slug.offers')}/${$slugByLocale(offer, this.$i18n.locale)}`)
       "
-      >Link</g-link
+      ><div class="link-text">
+        <span>{{ $t("links.offerItem") }} &rarr;</span>
+      </div></g-link
     >
   </article>
 </template>
@@ -90,10 +92,50 @@ export default {
     left: 0;
     right: 0;
     bottom: 0;
-    opacity: 0;
     overflow: hidden;
-    text-indent: -9999px;
     z-index: 0;
+
+    .link-text {
+      display: block;
+      position: absolute;
+      opacity: 0;
+      bottom: 0.5rem;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-style: italic;
+      background: linear-gradient(
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.8),
+        white
+      );
+      min-height: 30%;
+
+      span {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+  .offer-link .link-text,
+  .offer-text h3 {
+    transition: all 0.3s ease;
+  }
+  &:hover {
+    .offer-link .link-text,
+    .offer-text h3 {
+      transition: all 0.3s ease;
+    }
+    .offer-link .link-text {
+      opacity: 1;
+      bottom: 1.5rem;
+    }
+    .offer-text h3 {
+      //transform: translateY(-1rem);
+    }
   }
 }
 </style>

@@ -22,7 +22,7 @@
     <g-link
       class="room-link"
       :to="$tp(`${$t('slug.rooms')}/${$slugByLocale(room, this.$i18n.locale)}`)"
-      >Link</g-link
+      ><span>{{ $t("links.roomItem") }} &rarr;</span></g-link
     >
   </article>
 </template>
@@ -84,10 +84,36 @@ export default {
     left: 0;
     right: 0;
     bottom: 0;
-    opacity: 0;
     overflow: hidden;
-    text-indent: -9999px;
     z-index: 0;
+
+    span {
+      display: block;
+      position: absolute;
+      opacity: 0;
+      bottom: 0.5rem;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-style: italic;
+    }
+  }
+  .room-link span,
+  .room-text h3 {
+    transition: all 0.3s ease;
+  }
+  &:hover {
+    .room-link span,
+    .room-text h3 {
+      transition: all 0.3s ease;
+    }
+    .room-link span {
+      opacity: 1;
+      bottom: 1.5rem;
+    }
+    .room-text h3 {
+      transform: translateY(-1rem);
+    }
   }
 }
 

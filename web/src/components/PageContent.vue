@@ -361,6 +361,10 @@ figcaption {
     margin: 0 calc(var(--spacing-sitepadding) * -1);
     padding: var(--spacing-sitepadding);
   }
+  .localeFigureCaptioned {
+    margin: 0 calc(var(--spacing-sitepadding) * -1);
+    padding: 0;
+  }
 }
 
 @media (min-width: 800px) {

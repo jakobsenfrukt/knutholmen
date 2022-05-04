@@ -19,7 +19,10 @@
     "restaurant": "Om restauranten",
     "giftcard": "Kjøp gavekort",
     "bookOffer": "Bestill pakke",
-    "news": "Les fleire artiklar"
+    "news": "Les fleire artiklar",
+    "roomItem": "Meir info og bilete",
+    "offerItem": "Les meir og bestill",
+    "activityItem": "Les meir og bestill"
   },
   "slug": {
     "rooms": "/rom",

@@ -93,6 +93,10 @@ query {
             current
           }
         }
+        lead {
+          no
+          en
+        }
         image {
           image {
             asset {

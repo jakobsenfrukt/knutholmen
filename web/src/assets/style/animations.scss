@@ -1,0 +1,39 @@
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+:root {
+  --animation-fadeUp: fadeUp 0.3s linear forwards;
+  --animation-fadeUp-fast: fadeUp 0.3s linear forwards;
+
+  --animation-slideUp: slideUp 0.5s linear forwards;
+  --animation-slideUp-fast: slideUp 0.3s linear forwards;
+
+  --animation-slideDown: slideDown 0.5s linear forwards;
+  --animation-slideDown-fast: slideDown 0.3s linear forwards;
+}

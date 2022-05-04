@@ -19,7 +19,9 @@
     "restaurant": "About our restaurant",
     "giftcard": "Buy gift card",
     "bookOffer": "Book package",
-    "news": "Read more articles"
+    "news": "Read more articles",
+    "roomItem": "More info and images",
+    "offerItem": "Read more and book"
   },
   "slug": {
     "rooms": "/rooms",

@@ -29,7 +29,7 @@
           )}`
         )
       "
-      >Link</g-link
+      ><span>{{ $t("links.activityItem") }} &rarr;</span></g-link
     >
   </article>
 </template>
@@ -84,10 +84,41 @@ export default {
     left: 0;
     right: 0;
     bottom: 0;
-    opacity: 0;
     overflow: hidden;
-    text-indent: -9999px;
     z-index: 0;
+
+    span {
+      display: block;
+      position: absolute;
+      opacity: 0;
+      bottom: 0.5rem;
+      left: 0;
+      width: 100%;
+      text-align: right;
+      font-style: italic;
+      padding: 0 calc(var(--spacing-sitepadding) * 0.75);
+      color: var(--color-highlight);
+    }
+  }
+  .activity-link span,
+  .activity-text h3,
+  .activity-text p {
+    transition: all 0.3s ease;
+  }
+  &:hover {
+    .activity-link span,
+    .activity-text h3,
+    .activity-text p {
+      transition: all 0.3s ease;
+    }
+    .activity-link span {
+      opacity: 1;
+      bottom: 1.5rem;
+    }
+    .activity-text h3,
+    .activity-text p {
+      transform: translateY(-0.75rem);
+    }
   }
 }
 </style>
