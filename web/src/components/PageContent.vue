@@ -349,6 +349,9 @@ figcaption {
     .block-content {
       margin: 2rem auto;
     }
+    p.block-content {
+      margin: 2rem 0;
+    }
   }
   .imageColumns {
     display: block;
