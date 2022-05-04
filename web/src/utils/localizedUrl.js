@@ -5,8 +5,8 @@ const pathToPage = (page, locale) => {
   const type = {
     no: {
       room: "rom",
-      offer: "pakker",
-      activity: "aktiviteter",
+      offer: "pakkar",
+      activity: "aktivitetar",
       article: "aktuelt",
     },
     en: {
