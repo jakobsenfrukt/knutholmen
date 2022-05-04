@@ -266,7 +266,7 @@ figcaption {
       .block-content {
         margin: 2rem 0;
         p {
-          margin: 0;
+          margin: 0 0 1rem;
         }
       }
     }
@@ -279,7 +279,7 @@ figcaption {
   .block-content {
     margin: 2rem 0;
     p {
-      margin: 0;
+      margin: 0 0 1rem;
     }
   }
 }
