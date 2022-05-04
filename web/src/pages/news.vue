@@ -61,7 +61,7 @@ export default {
 
 <style lang="scss">
 .layout.news .lead {
-  margin-bottom: 0;
+  margin-bottom: 3rem;
 }
 .layout.news .section-intro {
   display: none;
