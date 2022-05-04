@@ -3,27 +3,41 @@ export default {
   type: 'document',
   title: 'Forside',
   __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'], 
+  groups: [
+    {
+      name: 'content',
+      title: 'Tekst og bilder',
+    },
+    {
+      name: 'selected',
+      title: 'Utvalgt innhold',
+    },
+  ],
   fields: [
     {
       name: 'title',
       type: 'localeString',
-      title: 'Tittel'
+      title: 'Tittel',
+      group: 'content'
     },
     {
       name: 'text',
       type: 'localeText',
-      title: 'Intro'
+      title: 'Intro',
+      group: 'content'
     },
     {
       name: 'image',
       type: 'localeFigure',
-      title: 'Toppbilde / illustrasjon'
+      title: 'Toppbilde / illustrasjon',
+      group: 'content'
     },
     {
       name: 'image2',
       type: 'localeFigure',
       title: 'Bilde',
-      description: 'Foto i fullbredde under bestillingslenke'
+      description: 'Foto i fullbredde under bestillingslenke',
+      group: 'content'
     },
     {
       title: 'Utvalgte pakker',
@@ -39,7 +53,8 @@ export default {
             }
           ]
         }
-      ]
+      ],
+      group: 'selected'
     },
     {
       title: 'Utvalgte romtyper',
@@ -55,7 +70,8 @@ export default {
             }
           ]
         }
-      ]
+      ],
+      group: 'selected'
     },
     {
       title: 'Utvalgte aktiviteter',
@@ -71,7 +87,8 @@ export default {
             }
           ]
         }
-      ]
+      ],
+      group: 'selected'
     },
     {
       title: 'Bilder til restaurantseksjon',
@@ -83,7 +100,8 @@ export default {
           type: 'localeFigure',
           title: 'Bilde'
         },
-      ]
+      ],
+      group: 'selected'
     },
   ]
 }

@@ -1,5 +1,5 @@
 <template>
-  <section class="activities activity-grid">
+  <section class="activities grid activity-grid">
     <div class="section-intro activity-intro">
       <g-link
         class="section-heading--link"

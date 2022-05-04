@@ -12,12 +12,12 @@
         v-if="$page.room.pageContent"
         :content="$page.room.pageContent.blocks"
       />
-      <RoomGrid
-        :heading="$t('headings.moreRooms')"
-        :limit="3"
-        :current="$page.room._id"
-      />
     </main>
+    <RoomGrid
+      :heading="$t('headings.moreRooms')"
+      :limit="3"
+      :current="$page.room._id"
+    />
   </Layout>
 </template>
 

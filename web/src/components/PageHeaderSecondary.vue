@@ -1,5 +1,5 @@
 <template>
-  <header class="page-header">
+  <header class="page-header" :class="{ hasButton: button }">
     <div class="grid">
       <div class="text text-top">
         <span class="page-title">{{ title }}</span>
@@ -90,7 +90,16 @@ export default {
 }
 .page-heading,
 .lead {
-  margin: 3rem auto;
+  margin: 1rem auto;
+}
+.lead {
+  margin-bottom: 3rem;
+}
+.hasButton {
+  .page-heading,
+  .lead {
+    margin: 3rem auto;
+  }
 }
 .page-title,
 .page-heading {

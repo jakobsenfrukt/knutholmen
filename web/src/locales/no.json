@@ -9,7 +9,8 @@
     "about": "Om oss",
     "contact": "Kontakt",
     "offers": "Pakker",
-    "guestharbor": "Gjestehamn"
+    "guestharbor": "Gjestehamn",
+    "news": "Aktuelt"
   },
   "links": {
     "offers": "Sjå alle pakker",
@@ -17,7 +18,8 @@
     "activities": "Sjå alle aktivitetar",
     "restaurant": "Om restauranten",
     "giftcard": "Kjøp gavekort",
-    "bookOffer": "Bestill pakke"
+    "bookOffer": "Bestill pakke",
+    "news": "Les fleire artiklar"
   },
   "slug": {
     "rooms": "/rom",

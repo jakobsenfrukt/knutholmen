@@ -9,7 +9,8 @@
     "about": "About",
     "contact": "Contact",
     "offers": "Offers",
-    "guestharbor": "Guest harbor"
+    "guestharbor": "Guest harbor",
+    "news": "News"
   },
   "links": {
     "offers": "View all offers",
@@ -17,7 +18,8 @@
     "activities": "View all activities",
     "restaurant": "About our restaurant",
     "giftcard": "Buy gift card",
-    "bookOffer": "Book package"
+    "bookOffer": "Book package",
+    "news": "Read more articles"
   },
   "slug": {
     "rooms": "/rooms",

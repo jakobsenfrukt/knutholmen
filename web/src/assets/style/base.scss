@@ -64,3 +64,8 @@ a {
 figure {
   margin: 0;
 }
+figcaption {
+  font-size: var(--font-size-xs);
+  padding: 0.7rem 1rem;
+  margin: 0;
+}

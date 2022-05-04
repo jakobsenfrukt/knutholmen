@@ -3,8 +3,8 @@
     <PageHeader :pageHeader="$page.guestHarbor.pageHeader" />
     <main class="page-content">
       <PageContent :content="$page.guestHarbor.pageContent.blocks" />
-      <RoomGrid showIntro :limit="3" />
     </main>
+    <RoomGrid showIntro :limit="3" />
   </Layout>
 </template>
 

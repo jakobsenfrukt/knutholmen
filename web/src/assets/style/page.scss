@@ -5,6 +5,7 @@
 }
 
 .block-content {
+  margin-bottom: 4rem;
   h1, h2, h3, h4, h5, h6 {
     margin: 2rem auto 2rem;
     max-width: 30rem;
@@ -15,11 +16,15 @@
   ul, ol {
     max-width: 30rem;
   }
-  img {
+  figure {
     display: block;
     width: 100%;
     margin: 3rem auto 4rem;
     max-width: 50rem;
+  }
+  img {
+    display: block;
+    width: 100%;
   }
   blockquote {
     font-family: var(--font-serif);
@@ -33,7 +38,7 @@
   }
 }
 p.block-content {
-  margin: 1rem auto 1.5rem;
+  margin: 1rem auto 4rem;
 }
 .sectionWithHeading .block-content {
   margin: 3rem 0;
@@ -50,7 +55,6 @@ p.block-content {
 
 section {
   position: relative;
-  overflow: hidden;
   padding: calc(var(--spacing-sitepadding)*2) 0;
 }
 
@@ -64,8 +68,7 @@ section {
   }
 }
 
-.page-content section {
-  margin: 0 calc(var(--spacing-sitepadding) * -1);
+main.page-content + section.grid {
   padding: calc(var(--spacing-sitepadding)*2) var(--spacing-sitepadding);
   background-color: var(--color-offwhite);
   .section-heading--link span {
@@ -128,26 +131,6 @@ section {
     z-index: 10;
   }
 }
-
-/*.section-heading--link {
-  &:after {
-    content: "→";
-    display: inline-block;
-    position: absolute;
-    color: inherit;
-    margin: 0 1rem;
-    transform: translateX(-1rem);
-    opacity: 0;
-    transition: var(--transition-hover);
-  }
-
-  &:hover {
-    &:after {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-}*/
 
 .section-button {
   grid-column: 1 / -1;

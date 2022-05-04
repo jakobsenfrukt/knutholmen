@@ -20,13 +20,12 @@
           class="block-content"
         />
       </div>
-
-      <ActivityGrid
-        :heading="$t('headings.moreActivities')"
-        :limit="3"
-        :current="$page.activity._id"
-      />
     </main>
+    <ActivityGrid
+      :heading="$t('headings.moreActivities')"
+      :limit="3"
+      :current="$page.activity._id"
+    />
   </Layout>
 </template>
 

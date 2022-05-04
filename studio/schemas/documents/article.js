@@ -47,8 +47,8 @@ export default {
       title: 'Ingress'
     },
     {
-      name: 'pageContent',
-      type: 'pageContent',
+      name: 'body',
+      type: 'body',
       title: 'Innhold'
     },
   ],

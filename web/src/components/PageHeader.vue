@@ -65,12 +65,12 @@ export default {
     padding: 0 calc(var(--spacing-sitepadding) * 2);
   }
 }
-.page-heading,
-.lead {
-  margin: 3rem auto;
-}
 .page-heading {
   color: var(--color-highlight);
+  margin: 3rem auto 2rem;
+}
+.lead {
+  margin: 2rem auto 3rem;
 }
 .illustration {
   width: 100%;

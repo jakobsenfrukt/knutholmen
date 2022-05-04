@@ -16,6 +16,11 @@
       <h3>
         {{ article.title }}
       </h3>
+      <Date
+        v-if="article.publishedAt"
+        :rawDate="article.publishedAt"
+        class="article-date"
+      />
       <p>
         {{ article.lead }}
       </p>
@@ -41,10 +46,12 @@ query {
 
 <script>
 import BlockContent from "@/components/tools/BlockContent";
+import Date from "@/components/tools/Date";
 
 export default {
   components: {
     BlockContent,
+    Date,
   },
   props: {
     article: Object,
@@ -68,7 +75,7 @@ export default {
     background: var(--color-white);
 
     h3 {
-      margin: 0.5rem 0 1rem;
+      margin: 0.5rem 0 0.5rem;
       font-weight: 300;
       font-size: var(--font-size-l);
       color: var(--color-highlight);

@@ -3,9 +3,9 @@
     <PageHeader :pageHeader="$page.eventPage.pageHeader" />
     <main class="page-content">
       <PageContent :content="$page.eventPage.pageContent.blocks" />
-      <RoomGrid showIntro :limit="3" />
-      <RestaurantSection />
     </main>
+    <RoomGrid showIntro :limit="3" />
+    <RestaurantSection />
   </Layout>
 </template>
 

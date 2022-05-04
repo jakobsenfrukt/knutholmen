@@ -4,8 +4,8 @@
     <main class="page-content">
       <PageContent :content="$page.roomPage.pageContent.blocks" />
       <RoomGrid expanded hideButton />
-      <ActivityGrid showIntro :limit="3" />
     </main>
+    <ActivityGrid showIntro :limit="3" />
   </Layout>
 </template>
 
@@ -182,5 +182,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped></style>

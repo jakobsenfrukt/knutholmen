@@ -1,5 +1,5 @@
 <template>
-  <section class="offers offer-grid">
+  <section class="offers grid offer-grid">
     <div class="section-intro offer-intro">
       <g-link
         class="section-heading--link"

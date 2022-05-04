@@ -1,10 +1,11 @@
 <template>
-  <section class="news article-grid">
+  <section class="news grid article-grid">
     <div class="section-intro article-intro">
-      <span class="section-heading" v-if="showIntro"
-        ><span>{{
-          $static.articlePage.pageHeader.title[$context.locale]
-        }}</span></span
+      <g-link
+        class="section-heading--link"
+        :to="$tp(`${$t('slug.news')}`)"
+        v-if="showIntro"
+        ><span>{{ $t("menu.news") }}</span></g-link
       >
       <h2 class="article-heading">
         <template v-if="heading">
@@ -39,6 +40,9 @@
         :article="article.node"
       />
     </template>
+    <div class="section-button" v-if="!hideButton">
+      <Button :text="$t('links.news')" :link="$tp(`${$t('slug.news')}`)" />
+    </div>
   </section>
 </template>
 
@@ -112,6 +116,10 @@ export default {
       default: false,
     },
     heading: {
+      type: String,
+      default: undefined,
+    },
+    current: {
       type: String,
       default: undefined,
     },

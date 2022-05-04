@@ -52,13 +52,12 @@
           class="block-content"
         />
       </div>
-
-      <OfferGrid
-        :heading="$t('headings.moreOffers')"
-        :limit="3"
-        :current="$page.offer._id"
-      />
     </main>
+    <OfferGrid
+      :heading="$t('headings.moreOffers')"
+      :limit="3"
+      :current="$page.offer._id"
+    />
   </Layout>
 </template>
 

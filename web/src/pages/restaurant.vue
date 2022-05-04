@@ -6,8 +6,8 @@
     />
     <main class="page-content">
       <PageContent :content="$page.restaurantPage.pageContent.blocks" />
-      <ActivityGrid showIntro :limit="3" />
     </main>
+    <ActivityGrid showIntro :limit="3" />
   </Layout>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <section class="rooms room-grid" :class="{ expanded: expanded }">
+  <section class="rooms grid room-grid" :class="{ expanded: expanded }">
     <div class="section-intro room-intro">
       <g-link
         class="section-heading--link"

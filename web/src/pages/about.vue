@@ -3,8 +3,8 @@
     <PageHeader :pageHeader="$page.about.pageHeader" />
     <main class="page-content about-content">
       <PageContent :content="$page.about.pageContent.blocks" />
-      <RoomGrid :heading="$t('headings.enterRooms')" :limit="3" showIntro />
     </main>
+    <RoomGrid :heading="$t('headings.enterRooms')" :limit="3" showIntro />
   </Layout>
 </template>
 

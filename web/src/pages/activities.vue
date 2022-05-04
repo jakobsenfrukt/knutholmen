@@ -7,8 +7,8 @@
     <main class="page-content">
       <PageContent :content="$page.activityPage.pageContent.blocks" />
       <ActivityGrid hideButton />
-      <RoomGrid showIntro :limit="3" />
     </main>
+    <RoomGrid showIntro :limit="3" />
   </Layout>
 </template>
 
@@ -185,9 +185,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-.layout.activities .section-intro {
-  display: none;
-}
-</style>
