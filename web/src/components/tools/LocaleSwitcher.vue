@@ -18,7 +18,7 @@
 <script>
 export default {
   name: "LocaleSwitcher",
-  data: function () {
+  data: function() {
     return {
       currentLocale: this.$i18n.locale.toString(),
       availableLocales: this.$i18n.availableLocales,
@@ -87,7 +87,7 @@ export default {
 }
 @media (max-width: 1000px) {
   .locale-button {
-    font-size: var(--font-size-m);
+    font-size: var(--font-size-s);
   }
 }
 </style>

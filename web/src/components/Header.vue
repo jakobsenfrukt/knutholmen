@@ -4,6 +4,12 @@
     <nav class="nav nav-main">
       <MainMenu />
     </nav>
+    <nav class="nav nav-cta">
+      <ul>
+        <li><a href="#">Bestill rom</a></li>
+        <li><a href="#">Gåvekort</a></li>
+      </ul>
+    </nav>
     <LocaleSwitcher class="language language-main" />
     <div class="nav-mobile-wrapper" :class="{ open: showMenu }">
       <div role="button" @click="toggleMenu" class="menu-toggle">
@@ -12,6 +18,12 @@
       </div>
       <nav class="nav-mobile">
         <MainMenu />
+        <nav class="nav nav-cta nav-cta-mobile">
+          <ul>
+            <li><a href="#">Bestill rom</a></li>
+            <li><a href="#">Gåvekort</a></li>
+          </ul>
+        </nav>
         <LocaleSwitcher class="language" />
       </nav>
     </div>
@@ -80,9 +92,9 @@ export default {
   }
 }
 .logo {
-  width: 20rem;
-  max-width: 100%;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 20rem;
+  margin: 0.5rem auto 1rem;
   position: relative;
   z-index: 1000;
 }
@@ -92,7 +104,35 @@ export default {
   padding: 0.6rem 1.6rem 0;
   position: relative;
 }
+.nav-cta {
+  position: absolute;
+  top: calc(var(--spacing-sitepadding) * 0.75);
+  left: var(--spacing-sitepadding);
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
 
+    li {
+      display: inline-block;
+      font-family: inherit;
+      font-size: var(--font-size-xs);
+      //text-transform: uppercase;
+      color: currentColor;
+      margin-right: 1.5rem;
+
+      a {
+        text-decoration: underline;
+        text-underline-offset: 2px;
+
+        &:hover {
+          color: var(--color-yellow);
+        }
+      }
+    }
+  }
+}
 .nav-mobile-wrapper {
   display: none;
 }
@@ -127,7 +167,7 @@ export default {
   top: calc(var(--spacing-sitepadding) - 0.3rem);
   right: 0;
   padding: 0 calc(var(--spacing-sitepadding) * 0.75);
-  z-index: 101;
+  z-index: 1001;
   cursor: pointer;
   display: none;
 
@@ -157,7 +197,8 @@ export default {
     max-width: 15rem;
   }
   .nav {
-    &-main {
+    &-main,
+    &-cta {
       display: none;
     }
     &-mobile {
@@ -191,6 +232,16 @@ export default {
 
     &-main {
       display: none;
+    }
+  }
+  .nav-cta-mobile {
+    display: block;
+    top: auto;
+    bottom: var(--spacing-sitepadding);
+    left: var(--spacing-sitepadding);
+
+    li a {
+      font-size: var(--font-size-s);
     }
   }
 }
