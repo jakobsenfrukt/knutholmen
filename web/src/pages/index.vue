@@ -9,7 +9,7 @@
       :items="$page.frontpage.selectedActivities"
       :limit="3"
     />
-    <ArticleGrid showIntro />
+    <ArticleGrid showIntro :limit="3" />
   </Layout>
 </template>
 
