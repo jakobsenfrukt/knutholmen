@@ -175,6 +175,19 @@ export default {
   metaInfo() {
     return {
       title: this.$page.about.pageHeader.title[this.$context.locale],
+      meta: [
+        {
+          name: "description",
+          content: this.$page.about.pageHeader.lead[this.$context.locale]
+            ? this.$page.about.pageHeader.lead[this.$context.locale]
+            : " ",
+        },
+        {
+          name: "og:image",
+          key: "og:image",
+          content: this.$page.about.pageHeader.image.asset.url,
+        },
+      ],
     };
   },
 };
