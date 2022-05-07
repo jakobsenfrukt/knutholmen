@@ -185,7 +185,7 @@ export default {
         {
           name: "og:image",
           key: "og:image",
-          content: this.$page.about.pageHeader.image.asset.url,
+          content: this.$page.about.pageHeader.image.image.asset.url,
         },
       ],
     };
