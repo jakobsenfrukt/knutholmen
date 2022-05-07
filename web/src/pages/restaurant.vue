@@ -208,7 +208,7 @@ export default {
         {
           name: "og:image",
           key: "og:image",
-          content: this.$page.restaurantPage.pageHeader.image.image
+          content: this.$page.restaurantPage.pageHeader.image
             ? this.$page.restaurantPage.pageHeader.image.image.asset.url
             : this.$page.general.seo.ogimg.asset.url,
         },
