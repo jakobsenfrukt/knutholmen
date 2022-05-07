@@ -7,7 +7,8 @@
     <main class="page-content">
       <PageContent :content="$page.restaurantPage.pageContent.blocks" />
     </main>
-    <ActivityGrid showIntro :limit="3" />
+    <OfferGrid showIntro :limit="3" />
+    <RoomGrid showIntro :limit="3" />
   </Layout>
 </template>
 
@@ -167,7 +168,8 @@ import BlockContent from "~/components/tools/BlockContent";
 import PageHeader from "~/components/PageHeader";
 import PageContent from "~/components/PageContent";
 import Button from "~/components/buttons/Button";
-import ActivityGrid from "~/components/ActivityGrid";
+import OfferGrid from "~/components/OfferGrid";
+import RoomGrid from "~/components/RoomGrid";
 
 export default {
   components: {
@@ -175,7 +177,8 @@ export default {
     BlockContent,
     Button,
     PageContent,
-    ActivityGrid,
+    OfferGrid,
+    RoomGrid,
   },
   metaInfo() {
     return {

@@ -5,6 +5,7 @@
       <PageContent :content="$page.roomPage.pageContent.blocks" />
       <RoomGrid expanded hideButton />
     </main>
+    <OfferGrid showIntro :limit="3" />
     <ActivityGrid showIntro :limit="3" />
   </Layout>
 </template>
@@ -166,6 +167,7 @@ import PageHeader from "~/components/PageHeader";
 import PageContent from "~/components/PageContent";
 import RoomGrid from "~/components/RoomGrid";
 import ActivityGrid from "~/components/ActivityGrid";
+import OfferGrid from "~/components/OfferGrid";
 
 export default {
   components: {
@@ -174,6 +176,7 @@ export default {
     PageContent,
     RoomGrid,
     ActivityGrid,
+    OfferGrid,
   },
   metaInfo() {
     return {
