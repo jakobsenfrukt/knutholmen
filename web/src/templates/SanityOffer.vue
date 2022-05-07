@@ -111,6 +111,19 @@ query offer ($id: ID!) {
       _rawEn
     }
   }
+  general: sanityGeneral(id: "general") {
+    seo {
+      ogimg {
+        asset {
+          url
+        }
+      }
+      description {
+        no
+        en
+      }
+    }
+  }
 }
 </page-query>
 
@@ -126,6 +139,26 @@ export default {
     Button,
     BlockContent,
     OfferGrid,
+  },
+  metaInfo() {
+    return {
+      title: this.$page.offer.title[this.$context.locale],
+      meta: [
+        {
+          name: "description",
+          content: this.$page.offer.lead
+            ? this.$page.offer.lead[this.$context.locale]
+            : this.$page.general.seo.description[this.$context.locale],
+        },
+        {
+          name: "og:image",
+          key: "og:image",
+          content: this.$page.offer.image
+            ? this.$page.offer.image.image.asset.url
+            : this.$page.general.seo.ogimg.asset.url,
+        },
+      ],
+    };
   },
 };
 </script>

@@ -54,6 +54,19 @@ query ($id: ID!) {
     lead
     _rawBody
   }
+  general: sanityGeneral(id: "general") {
+    seo {
+      ogimg {
+        asset {
+          url
+        }
+      }
+      description {
+        no
+        en
+      }
+    }
+  }
 }
 </page-query>
 
@@ -69,6 +82,26 @@ export default {
     Date,
     PageHeader,
     ArticleGrid,
+  },
+  metaInfo() {
+    return {
+      title: this.$page.article.title,
+      meta: [
+        {
+          name: "description",
+          content: this.$page.article.lead
+            ? this.$page.article.lead
+            : this.$page.general.seo.description,
+        },
+        {
+          name: "og:image",
+          key: "og:image",
+          content: this.$page.article.image
+            ? this.$page.article.image.image.asset.url
+            : this.$page.general.seo.ogimg.asset.url,
+        },
+      ],
+    };
   },
 };
 </script>

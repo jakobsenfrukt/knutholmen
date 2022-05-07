@@ -199,9 +199,7 @@ export default {
       meta: [
         {
           name: "description",
-          content: this.$page.restaurantPage.pageHeader.lead[
-            this.$context.locale
-          ]
+          content: this.$page.restaurantPage.pageHeader.lead
             ? this.$page.restaurantPage.pageHeader.lead[this.$context.locale]
             : this.$page.general.seo.description[this.$context.locale],
         },

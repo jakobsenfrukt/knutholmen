@@ -197,7 +197,7 @@ export default {
       meta: [
         {
           name: "description",
-          content: this.$page.roomPage.pageHeader.lead[this.$context.locale]
+          content: this.$page.roomPage.pageHeader.lead
             ? this.$page.roomPage.pageHeader.lead[this.$context.locale]
             : this.$page.general.seo.description[this.$context.locale],
         },

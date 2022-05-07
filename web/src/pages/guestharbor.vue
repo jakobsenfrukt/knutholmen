@@ -189,7 +189,7 @@ export default {
       meta: [
         {
           name: "description",
-          content: this.$page.guestHarbor.pageHeader.lead[this.$context.locale]
+          content: this.$page.guestHarbor.pageHeader.lead
             ? this.$page.guestHarbor.pageHeader.lead[this.$context.locale]
             : this.$page.general.seo.description[this.$context.locale],
         },

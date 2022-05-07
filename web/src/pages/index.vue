@@ -199,9 +199,9 @@ export default {
       meta: [
         {
           name: "description",
-          content: this.$page.frontpage.text[this.$context.locale]
+          content: this.$page.frontpage.text
             ? this.$page.frontpage.text[this.$context.locale]
-            : " ",
+            : this.$page.general.seo.description[this.$context.locale],
         },
         {
           name: "og:image",

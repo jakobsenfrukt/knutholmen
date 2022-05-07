@@ -80,6 +80,19 @@ query activity ($id: ID!) {
       }
     }
   }
+  general: sanityGeneral(id: "general") {
+    seo {
+      ogimg {
+        asset {
+          url
+        }
+      }
+      description {
+        no
+        en
+      }
+    }
+  }
 }
 </page-query>
 
@@ -95,6 +108,26 @@ export default {
     BlockContent,
     ActivityGrid,
     OfferGrid,
+  },
+  metaInfo() {
+    return {
+      title: this.$page.activity.title[this.$context.locale],
+      meta: [
+        {
+          name: "description",
+          content: this.$page.activity.lead
+            ? this.$page.activity.lead[this.$context.locale]
+            : this.$page.general.seo.description[this.$context.locale],
+        },
+        {
+          name: "og:image",
+          key: "og:image",
+          content: this.$page.activity.image
+            ? this.$page.activity.image.image.asset.url
+            : this.$page.general.seo.ogimg.asset.url,
+        },
+      ],
+    };
   },
 };
 </script>

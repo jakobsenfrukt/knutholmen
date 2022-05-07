@@ -194,7 +194,7 @@ export default {
       meta: [
         {
           name: "description",
-          content: this.$page.eventPage.pageHeader.lead[this.$context.locale]
+          content: this.$page.eventPage.pageHeader.lead
             ? this.$page.eventPage.pageHeader.lead[this.$context.locale]
             : this.$page.general.seo.description[this.$context.locale],
         },
