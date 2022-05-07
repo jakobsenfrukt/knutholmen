@@ -156,6 +156,19 @@ query {
       }
     }
   }
+  general: sanityGeneral(id: "general") {
+    seo {
+      ogimg {
+        asset {
+          url
+        }
+      }
+      description {
+        no
+        en
+      }
+    }
+  }
 }
 </page-query>
 
@@ -180,12 +193,14 @@ export default {
           name: "description",
           content: this.$page.about.pageHeader.lead[this.$context.locale]
             ? this.$page.about.pageHeader.lead[this.$context.locale]
-            : " ",
+            : this.$page.general.seo.description[this.$context.locale],
         },
         {
           name: "og:image",
           key: "og:image",
-          content: this.$page.about.pageHeader.image.image.asset.url,
+          content: this.$page.about.pageHeader.image.image.asset.url
+            ? this.$page.about.pageHeader.image.image.asset.url
+            : this.$page.general.seo.ogimg.asset.url,
         },
       ],
     };

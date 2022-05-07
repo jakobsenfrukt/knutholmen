@@ -21,6 +21,34 @@ query {
       no
       en
     }
+    text {
+      no
+      en
+    }
+    image {
+      image {
+        asset {
+          _id
+          url
+        }
+      }
+      alt {
+        no
+        en
+      }
+    }
+    image2 {
+      image {
+        asset {
+          _id
+          url
+        }
+      }
+      alt {
+        no
+        en
+      }
+    }
     selectedOffers {
       id
       title {
@@ -127,6 +155,19 @@ query {
       }
     }
   }
+  general: sanityGeneral(id: "general") {
+    seo {
+      ogimg {
+        asset {
+          url
+        }
+      }
+      description {
+        no
+        en
+      }
+    }
+  }
 }
 </page-query>
 
@@ -150,6 +191,26 @@ export default {
   metaInfo() {
     return {
       title: this.$page.frontpage.title[this.$context.locale],
+    };
+  },
+  metaInfo() {
+    return {
+      title: this.$page.frontpage.title[this.$context.locale],
+      meta: [
+        {
+          name: "description",
+          content: this.$page.frontpage.text[this.$context.locale]
+            ? this.$page.frontpage.text[this.$context.locale]
+            : " ",
+        },
+        {
+          name: "og:image",
+          key: "og:image",
+          content: this.$page.frontpage.image2.image.asset.url
+            ? this.$page.frontpage.image2.image.asset.url
+            : this.$page.general.seo.ogimg.asset.url,
+        },
+      ],
     };
   },
 };

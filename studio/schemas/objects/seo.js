@@ -12,7 +12,7 @@ export default {
     },
     {
       name: 'description',
-      type: 'text',
+      type: 'localeText',
       title: 'Beskrivelse',
       description: 'Kort beskrivelse av nettsiden for søkemotorer og sosiale medier.'
     }

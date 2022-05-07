@@ -155,6 +155,19 @@ query {
       }
     }
   }
+  general: sanityGeneral(id: "general") {
+    seo {
+      ogimg {
+        asset {
+          url
+        }
+      }
+      description {
+        no
+        en
+      }
+    }
+  }
 }
 </page-query>
 
@@ -172,6 +185,21 @@ export default {
   metaInfo() {
     return {
       title: this.$page.guestinfo.pageHeader.title[this.$context.locale],
+      meta: [
+        {
+          name: "description",
+          content: this.$page.guestinfo.pageHeader.lead[this.$context.locale]
+            ? this.$page.guestinfo.pageHeader.lead[this.$context.locale]
+            : this.$page.general.seo.description[this.$context.locale],
+        },
+        {
+          name: "og:image",
+          key: "og:image",
+          content: this.$page.guestinfo.pageHeader.image.image.asset.url
+            ? this.$page.guestinfo.pageHeader.image.image.asset.url
+            : this.$page.general.seo.ogimg.asset.url,
+        },
+      ],
     };
   },
 };

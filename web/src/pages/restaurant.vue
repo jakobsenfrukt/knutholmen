@@ -160,6 +160,19 @@ query {
       }
     }
   }
+  general: sanityGeneral(id: "general") {
+    seo {
+      ogimg {
+        asset {
+          url
+        }
+      }
+      description {
+        no
+        en
+      }
+    }
+  }
 }
 </page-query>
 
@@ -183,6 +196,23 @@ export default {
   metaInfo() {
     return {
       title: this.$page.restaurantPage.pageHeader.title[this.$context.locale],
+      meta: [
+        {
+          name: "description",
+          content: this.$page.restaurantPage.pageHeader.lead[
+            this.$context.locale
+          ]
+            ? this.$page.restaurantPage.pageHeader.lead[this.$context.locale]
+            : this.$page.general.seo.description[this.$context.locale],
+        },
+        {
+          name: "og:image",
+          key: "og:image",
+          content: this.$page.restaurantPage.pageHeader.image.image.asset.url
+            ? this.$page.restaurantPage.pageHeader.image.image.asset.url
+            : this.$page.general.seo.ogimg.asset.url,
+        },
+      ],
     };
   },
 };
