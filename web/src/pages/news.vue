@@ -2,7 +2,7 @@
   <Layout class="news">
     <PageHeader :pageHeader="$page.articlePage.pageHeader" />
     <main class="page-content">
-      <ArticleGrid hideButton />
+      <ArticleGrid hideButton showArchive :limit="12" />
     </main>
   </Layout>
 </template>

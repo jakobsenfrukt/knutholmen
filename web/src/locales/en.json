@@ -22,7 +22,8 @@
     "news": "Read more articles",
     "roomItem": "More info and images",
     "offerItem": "Read more and book",
-    "activityItem": "Read more and book"
+    "activityItem": "Read more and book",
+    "showMore": "Load more"
   },
   "slug": {
     "rooms": "/rooms",

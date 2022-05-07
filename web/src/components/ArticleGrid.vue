@@ -40,8 +40,19 @@
         :article="article.node"
       />
     </template>
-    <div class="section-button" v-if="!hideButton">
-      <Button :text="$t('links.news')" :link="$tp(`${$t('slug.news')}`)" />
+    <div class="section-button" v-if="!hideButton || showArchive">
+      <Button
+        :text="$t('links.news')"
+        :link="$tp(`${$t('slug.news')}`)"
+        v-if="!hideButton"
+      />
+      <div
+        v-if="showArchive && limit < getLocaleArticles().length"
+        class="button show-more"
+        @click="showMore()"
+      >
+        {{ $t("links.showMore") }}
+      </div>
     </div>
   </section>
 </template>
@@ -123,6 +134,10 @@ export default {
       type: String,
       default: undefined,
     },
+    showArchive: {
+      type: Boolean,
+      default: false,
+    },
   },
   methods: {
     getLocaleArticles() {
@@ -134,6 +149,9 @@ export default {
       return array
         .filter((item) => item.node.id != this.current)
         .sort(() => Math.random() - Math.random());
+    },
+    showMore() {
+      this.limit += this.limit;
     },
   },
 };

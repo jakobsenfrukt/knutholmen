@@ -22,7 +22,8 @@
     "news": "Les fleire artiklar",
     "roomItem": "Meir info og bilete",
     "offerItem": "Les meir og bestill",
-    "activityItem": "Les meir og bestill"
+    "activityItem": "Les meir og bestill",
+    "showMore": "Last inn fleire"
   },
   "slug": {
     "rooms": "/rom",

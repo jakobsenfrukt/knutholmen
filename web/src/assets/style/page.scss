@@ -74,7 +74,7 @@ main.page-content + section.grid {
   }
 }
 main.page-content section.grid {
-  padding-top: 0;
+  padding: 0 0 var(--spacing-sitepadding);
   .section-intro {
     display: none;
   }
