@@ -6,8 +6,20 @@
     </nav>
     <nav class="nav nav-cta">
       <ul>
-        <li><a href="#">Bestill rom</a></li>
-        <li><a href="#">Gåvekort</a></li>
+        <li>
+          <a
+            :href="$static.general.bookRoom.url[$context.locale]"
+            target="_blank"
+            >{{ $static.general.bookRoom.buttonText[$context.locale] }}</a
+          >
+        </li>
+        <li>
+          <a
+            :href="$static.general.giftcard.url[$context.locale]"
+            target="_blank"
+            >{{ $t("headings.giftcard") }}</a
+          >
+        </li>
       </ul>
     </nav>
     <LocaleSwitcher class="language language-main" />
@@ -20,8 +32,20 @@
         <MainMenu />
         <nav class="nav nav-cta nav-cta-mobile">
           <ul>
-            <li><a href="#">Bestill rom</a></li>
-            <li><a href="#">Gåvekort</a></li>
+            <li>
+              <a
+                :href="$static.general.bookRoom.url[$context.locale]"
+                target="_blank"
+                >{{ $static.general.bookRoom.buttonText[$context.locale] }}</a
+              >
+            </li>
+            <li>
+              <a
+                :href="$static.general.giftcard.url[$context.locale]"
+                target="_blank"
+                >{{ $t("headings.giftcard") }}</a
+              >
+            </li>
           </ul>
         </nav>
         <LocaleSwitcher class="language" />
@@ -35,6 +59,33 @@
     ></IntersectionObserver>
   </header>
 </template>
+
+<static-query>
+query {
+  general: sanityGeneral(id: "general") {
+    bookRoom {
+      buttonText {
+        no
+        en
+      }
+      url {
+        no
+        en
+      }
+    }
+    giftcard {
+      buttonText {
+        no
+        en
+      }
+      url {
+        no
+        en
+      }
+    }
+  }
+}
+</static-query>
 
 <script>
 import Logo from "@/components/Logo";
