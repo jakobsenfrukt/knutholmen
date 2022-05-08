@@ -6,6 +6,7 @@
         v-model="selectedDate"
         range
         :disabled-date="disabledDate"
+        :lang="lang()"
         @change="onDateRangeChange"
       ></date-picker>
     </div>
@@ -45,7 +46,8 @@
 <script>
 import DatePicker from "vue2-datepicker";
 import "vue2-datepicker/index.css";
-import "vue2-datepicker/locale/nb";
+import * as langNb from "vue2-datepicker/locale/nb";
+import * as langEn from "vue2-datepicker/locale/en";
 
 // https://be.synxis.com/?config=KNUTSBE&hotel=55981&level=hotel&locale=nb-NO
 
@@ -103,6 +105,9 @@ export default {
       return (
         new Date(date.toDateString()) < new Date(new Date().toDateString())
       );
+    },
+    lang() {
+      return this.$context.locale === "no" ? langNb : langEn;
     },
   },
 };
