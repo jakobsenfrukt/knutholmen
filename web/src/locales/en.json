@@ -23,7 +23,9 @@
     "roomItem": "More info and images",
     "offerItem": "Read more and book",
     "activityItem": "Read more and book",
-    "showMore": "Load more"
+    "showMore": "Load more",
+    "checkAvailability": "Check availability",
+    "giftcardExternal": "Buy a gift card from De Historiske"
   },
   "slug": {
     "rooms": "/rooms",
@@ -44,7 +46,8 @@
     "moreActivities": "Other activities",
     "moreOffers": "Other package offers",
     "moreArticles": "Related articles",
-    "enterRooms": "Stay at Knutholmen"
+    "enterRooms": "Stay at Knutholmen",
+    "bookStay": "Book your stay"
   },
   "error": {
     "heading": "Oh no! This page is missing!",

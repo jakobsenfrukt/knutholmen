@@ -144,6 +144,9 @@ export default {
       return this.$static.articles.edges.filter((article) => {
         return article.node.locale === this.$context.locale;
       });
+      /*.filter((article) => {
+          return article.publishedAt < Date.now();
+        });*/
     },
     shuffle(array) {
       return array

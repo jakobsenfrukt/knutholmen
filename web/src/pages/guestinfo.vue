@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Layout class="guestinfo">
     <PageHeader :pageHeader="$page.guestinfo.pageHeader" />
     <main class="page-content guestinfo-content">
       <PageContent :content="$page.guestinfo.pageContent.blocks" />
@@ -205,4 +205,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss">
+.guestinfo .footer-cta {
+  display: none;
+}
+</style>

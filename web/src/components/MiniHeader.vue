@@ -278,7 +278,7 @@ export default {
       display: none;
     }
     &-mobile {
-      display: flex;
+      display: none;
       opacity: 0;
       transform: translateY(-100%);
     }
@@ -286,6 +286,7 @@ export default {
   .open {
     color: var(--color-background);
     .nav-mobile {
+      display: flex;
       opacity: 1;
       transform: translateY(0);
       animation: menuEnter 0.3s linear forwards;

@@ -22,7 +22,7 @@
       </div>
 
       <div class="booker-wrapper">
-        <Button type="bookRoom" />
+        <!--<Button type="bookRoom" />-->
         <Booker />
       </div>
     </div>
@@ -105,7 +105,7 @@ export default {
   overflow: visible;
   &-top {
     position: relative;
-    padding-bottom: calc(var(--spacing-sitepadding) * 1.75);
+    padding-bottom: calc(var(--spacing-sitepadding) * 2);
   }
   .illustration {
     display: block;
@@ -134,7 +134,7 @@ export default {
 .booker {
   &-wrapper {
     position: absolute;
-    bottom: -1.5rem;
+    bottom: -2.5rem;
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
@@ -147,6 +147,14 @@ export default {
     .illustration {
       padding: 3rem 0 0;
     }
+    &-top {
+      position: relative;
+      padding-bottom: calc(var(--spacing-sitepadding) * 6);
+    }
+  }
+  .booker-wrapper {
+    bottom: auto;
+    margin-top: 2rem;
   }
 }
 </style>

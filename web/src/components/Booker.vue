@@ -1,6 +1,7 @@
 <template>
   <div class="booker">
     <div class="booker-date-picker">
+      <span class="label">Dato</span>
       <date-picker
         v-model="selectedDate"
         range
@@ -9,8 +10,8 @@
       ></date-picker>
     </div>
     <div class="booker-num-people">
+      <span class="label">Antall gjester</span>
       <div>
-        <span>Voksne</span>
         <input
           type="number"
           id="booker-adults"
@@ -20,9 +21,7 @@
           ref="numAdults"
           @change="onNumAdultsChange"
         />
-      </div>
-      <div>
-        <span>Barn</span>
+        <span class="sub-label">Voksne</span>
         <input
           type="number"
           id="booker-children"
@@ -32,12 +31,13 @@
           ref="numChildren"
           @change="onNumChildrenChange"
         />
+        <span class="sub-label">Barn</span>
       </div>
     </div>
     <div class="booker-launch">
-      <a :href="searchUrl()" target="_blank" class="button"
-        >Sjekk tilgjengelighet</a
-      >
+      <a :href="searchUrl()" target="_blank" class="button">{{
+        $t("links.checkAvailability")
+      }}</a>
     </div>
   </div>
 </template>
@@ -108,21 +108,100 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .booker {
   background: var(--color-white);
   color: var(--color-blue-dark);
-  display: flex;
-  padding: 0.5rem;
-
-  display: none;
+  box-shadow: var(--box-shadow);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1rem;
+  padding: 0.7rem 0.8rem 0.8rem;
+  text-align: left;
 
   &-date-picker {
   }
+  &-num-people {
+    input {
+      margin-right: 0.4rem;
+    }
+  }
   &-launch {
   }
+  .label {
+    display: block;
+    text-transform: uppercase;
+    font-size: var(--font-size-xs);
+    margin-bottom: 0.2rem;
+  }
+  .sub-label {
+    display: inline-block;
+    margin-right: 0.6rem;
+  }
   .button {
-    word-wrap: nowrap;
+    background: var(--color-green) !important;
+    &:hover {
+      background: var(--color-yellow) !important;
+    }
+  }
+}
+.mx-datepicker-main {
+  font-family: var(--font-main);
+  color: currentColor;
+
+  button {
+    font-family: var(--font-main);
+    text-transform: capitalize;
+    color: currentColor;
+  }
+}
+.mx-table-date .today {
+  color: var(--color-blue-text);
+}
+.mx-calendar-content .cell.active {
+  background-color: var(--color-blue-text);
+}
+.mx-calendar-content .cell.hover-in-range {
+  background-color: var(--color-blue-light);
+}
+.mx-calendar-content .cell:hover {
+  background-color: var(--color-blue-text);
+  color: var(--color-white);
+}
+.mx-input,
+.booker input {
+  font-family: var(--font-main);
+  color: var(--color-blue-dark);
+  font-size: 1rem;
+  border: 1px solid rgba(28, 41, 75, 0.6);
+  border-radius: 0;
+  padding: 0.2rem 0.4rem;
+  height: auto;
+  line-height: 1.5;
+}
+.mx-datepicker-range {
+  width: 16rem;
+}
+
+@media (max-width: 1000px) {
+  .booker {
+    display: inline-block;
+    padding: 1rem;
+    &-date-picker,
+    &-num-people {
+      margin-bottom: 1rem;
+    }
+    &-launch {
+      margin-bottom: 0;
+      .button {
+        width: 100%;
+        text-align: center;
+      }
+    }
+    .mx-datepicker-range {
+      width: 100%;
+    }
   }
 }
 </style>

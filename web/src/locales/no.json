@@ -23,7 +23,9 @@
     "roomItem": "Meir info og bilete",
     "offerItem": "Les meir og bestill",
     "activityItem": "Les meir og bestill",
-    "showMore": "Last inn fleire"
+    "showMore": "Last inn fleire",
+    "checkAvailability": "Sjekk tilgjengelegheit",
+    "giftcardExternal": "Kjøp gåvekort hos De Historiske"
   },
   "slug": {
     "rooms": "/rom",
@@ -44,7 +46,8 @@
     "moreActivities": "Fleire aktivitetar",
     "moreOffers": "Fleire pakketilbod",
     "moreArticles": "Fleire artiklar",
-    "enterRooms": "Her kan du bu på Knutholmen"
+    "enterRooms": "Her kan du bu på Knutholmen",
+    "bookStay": "Bestill overnatting"
   },
   "error": {
     "heading": "Ånei! Denne sida finn vi ikkje!",

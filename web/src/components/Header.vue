@@ -143,11 +143,8 @@ export default {
   }
 }
 .logo {
-  width: 100%;
-  max-width: 20rem;
+  width: 20rem;
   margin: 0.5rem auto 1rem;
-  position: relative;
-  z-index: 1000;
 }
 .nav-main {
   display: inline-block;
@@ -253,7 +250,7 @@ export default {
       display: none;
     }
     &-mobile {
-      display: flex;
+      display: none;
       opacity: 0;
       transform: translateY(-100%);
     }
@@ -264,6 +261,7 @@ export default {
   .open {
     color: var(--color-white);
     .nav-mobile {
+      display: flex;
       opacity: 1;
       transform: translateY(0);
       animation: menuEnter 0.3s linear forwards;
