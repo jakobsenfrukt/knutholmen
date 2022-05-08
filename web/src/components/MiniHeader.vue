@@ -283,6 +283,9 @@ export default {
       transform: translateY(-100%);
     }
   }
+  .logo {
+    z-index: 1002;
+  }
   .open {
     color: var(--color-background);
     .nav-mobile {

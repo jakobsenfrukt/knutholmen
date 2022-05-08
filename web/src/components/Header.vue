@@ -243,6 +243,8 @@ export default {
   .logo {
     margin: 0;
     max-width: 15rem;
+    position: relative;
+    z-index: 1002;
   }
   .nav {
     &-main,
