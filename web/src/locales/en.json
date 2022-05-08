@@ -53,5 +53,12 @@
     "heading": "Oh no! This page is missing!",
     "body": "For some reason we can't find the page you're looking for. Did you check the spelling in the URL? If you know for sure there was supposed to be a page here, please let us know. If not, try again from our front page!",
     "link": "Go home"
+  },
+  "booker": {
+    "checkAvailability": "Check availability",
+    "date": "Date",
+    "guests": "Number of guests",
+    "adults": "Adults",
+    "children": "Children"
   }
 }

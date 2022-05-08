@@ -24,7 +24,6 @@
     "offerItem": "Les meir og bestill",
     "activityItem": "Les meir og bestill",
     "showMore": "Last inn fleire",
-    "checkAvailability": "Sjekk tilgjengelegheit",
     "giftcardExternal": "Kjøp gåvekort hos De Historiske"
   },
   "slug": {
@@ -53,5 +52,12 @@
     "heading": "Ånei! Denne sida finn vi ikkje!",
     "body": "Vi kan ikkje finne sida du leitar etter. Sjekka du om det var skrivefeil i URLen? Om du veit sikkert at det skulle vore ei side her, fortel det gjerne til oss. Hvis ikkje, prøv igjen fra forsida vår!",
     "link": "Til framsida"
+  },
+  "booker": {
+    "checkAvailability": "Sjekk tilgjengelegheit",
+    "date": "Dato",
+    "guests": "Tal på gjester",
+    "adults": "Vaksne",
+    "children": "Barn"
   }
 }

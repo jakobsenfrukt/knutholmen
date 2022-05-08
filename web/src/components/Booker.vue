@@ -1,7 +1,7 @@
 <template>
   <div class="booker">
     <div class="booker-date-picker">
-      <span class="label">Dato</span>
+      <span class="label">{{ $t("booker.date") }}</span>
       <date-picker
         v-model="selectedDate"
         range
@@ -10,7 +10,7 @@
       ></date-picker>
     </div>
     <div class="booker-num-people">
-      <span class="label">Antall gjester</span>
+      <span class="label">{{ $t("booker.guests") }}</span>
       <div>
         <input
           type="number"
@@ -21,7 +21,7 @@
           ref="numAdults"
           @change="onNumAdultsChange"
         />
-        <span class="sub-label">Voksne</span>
+        <span class="sub-label">{{ $t("booker.adults") }}</span>
         <input
           type="number"
           id="booker-children"
@@ -31,12 +31,12 @@
           ref="numChildren"
           @change="onNumChildrenChange"
         />
-        <span class="sub-label">Barn</span>
+        <span class="sub-label">{{ $t("booker.children") }}</span>
       </div>
     </div>
     <div class="booker-launch">
       <a :href="searchUrl()" target="_blank" class="button">{{
-        $t("links.checkAvailability")
+        $t("booker.checkAvailability")
       }}</a>
     </div>
   </div>
