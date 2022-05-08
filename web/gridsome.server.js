@@ -8,6 +8,8 @@ const clientConfig = require("./client-config");
 
 const { pathToPage } = require("./src/utils/localizedUrl");
 
+const moment = require("moment");
+
 module.exports = function(api) {
   api.loadSource((store) => {
     // Use the Data store API here: https://gridsome.org/docs/data-store-api
@@ -82,6 +84,7 @@ module.exports = function(api) {
                 current
               }
               locale
+              publishedAt
             }
           }
         }
@@ -169,9 +172,21 @@ module.exports = function(api) {
 
     // Articles
     const articles = response.data.articles.edges;
+    const today = moment()
+      .startOf("day")
+      .toDate();
     articles
       .map((edge) => edge.node)
       .filter((node) => node.slug?.current)
+      .filter((node) => {
+        if (!node.publishedAt) {
+          return false;
+        }
+        const publishDate = moment(node.publishedAt)
+          .startOf("day")
+          .toDate();
+        return publishDate <= today;
+      })
       .forEach((page) =>
         createPageWithLocale({
           page: page,

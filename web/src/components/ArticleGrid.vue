@@ -19,8 +19,8 @@
         class="lead"
         v-if="
           showIntro &&
-            $static.articlePage.pageHeader.lead &&
-            $static.articlePage.pageHeader.lead[$context.locale]
+          $static.articlePage.pageHeader.lead &&
+          $static.articlePage.pageHeader.lead[$context.locale]
         "
       >
         {{ $static.articlePage.pageHeader.lead[$context.locale] }}
@@ -107,6 +107,7 @@ query {
 <script>
 import ArticleItem from "@/components/ArticleItem";
 import Button from "@/components/buttons/Button";
+import * as moment from "moment";
 
 export default {
   components: {
@@ -141,12 +142,18 @@ export default {
   },
   methods: {
     getLocaleArticles() {
-      return this.$static.articles.edges.filter((article) => {
-        return article.node.locale === this.$context.locale;
-      });
-      /*.filter((article) => {
-          return article.publishedAt < Date.now();
-        });*/
+      const today = moment().startOf("day").toDate();
+      return this.$static.articles.edges
+        .filter((article) => article.node.locale === this.$context.locale)
+        .filter((article) => {
+          if (!article.node.publishedAt) {
+            return false;
+          }
+          const publishDate = moment(article.node.publishedAt)
+            .startOf("day")
+            .toDate();
+          return publishDate <= today;
+        });
     },
     shuffle(array) {
       return array
