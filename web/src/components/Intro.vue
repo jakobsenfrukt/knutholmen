@@ -22,7 +22,7 @@
       </div>
 
       <div class="booker-wrapper">
-        <!--<Button type="bookRoom" />-->
+        <Button type="bookRoom" class="simplebutton" />
         <Booker />
       </div>
     </div>
@@ -140,6 +140,9 @@ export default {
     z-index: 2;
     width: 100%;
     text-align: center;
+    .simplebutton {
+      display: none;
+    }
   }
 }
 @media (max-width: 1000px) {
@@ -149,12 +152,18 @@ export default {
     }
     &-top {
       position: relative;
-      padding-bottom: calc(var(--spacing-sitepadding) * 6);
+      padding-bottom: calc(var(--spacing-sitepadding) * 2.5);
     }
-  }
-  .booker-wrapper {
-    bottom: auto;
-    margin-top: 2rem;
+    .booker-wrapper {
+      bottom: auto;
+      margin-top: 2rem;
+      .booker {
+        display: none;
+      }
+      .simplebutton {
+        display: block;
+      }
+    }
   }
 }
 </style>
