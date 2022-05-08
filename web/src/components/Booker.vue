@@ -78,7 +78,7 @@ export default {
         config: "KNUTSBE",
         hotel: "55981",
         level: "hotel",
-        locale: "nb-NO", // TODO: or english
+        locale: this.$context.locale === "no" ? "nb-NO" : "en-US",
         arrive: (startDate && startDate.toISOString().split("T")[0]) || "",
         depart: (endDate && endDate.toISOString().split("T")[0]) || "",
         adult: numAdults,
