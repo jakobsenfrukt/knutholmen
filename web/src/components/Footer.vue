@@ -254,8 +254,9 @@ export default {
 }
 .footer-logos--visa {
   background: #000;
-  margin: 0 calc(var(--spacing-sitepadding) * -1);
-  padding: calc(var(--spacing-sitepadding) / 4) var(--spacing-sitepadding);
+  margin: 0;
+  padding: calc(var(--spacing-sitepadding) / 4)
+    calc(var(--spacing-sitepadding) * 0.5);
   text-align: right;
 
   li {
@@ -275,6 +276,22 @@ export default {
   .footer-logos--friends {
     grid-template-columns: 1fr 1fr;
   }
+  .giftcard {
+    margin-bottom: 3rem;
+  }
+  .footer-logos--friends {
+    grid-template-columns: 1fr 1fr;
+    li {
+      &:first-of-type {
+        grid-column: span 2;
+        margin-bottom: 2rem;
+      }
+      &:last-of-type {
+        grid-column: span 1;
+        text-align: right;
+      }
+    }
+  }
 }
 
 @media (max-width: 400px) {
@@ -282,8 +299,12 @@ export default {
   .site-footer .footer-info {
     grid-template-columns: 1fr;
   }
+  .contact-list {
+    margin-bottom: 2rem;
+  }
   .giftcard {
     grid-column: span 1;
+    margin-bottom: 3rem;
   }
 }
 </style>
