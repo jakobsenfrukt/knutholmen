@@ -56,8 +56,8 @@
   "booker": {
     "checkAvailability": "Sjekk tilgjengelegheit",
     "date": "Dato",
-    "guests": "Tal på gjester",
+    "guests": "Tal på gjestar",
     "adults": "Vaksne",
-    "children": "Barn"
+    "children": "Born"
   }
 }
