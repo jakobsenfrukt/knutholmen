@@ -149,6 +149,7 @@ export default {
 .mx-datepicker-main {
   font-family: var(--font-main);
   color: currentColor;
+  box-shadow: var(--box-shadow);
 
   button {
     font-family: var(--font-main);
