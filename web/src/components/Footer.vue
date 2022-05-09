@@ -95,10 +95,6 @@
         <li><img src="/assets/images/footerlogos/mf-logo.svg" /></li>
       </ul>
     </div>
-    <ul class="footer-logos footer-logos--visa">
-      <li><img src="/assets/images/footerlogos/VISA__Verified_by.png" /></li>
-      <li><img src="/assets/images/footerlogos/MasterCard.png" /></li>
-    </ul>
   </footer>
 </template>
 
@@ -249,23 +245,6 @@ export default {
     &:last-of-type {
       grid-column: span 2;
       text-align: right;
-    }
-  }
-}
-.footer-logos--visa {
-  background: #000;
-  margin: 0;
-  padding: calc(var(--spacing-sitepadding) / 4)
-    calc(var(--spacing-sitepadding) * 0.5);
-  text-align: right;
-
-  li {
-    display: inline-block;
-    margin-right: 1rem;
-    height: 1.2rem;
-    img {
-      max-height: 100%;
-      opacity: 0.8;
     }
   }
 }
