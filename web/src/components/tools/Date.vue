@@ -46,7 +46,7 @@ export default {
       const dateObject = new Date(this.rawDate);
       const year = dateObject.getFullYear();
       const day = dateObject.getDate();
-      const monthnumber = dateObject.getMonth() + 1;
+      const monthnumber = dateObject.getMonth();
 
       return {
         no: day + ". " + this.monthnames.no[monthnumber] + " " + year,
