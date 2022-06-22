@@ -81,13 +81,27 @@ export default {
         hotel: "55981",
         level: "hotel",
         locale: this.$context.locale === "no" ? "nb-NO" : "en-US",
-        arrive: (startDate && startDate.toISOString().split("T")[0]) || "",
-        depart: (endDate && endDate.toISOString().split("T")[0]) || "",
+        arrive: (startDate && this.getIsoDate(startDate)) || "",
+        depart: (endDate && this.getIsoDate(endDate)) || "",
         adult: numAdults,
         child: numChildren,
       };
       const paramsString = new URLSearchParams(params).toString();
       return `${baseUrl}?${paramsString}`;
+    },
+    getIsoDate(date) {
+      let year = date.getFullYear();
+      let month = date.getMonth() + 1;
+      let day = date.getDate();
+
+      if (day < 10) {
+        day = "0" + day;
+      }
+      if (month < 10) {
+        month = "0" + month;
+      }
+
+      return year + "-" + month + "-" + day;
     },
     onDateRangeChange(value) {
       const [startDate, endDate] = value;
