@@ -174,26 +174,24 @@ export default {
     PageContent,
     BlockContent,
   },
-  /*metaInfo() {
+  metaInfo() {
     return {
-      title: this.$page.room.title[this.$context.locale],
+      title: this.$page.page.title[this.$context.locale],
       meta: [
         {
           name: "description",
-          content: this.$page.room.lead
-            ? this.$page.room.lead[this.$context.locale]
+          content: this.$page.page.lead
+            ? this.$page.page.lead[this.$context.locale]
             : this.$page.general.seo.description[this.$context.locale],
         },
         {
           name: "og:image",
           key: "og:image",
-          content: this.$page.room.image
-            ? this.$page.room.image.image.asset.url
-            : this.$page.general.seo.ogimg.asset.url,
+          content: this.$page.general.seo.ogimg.asset.url,
         },
       ],
     };
-  },*/
+  },
 };
 </script>
 
