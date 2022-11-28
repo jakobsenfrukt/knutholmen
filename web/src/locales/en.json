@@ -10,7 +10,9 @@
     "contact": "Contact",
     "offers": "Offers",
     "guestharbor": "Guest harbor",
-    "news": "News"
+    "news": "News",
+    "privacy": "Privacy",
+    "terms": "Terms and conditions"
   },
   "links": {
     "offers": "View all offers",
@@ -35,7 +37,9 @@
     "activities": "/activities",
     "restaurant": "/restaurant",
     "meetings": "/meetings",
-    "guestharbor": "/guestharbor"
+    "guestharbor": "/guestharbor",
+    "privacy": "/privacy",
+    "terms": "/terms-and-conditions"
   },
   "headings": {
     "address": "Visit us",

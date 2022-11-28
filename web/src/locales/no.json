@@ -10,7 +10,9 @@
     "contact": "Kontakt",
     "offers": "Pakkar",
     "guestharbor": "Gjestehamn",
-    "news": "Aktuelt"
+    "news": "Aktuelt",
+    "privacy": "Personvern",
+    "terms": "Bestillingsvilkår"
   },
   "links": {
     "offers": "Sjå alle pakkar",
@@ -34,7 +36,9 @@
     "activities": "/aktivitetar",
     "restaurant": "/restaurant",
     "meetings": "/mote",
-    "guestharbor": "/gjestehamn"
+    "guestharbor": "/gjestehamn",
+    "privacy": "/personvern",
+    "terms": "/bestillingsvilkar"
   },
   "headings": {
     "address": "Besøk oss",

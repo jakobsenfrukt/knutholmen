@@ -80,6 +80,24 @@
       </div>-->
       <ul class="footer-item footer-logos footer-logos--friends">
         <li>
+          <ul class="info-links">
+            <li>
+              <g-link
+                :to="$tp(`/info${$t('slug.privacy')}`)"
+                :title="$t('menu.privacy')"
+                ><span>{{ $t("menu.privacy") }}</span></g-link
+              >
+            </li>
+            <li>
+              <g-link
+                :to="$tp(`/info${$t('slug.terms')}`)"
+                :title="$t('menu.terms')"
+                ><span>{{ $t("menu.terms") }}</span></g-link
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="friend-logo">
           <a href="https://www.dehistoriske.no/"
             ><img src="/assets/images/footerlogos/dehistoriske.svg"/></a
           ><br />
@@ -87,12 +105,14 @@
             $t("links.giftcardExternal")
           }}</a>
         </li>
-        <li>
+        <li class="friend-logo">
           <a href="https://www.nordfjord.no/"
             ><img src="/assets/images/footerlogos/logo-en.png"
           /></a>
         </li>
-        <li><img src="/assets/images/footerlogos/mf-logo.svg" /></li>
+        <li class="friend-logo">
+          <img src="/assets/images/footerlogos/mf-logo.svg" />
+        </li>
       </ul>
     </div>
   </footer>
@@ -211,7 +231,12 @@ export default {
 }
 .giftcard {
   grid-column: span 2;
-  margin-bottom: 12rem;
+  margin-bottom: 10rem;
+}
+.info-links {
+  list-style: none;
+  margin: 0 0;
+  padding: 0;
 }
 .footer-logos {
   list-style: none;
@@ -232,19 +257,19 @@ export default {
 }
 .footer-logos--friends {
   padding-bottom: 1rem;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
   column-gap: var(--spacing-sitepadding);
-  margin-top: 6rem;
-  li {
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-top: 2rem;
+  li:first-of-type {
+    margin: 0 auto 0 0;
+  }
+  .friend-logo {
     font-size: var(--font-size-xs);
     img {
       height: 3rem;
       object-fit: contain;
-    }
-    &:last-of-type {
-      grid-column: span 2;
-      text-align: right;
     }
   }
 }
@@ -257,19 +282,6 @@ export default {
   }
   .giftcard {
     margin-bottom: 3rem;
-  }
-  .footer-logos--friends {
-    grid-template-columns: 1fr 1fr;
-    li {
-      &:first-of-type {
-        grid-column: span 2;
-        margin-bottom: 2rem;
-      }
-      &:last-of-type {
-        grid-column: span 1;
-        text-align: right;
-      }
-    }
   }
 }
 
@@ -284,6 +296,14 @@ export default {
   .giftcard {
     grid-column: span 1;
     margin-bottom: 3rem;
+  }
+  .footer-logos--friends {
+    flex-wrap: wrap;
+
+    li {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
   }
 }
 </style>
