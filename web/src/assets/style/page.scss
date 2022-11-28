@@ -6,26 +6,44 @@
 
 .block-content {
   margin-bottom: 4rem;
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin: 2rem auto 2rem;
     max-width: 30rem;
   }
-  p, ul, ol {
+
+  p,
+  ul,
+  ol {
     margin: 1rem auto 1.5rem;
   }
-  ul, ol {
+
+  ul,
+  ol {
     max-width: 30rem;
+
+    li {
+      margin-bottom: 1rem;
+    }
   }
+
   figure {
     display: block;
     width: 100%;
     margin: 3rem auto 4rem;
     max-width: 50rem;
   }
+
   img {
     display: block;
     width: 100%;
   }
+
   blockquote {
     font-family: var(--font-serif);
     font-size: var(--font-size-l);
@@ -37,11 +55,14 @@
     text-align: center;
   }
 }
+
 p.block-content {
   margin: 1rem auto 4rem;
 }
+
 .sectionWithHeading .block-content {
   margin: 3rem 0;
+
   p {
     margin: 0 0 1rem;
   }
@@ -61,20 +82,24 @@ section {
 .index section {
   &:nth-of-type(odd):not(.intro) {
     background-color: var(--color-offwhite);
+
     .section-heading--link span {
       background-color: var(--color-offwhite) !important;
     }
   }
 }
 
-main.page-content + section.grid {
+main.page-content+section.grid {
   background-color: var(--color-offwhite);
+
   .section-heading--link span {
     background-color: var(--color-offwhite) !important;
   }
 }
+
 main.page-content section.grid {
   padding: 0 0 var(--spacing-sitepadding);
+
   .section-intro {
     display: none;
   }
@@ -116,6 +141,7 @@ main.page-content section.grid {
   display: block;
   max-width: 15rem;
   margin: 0 auto 2rem;
+
   &:before {
     content: " ";
     display: block;
@@ -128,6 +154,7 @@ main.page-content section.grid {
     top: 50%;
     opacity: .6;
   }
+
   span {
     display: inline-block;
     background-color: var(--color-background);
