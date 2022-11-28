@@ -75,6 +75,22 @@ module.exports = function(api) {
             }
           }
         }
+        pages: allSanityPage{
+          edges {
+            node {
+              _type
+              id
+              slug {
+                no {
+                  current
+                }
+                en {
+                  current
+                }
+              }
+            }
+          }
+        }
         articles: allSanityArticle {
           edges {
             node {
@@ -102,7 +118,6 @@ module.exports = function(api) {
       translatedPaths,
       component,
     }) => {
-      console.log("creating page", path, "from", page.id);
       createPage({
         path: path,
         component: component,
@@ -168,6 +183,12 @@ module.exports = function(api) {
     handleEdges({
       edges: response.data.activities.edges,
       component: "./src/templates/SanityActivity.vue",
+    });
+
+    // Pages
+    handleEdges({
+      edges: response.data.pages.edges,
+      component: "./src/templates/SanityPage.vue",
     });
 
     // Articles

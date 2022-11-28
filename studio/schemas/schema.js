@@ -23,6 +23,7 @@ import activity from './documents/activity'
 import eventPage from './documents/eventPage'
 import guestinfo from './documents/guestinfo'
 import guestHarbor from './documents/guestHarbor'
+import page from './documents/page'
 
 // objects
 import body from './objects/body'
@@ -72,6 +73,7 @@ export default createSchema({
     eventPage,
     guestinfo,
     guestHarbor,
+    page,
     // objects
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas

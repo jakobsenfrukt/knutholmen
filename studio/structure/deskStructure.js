@@ -3,7 +3,7 @@ import S from '@sanity/desk-tool/structure-builder'
 import { MdSettings, MdInfo, MdArticle, MdOutlineArticle, MdHome, MdEmail, MdLocalOffer, MdHotel, MdRestaurant, MdDirectionsBoatFilled, MdFolder, MdCake, MdAnchor, MdHouseboat } from 'react-icons/md'
 
 const hiddenDocTypes = listItem =>
-  !['general', 'article', 'articlePage', 'about', 'frontpage', 'contact', 'offer', 'room', 'roomPage', 'restaurantPage', 'offerPage', 'activityPage', 'activity', 'eventPage', 'guestinfo', 'guestHarbor'].includes(listItem.getId())
+  !['general', 'article', 'articlePage', 'about', 'frontpage', 'contact', 'offer', 'room', 'roomPage', 'restaurantPage', 'offerPage', 'activityPage', 'activity', 'eventPage', 'guestinfo', 'guestHarbor', 'page'].includes(listItem.getId())
 
 export default () =>
   S.list()
@@ -226,6 +226,16 @@ export default () =>
             .id('guestinfo')
             .schemaType('guestinfo')
             .documentId('guestinfo')
+        ),
+      S.listItem()
+        .title('Andre sider')
+        .schemaType('page')
+        .icon(MdOutlineArticle)
+        .child(
+          S.documentList()
+            .id('pages')
+            .title('Sider')
+            .filter('_type == "page"')
         ),
       // This returns an array of all the document types
       // defined in schema.js. We filter out those that we have

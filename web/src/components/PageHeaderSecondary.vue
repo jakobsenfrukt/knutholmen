@@ -1,5 +1,5 @@
 <template>
-  <header class="page-header" :class="{ hasButton: button }">
+  <header class="page-header" :class="{ hasButton: button, center: center }">
     <div class="grid">
       <div class="text text-top">
         <span class="page-title">{{ title }}</span>
@@ -8,9 +8,8 @@
           <Button :type="button" />
         </div>
       </div>
-      <div class="image">
+      <div class="image" v-if="image">
         <g-image
-          v-if="image"
           :src="
             $urlForImage(image.image, $static.metadata.sanityOptions)
               .width(1200)
@@ -20,8 +19,8 @@
           :alt="image.alt[$context.locale]"
         />
       </div>
-      <div class="text text-bottom">
-        <p class="lead" v-if="lead">
+      <div class="text text-bottom" v-if="lead">
+        <p class="lead">
           {{ lead }}
         </p>
       </div>
@@ -53,6 +52,7 @@ export default {
     heading: String,
     lead: String,
     button: String,
+    center: Boolean,
   },
 };
 </script>
@@ -86,6 +86,23 @@ export default {
   }
   .text-bottom {
     align-self: flex-start;
+  }
+
+  &.center {
+    background: var(--color-white);
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    .grid {
+      display: block;
+    }
+    .text {
+      text-align: center;
+    }
+    .page-heading {
+      margin: 0 auto;
+      color: var(--color-blue-dark);
+      max-width: 12em;
+    }
   }
 }
 .page-heading,
