@@ -24,6 +24,7 @@ export default {
       name: 'url',
       type: 'localeString',
       title: 'URL til bestilling',
+      validation: Rule => Rule.required(),
       description: 'Husk å inkludere hele URLen, inkludert https:// etc.'
     },
     {
