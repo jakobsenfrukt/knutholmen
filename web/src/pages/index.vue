@@ -1,7 +1,6 @@
 <template>
   <Layout class="index">
     <Intro />
-    <OfferGrid showIntro :items="$page.frontpage.selectedOffers" :limit="3" />
     <RoomGrid showIntro :items="$page.frontpage.selectedRooms" :limit="3" />
     <RestaurantSection :images="$page.frontpage.restaurantImages" />
     <ActivityGrid
@@ -9,6 +8,7 @@
       :items="$page.frontpage.selectedActivities"
       :limit="3"
     />
+    <OfferGrid showIntro :items="$page.frontpage.selectedOffers" :limit="3" />
     <ArticleGrid showIntro :limit="3" />
   </Layout>
 </template>
