@@ -71,7 +71,7 @@ query {
     }
   }
   rooms: allSanityRoom(
-    sortBy: "title", order: ASC
+    sortBy: "published", order: DESC
   ) {
     edges {
       node {
