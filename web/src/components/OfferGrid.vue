@@ -72,10 +72,12 @@ query {
     }
   }
   offers: allSanityOffer(
-    sortBy: "published", order: DESC
+    sortBy: "_updatedAt", order: DESC
   ) {
     edges {
       node {
+        _updatedAt
+        _createdAt
         id
         title {
           no

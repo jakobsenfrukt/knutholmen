@@ -71,10 +71,11 @@ query {
     }
   }
   rooms: allSanityRoom(
-    sortBy: "published", order: DESC
+    sortBy: "_updatedAt", order: DESC
   ) {
     edges {
       node {
+        _updatedAt
         _type
         id
         title {
