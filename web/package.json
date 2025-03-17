@@ -19,5 +19,10 @@
   },
   "devDependencies": {
     "sass-loader": "^8.0.2"
+  },
+  "overrides": {
+    "gridsome": {
+      "sharp": "0.29.3"
+    }
   }
 }
