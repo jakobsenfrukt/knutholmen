@@ -7,6 +7,7 @@
     <main class="page-content">
       <PageContent :content="$page.restaurantPage.pageContent.blocks" />
     </main>
+    <BookTable />
     <OfferGrid showIntro :limit="3" />
     <RoomGrid showIntro :limit="3" />
   </Layout>
@@ -183,6 +184,7 @@ import PageContent from "~/components/PageContent";
 import Button from "~/components/buttons/Button";
 import OfferGrid from "~/components/OfferGrid";
 import RoomGrid from "~/components/RoomGrid";
+import BookTable from "../components/BookTable.vue";
 
 export default {
   components: {
@@ -192,6 +194,7 @@ export default {
     PageContent,
     OfferGrid,
     RoomGrid,
+    BookTable
   },
   metaInfo() {
     return {

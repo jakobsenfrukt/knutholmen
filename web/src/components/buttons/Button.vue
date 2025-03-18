@@ -28,8 +28,7 @@
     <div v-if="type && type === 'bookTable'">
       <a
         class="button large blank"
-        :href="$static.general.bookTable.url[$context.locale]"
-        target="_blank"
+        href="/restaurant/#book"
         >{{ $static.general.bookTable.buttonText[$context.locale] }}</a
       >
       <p class="info">{{ $static.general.bookTable.info[$context.locale] }}</p>
