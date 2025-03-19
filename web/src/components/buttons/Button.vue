@@ -27,9 +27,9 @@
     <!-- Book table -->
     <div v-if="type && type === 'bookTable'">
       <a
-        class="button large blank"
-        :href="$static.general.bookTable.url[$context.locale]"
-        target="_blank"
+        class="button large"
+        href="/restaurant/#book"
+        @click="scrollToBookSection"
         >{{ $static.general.bookTable.buttonText[$context.locale] }}</a
       >
       <p class="info">{{ $static.general.bookTable.info[$context.locale] }}</p>
@@ -148,6 +148,20 @@ export default {
       default: undefined,
     },
   },
+  methods: {
+    scrollToBookSection(event) {
+      if (window.location.pathname.includes('/restaurant')) {
+        const bookSection = document.getElementById('book');
+        if (bookSection) {
+          event.preventDefault();
+          if (window.location.hash !== '#book') {
+            history.pushState(null, null, '#book');
+          }
+          bookSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+  }
 };
 </script>
 
