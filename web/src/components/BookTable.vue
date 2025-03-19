@@ -1,9 +1,9 @@
 <template>
   <section id="book" class="restaurant-booking">
-    <a :href="$static.general.bookTable.url[$context.locale]" class="section-heading--link">
+    <!--a :href="$static.general.bookTable.url[$context.locale]" class="section-heading--link">
       <span>{{ $static.general.bookTable.buttonText[$context.locale] }}</span>
-    </a>
-    <iframe src="https://knutholmen.munu.shop/bookingswidget" height="1000" width="360" title="Booking Widget"></iframe>
+    </a-->
+    <iframe src="https://knutholmen.munu.shop/bookingswidget" height="1000" width="360" :title="$static.general.bookTable.buttonText[$context.locale]"></iframe>
   </section>
 </template>
 
@@ -55,7 +55,6 @@ export default {
 
   iframe {
     border: none;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
   }
 }
 .section-heading--link {

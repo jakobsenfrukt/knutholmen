@@ -27,7 +27,7 @@
     <!-- Book table -->
     <div v-if="type && type === 'bookTable'">
       <a
-        class="button large blank"
+        class="button large"
         href="/restaurant/#book"
         @click="scrollToBookSection"
         >{{ $static.general.bookTable.buttonText[$context.locale] }}</a
