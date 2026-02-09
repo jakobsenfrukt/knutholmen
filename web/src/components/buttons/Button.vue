@@ -15,7 +15,7 @@
     <div v-if="type && type === 'bookActivity'">
       <a
         class="button large blank"
-        :href="$static.general.bookActivity.url[$context.locale]"
+        :href="bookActivityLink"
         target="_blank"
         >{{ $static.general.bookActivity.buttonText[$context.locale] }}</a
       >
@@ -147,6 +147,26 @@ export default {
       type: String,
       default: undefined,
     },
+    subject: {
+      type: String,
+      default: null
+    }
+  },
+  computed: {
+    bookActivityLink () {
+      const mailtoLink =
+        this.$static.general.bookActivity.url[this.$context.locale]
+
+      if (!this.subject) {
+        return mailtoLink
+      }
+
+      const subject = encodeURIComponent(
+        `Bestilling: ${this.subject}`
+      )
+
+      return `${mailtoLink}?subject=${subject}`
+    }
   },
   methods: {
     scrollToBookSection(event) {

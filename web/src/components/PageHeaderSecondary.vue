@@ -5,7 +5,7 @@
         <span class="page-title">{{ title }}</span>
         <h1 class="page-heading">{{ heading }}</h1>
         <div class="button-wrapper" v-if="button">
-          <Button :type="button" />
+          <Button :type="button" :subject="heading" />
         </div>
       </div>
       <div class="image" v-if="image">
