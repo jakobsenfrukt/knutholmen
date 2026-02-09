@@ -161,12 +161,17 @@ export default {
         return mailtoLink
       }
 
+      const subjectPrefix =
+        this.$context.locale === 'en'
+          ? 'Booking'
+          : 'Bestilling'
+
       const subject = encodeURIComponent(
-        `Bestilling: ${this.subject}`
+        `${subjectPrefix}: ${this.subject}`
       )
 
       return `${mailtoLink}?subject=${subject}`
-    }
+    },
   },
   methods: {
     scrollToBookSection(event) {
