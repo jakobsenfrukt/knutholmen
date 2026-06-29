@@ -5,7 +5,7 @@
         <span class="page-title">{{ title }}</span>
         <h1 class="page-heading">{{ heading }}</h1>
         <div class="button-wrapper" v-if="button">
-          <Button :type="button" :subject="heading" />
+          <Button :type="button" :subject="heading" :bookingUrl="bookingUrl" />
         </div>
       </div>
       <div class="image" v-if="image">
@@ -52,6 +52,7 @@ export default {
     heading: String,
     lead: String,
     button: String,
+    bookingUrl: String,
     center: Boolean,
   },
 };

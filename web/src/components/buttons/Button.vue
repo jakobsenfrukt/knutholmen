@@ -150,10 +150,18 @@ export default {
     subject: {
       type: String,
       default: null
+    },
+    bookingUrl: {
+      type: String,
+      default: null
     }
   },
   computed: {
     bookActivityLink () {
+      if (this.bookingUrl) {
+        return this.bookingUrl
+      }
+
       const mailtoLink =
         this.$static.general.bookActivity.url[this.$context.locale]
 

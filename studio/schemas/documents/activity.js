@@ -21,6 +21,12 @@ export default {
       title: 'Bilde'
     },
     {
+      name: 'bookingUrl',
+      type: 'localeString',
+      title: 'Lenke til bestilling',
+      description: 'Overskriver den generelle bestillingslenken som knapp for denne aktiviteten'
+    },
+    {
       name: 'lead',
       type: 'localeText',
       title: 'Ingress'

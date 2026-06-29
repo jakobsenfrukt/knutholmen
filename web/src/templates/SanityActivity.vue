@@ -6,6 +6,7 @@
       :image="$page.activity.image"
       :lead="$page.activity.lead[$context.locale]"
       button="bookActivity"
+      :bookingUrl="$page.activity.bookingUrl && $page.activity.bookingUrl[$context.locale]"
     />
     <main class="page-content">
       <div class="body-content" v-if="$page.activity.body">
@@ -70,6 +71,10 @@ query activity ($id: ID!) {
     body {
       _rawNo
       _rawEn
+    }
+    bookingUrl {
+      no
+      en
     }
   }
   activityPage: sanityActivityPage(id: "activityPage") {
